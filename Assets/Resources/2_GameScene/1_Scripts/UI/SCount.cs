@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class SCount : MonoBehaviour
 {
+    public Lazer LazerSc;
     public Text CountText = null;
     public SPlayerMove HeroSc;
     int nCount = 10;
     public GameObject PauseBtnGams;
+    bool bLazerCorutineUse = false;
 
     // Update is called once per frame
     void Update()
@@ -25,6 +27,11 @@ public class SCount : MonoBehaviour
             HeroSc.bCountSetCom = true;
             CountText.text = "START!";
             StartCoroutine(TextEnable());
+            if (!bLazerCorutineUse)
+            {
+                StartCoroutine(LazerSc.LazerUse());
+                bLazerCorutineUse = true;
+            }
         }
     }
 
