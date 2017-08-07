@@ -352,7 +352,7 @@ public class SPlayerMove : MonoBehaviour
     {
         if (!bDmgAccess)
         {
-            if (col.tag == ("Bullet"))
+            if (col.tag == ("Bullet") || col.CompareTag("Lazer"))
             {
                 bHeroDie = true;
                 Sr.enabled = false;
