@@ -1,0 +1,66 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MenuBtnMng : MonoBehaviour
+{
+
+    public Transform SettingPopUpTr;
+    public Transform CreditTr;
+    bool bPopUpAccess = false;
+
+    public void SettingBtn()
+    {
+        if (!bPopUpAccess)
+        {
+            SettingPopUpTr.localPosition = Vector2.zero;
+            bPopUpAccess = true;
+        }
+    }
+
+    public void SettingCloseBtn()
+    {
+        SettingPopUpTr.localPosition = new Vector2(800f, 0f);
+        bPopUpAccess = false;
+    }
+
+    public void EarthCredit()
+    {
+        if (!bPopUpAccess)
+        {
+            CreditTr.localPosition = Vector2.zero;
+            bPopUpAccess = true;
+        }
+    }
+
+    public void CreditClose()
+    {
+        CreditTr.localPosition = new Vector2(-800f, 0f);
+        bPopUpAccess = false;
+    }
+
+    public void SoundOn()
+    {
+        if (SSoundMng.I.bSoundOnOff)
+            SSoundMng.I.Play("Main", false, true);
+
+        SSoundMng.I.bSoundOnOff = false;
+    }
+
+    public void SoundOff()
+    {
+        SSoundMng.I.Stop();
+        SSoundMng.I.bSoundOnOff = true;
+    }
+
+    public void JoyStickLeft()
+    {
+        SSoundMng.I.nJoyStickNum = 0;
+    }
+
+    public void JoyStickRight()
+    {
+        SSoundMng.I.nJoyStickNum = 1;
+    }
+
+}
