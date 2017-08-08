@@ -19,7 +19,9 @@ public class SSoundMng : MonoBehaviour
 
     public bool bSoundOnOff = false;
 
-    public int nJoyStickNum = 0;
+    public int nJoyStickNum;
+
+    public bool bJoyPos;
 
     public static SSoundMng I
     {

@@ -38,13 +38,13 @@ public class SGameMng : MonoBehaviour
         if (!SSoundMng.I.bSoundOnOff)
             SSoundMng.I.Play("Game", false, true);
 
-        if (SSoundMng.I.nJoyStickNum == 0)
+        if (SSoundMng.I.nJoyStickNum == 0)                                                      //Left
         {
             JoystickGams.transform.localPosition = new Vector2(-140f, -380f);
             SkillBtnGams.transform.localPosition = new Vector2(135f, -375f);
             SkillCoolLabelGams.transform.localPosition = Vector2.zero;
         }
-        else if (SSoundMng.I.nJoyStickNum == 1)
+        else if (SSoundMng.I.nJoyStickNum == 1)                                                 //Right
         {
             JoystickGams.transform.localPosition = new Vector2(160f, -380f);
             SkillBtnGams.transform.localPosition = new Vector2(-85f, -375f);

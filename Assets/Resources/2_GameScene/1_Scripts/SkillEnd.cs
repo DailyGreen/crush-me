@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkillEnd : MonoBehaviour {
 
     public GameObject[] Scene;
-
+    public BoxCollider2D LazerBox;
 
     public void Boom()
     {
@@ -18,9 +18,15 @@ public class SkillEnd : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    void LazerAniEnd()
+    public void LazerAniEnd()
     {
+        LazerBox.enabled = false;
         gameObject.SetActive(false);
+    }
+
+    public void LazerDmg()
+    {
+        LazerBox.enabled = true;
     }
 
 }

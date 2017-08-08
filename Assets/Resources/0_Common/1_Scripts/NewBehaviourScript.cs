@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour {
 	void Update () {
         if(asdf.FadeCtrl())
         {
-            Application.LoadLevel("2_GameScene");
+            SceneManager.LoadScene("1_MenuScene");
             Debug.Log(asdf.FadeCtrl());
         }
     }

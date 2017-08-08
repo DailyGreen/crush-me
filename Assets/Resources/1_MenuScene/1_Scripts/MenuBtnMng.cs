@@ -9,6 +9,19 @@ public class MenuBtnMng : MonoBehaviour
     public Transform CreditTr;
     bool bPopUpAccess = false;
 
+    void Update()
+    {
+        if (!SSoundMng.I.bJoyPos)
+        {
+            SSoundMng.I.nJoyStickNum = 0;
+        }
+
+        if (SSoundMng.I.bJoyPos)
+        {
+            SSoundMng.I.nJoyStickNum = 1;
+        }
+    }
+
     public void SettingBtn()
     {
         if (!bPopUpAccess)
@@ -55,12 +68,12 @@ public class MenuBtnMng : MonoBehaviour
 
     public void JoyStickLeft()
     {
-        SSoundMng.I.nJoyStickNum = 0;
+        SSoundMng.I.bJoyPos = false;
     }
 
     public void JoyStickRight()
     {
-        SSoundMng.I.nJoyStickNum = 1;
+        SSoundMng.I.bJoyPos = true;
     }
 
 }
