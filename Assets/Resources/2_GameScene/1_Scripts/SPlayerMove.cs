@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SPlayerMove : MonoBehaviour
 {
     public JoyStick JoystickScrp = null;
+    public Lazer LazerSc;
 
     public Transform PlayerParentTr;
 
@@ -15,7 +16,7 @@ public class SPlayerMove : MonoBehaviour
     public GameObject ShieldGams;
     public GameObject DestroySkill;
     public GameObject DieGams;
-    public GameObject[] LazerGams;
+    public GameObject LazerGams;
     public GameObject[] Explaying;
 
     public GameObject BackGround;
@@ -131,19 +132,19 @@ public class SPlayerMove : MonoBehaviour
 
         if (PlayerParentTr.localPosition.x >= 2.5f)
         {
-            PlayerParentTr.Translate(Vector2.left * (fSpeed + 0.5f) * Time.deltaTime);
+            PlayerParentTr.Translate(Vector2.left * fSpeed * Time.deltaTime);
         }
         if (PlayerParentTr.localPosition.x <= -2.5f)
         {
-            PlayerParentTr.Translate(Vector2.right * (fSpeed + 0.5f) * Time.deltaTime);
+            PlayerParentTr.Translate(Vector2.right * fSpeed * Time.deltaTime);
         }
         if (PlayerParentTr.localPosition.y >= 4.5f)
         {
-            PlayerParentTr.Translate(Vector2.down * (fSpeed + 0.5f) * Time.deltaTime);
+            PlayerParentTr.Translate(Vector2.down * fSpeed * Time.deltaTime);
         }
         if (PlayerParentTr.localPosition.y <= -4.5f)
         {
-            PlayerParentTr.Translate(Vector2.up * (fSpeed + 0.5f) * Time.deltaTime);
+            PlayerParentTr.Translate(Vector2.up * fSpeed * Time.deltaTime);
         }
     }
 
@@ -182,9 +183,10 @@ public class SPlayerMove : MonoBehaviour
                 }
                 bBdSkill = true;
                 fBdSkillTime = Time.time;
-                for (int j = 0; j < LazerGams.Length; j++)
+                LazerGams.transform.localPosition = new Vector3(0f, -100f, 0f);
+                for (int j = 0; j < 2; j++)                                         //레이저의 X,Y값만 바꿈
                 {
-                    LazerGams[j].transform.localPosition = new Vector3(0f, -100f, 0f);
+                    LazerSc.fPosValue[j] = 100f;
                 }
                 //bDmgAccess = true;
                 DestroySkill.transform.parent = BackGround.transform;
