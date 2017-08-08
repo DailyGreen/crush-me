@@ -14,9 +14,20 @@ public class Lazer : MonoBehaviour
 
     void LazerPosSet()
     {
-        fPosValue[0] = Random.Range(-2.4f, 2.4f);
-        fPosValue[1] = Random.Range(-4.5f, 4.5f);
         fPosValue[2] = Random.Range(0, 180);
+        if (fPosValue[2] <= 20 && fPosValue[2] >= -20)
+        {
+            fPosValue[1] = Random.Range(-2.5f, 2.5f);
+        }
+        else if (fPosValue[2] >= 160 && fPosValue[2] <= -160)
+        {
+            fPosValue[1] = Random.Range(-2.5f, 2.5f);
+        }
+        else
+        {
+            fPosValue[0] = Random.Range(-2.4f, 2.4f);
+            fPosValue[1] = Random.Range(-4.5f, 4.5f);
+        }
     }
 
     void LazerNotice()

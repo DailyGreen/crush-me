@@ -15,6 +15,7 @@ public class SPlayerMove : MonoBehaviour
     public GameObject ShieldGams;
     public GameObject DestroySkill;
     public GameObject DieGams;
+    public GameObject[] LazerGams;
     public GameObject[] Explaying;
 
     public GameObject BackGround;
@@ -158,7 +159,9 @@ public class SPlayerMove : MonoBehaviour
     IEnumerator TimeCountCor()
     {
         yield return new WaitForSeconds(1f);
-        SGameMng.I.nTimeCount++;
+        if (!SGameMng.I.bPause)
+            SGameMng.I.nTimeCount++;
+
         StartCoroutine(TimeCountCor());
     }
 
@@ -179,6 +182,10 @@ public class SPlayerMove : MonoBehaviour
                 }
                 bBdSkill = true;
                 fBdSkillTime = Time.time;
+                for (int j = 0; j < LazerGams.Length; j++)
+                {
+                    LazerGams[j].transform.localPosition = new Vector3(0f, -100f, 0f);
+                }
                 //bDmgAccess = true;
                 DestroySkill.transform.parent = BackGround.transform;
                 DestroySkill.SetActive(true);
@@ -291,7 +298,7 @@ public class SPlayerMove : MonoBehaviour
 
     IEnumerator SkillCount()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.001f);
         bSkillSet = false;
     }
 

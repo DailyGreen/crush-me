@@ -15,10 +15,11 @@ public class GameBtnMng : MonoBehaviour
 
     public void PauseBtn()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         PauseSceneGams.SetActive(true);
         PauseBtnImg.color = new Color(255f, 255f, 255f, 0f);
         ReplayLayerGams.SetActive(true);
+        SGameMng.I.bPause = true;
     }
 
     public void RePlayBtn()
@@ -30,7 +31,7 @@ public class GameBtnMng : MonoBehaviour
     public void HomeBtn()
     {
         SceneManager.LoadScene("1_MenuScene");
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         SSoundMng.I.Stop();
     }
 
@@ -50,7 +51,7 @@ public class GameBtnMng : MonoBehaviour
 
     IEnumerator Replay()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         SGameMng.I.bMoveAccess = true;
         ReplayLayerGams.SetActive(false);
         CountText.text = 3.ToString();
@@ -63,6 +64,7 @@ public class GameBtnMng : MonoBehaviour
         CountText.fontSize = 100;
         CountText.text = "START!";
         yield return new WaitForSeconds(1f);
+        SGameMng.I.bPause = false;
         PauseSceneGams.SetActive(false);
         RePlayCountGams.SetActive(false);
         SGameMng.I.bMoveAccess = false;
