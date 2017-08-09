@@ -9,6 +9,7 @@ public class Lazer : MonoBehaviour
     public GameObject LazerLine;
     public Vector3 LazerPos;
     public float[] fPosValue;
+    public bool bLazerUsed = false;
 
     // Use this for initialization
 
@@ -26,12 +27,13 @@ public class Lazer : MonoBehaviour
         else
         {
             fPosValue[0] = Random.Range(-2.4f, 2.4f);
-            fPosValue[1] = Random.Range(-4.5f, 4.5f);
+            fPosValue[1] = Random.Range(-4f, 4f);
         }
     }
 
     void LazerNotice()
     {
+        bLazerUsed = true;
         LazerLine.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
         LazerLine.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
     }
@@ -48,6 +50,7 @@ public class Lazer : MonoBehaviour
         LazerPosSet();
         yield return new WaitForSeconds(5f);
         LazerNotice();
+        LazerGams.transform.localScale = Vector3.one;
         yield return new WaitForSeconds(1f);
         LazerLine.transform.localPosition = new Vector3(-100f, 0f, 0f);
         LazerComeOut();

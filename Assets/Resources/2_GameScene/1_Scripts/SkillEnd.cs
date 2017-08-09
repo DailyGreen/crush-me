@@ -6,6 +6,7 @@ public class SkillEnd : MonoBehaviour {
 
     public GameObject[] Scene;
     public BoxCollider2D LazerBox;
+    public Lazer LazerSc;
 
     public void Boom()
     {
@@ -21,6 +22,7 @@ public class SkillEnd : MonoBehaviour {
     public void LazerAniEnd()
     {
         LazerBox.enabled = false;
+        LazerSc.bLazerUsed = false;
         gameObject.SetActive(false);
     }
 

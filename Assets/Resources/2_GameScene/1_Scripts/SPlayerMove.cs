@@ -16,7 +16,7 @@ public class SPlayerMove : MonoBehaviour
     public GameObject ShieldGams;
     public GameObject DestroySkill;
     public GameObject DieGams;
-    public GameObject LazerGams;
+    public GameObject[] LazerGams;
     public GameObject[] Explaying;
 
     public GameObject BackGround;
@@ -183,7 +183,7 @@ public class SPlayerMove : MonoBehaviour
                 }
                 bBdSkill = true;
                 fBdSkillTime = Time.time;
-                LazerGams.transform.localPosition = new Vector3(0f, -100f, 0f);
+                LazerGams[0].transform.localPosition = new Vector3(0f, -100f, 0f);
                 for (int j = 0; j < 2; j++)                                         //레이저의 X,Y값만 바꿈
                 {
                     LazerSc.fPosValue[j] = 100f;
@@ -285,6 +285,9 @@ public class SPlayerMove : MonoBehaviour
                     REnemyMove.v_bullet[i].transform.localScale = new Vector2(0.5f, 0.5f);
             }
             bBsSkill = true;
+            if (LazerSc.bLazerUsed)
+                LazerGams[1].transform.localScale = new Vector3(0.5f, 1f, 1f);
+
             fBsSkillCt = Time.time;
             bSkills[3] = false;
         }
