@@ -21,7 +21,6 @@ public class SkillEnd : MonoBehaviour {
 
     public void LazerAniEnd()
     {
-        LazerBox.enabled = false;
         LazerSc.bLazerUsed = false;
         gameObject.SetActive(false);
     }
@@ -29,6 +28,11 @@ public class SkillEnd : MonoBehaviour {
     public void LazerDmg()
     {
         LazerBox.enabled = true;
+    }
+
+    public void LazerDmgOff()
+    {
+        LazerBox.enabled = false;
     }
 
 }

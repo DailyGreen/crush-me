@@ -52,6 +52,9 @@ public class REnemyMove : MonoBehaviour
         }
 
         BulletRezenVec3 = transform.localPosition;
+
+        fMoveSpeed = Random.Range(0.5f, 1.9f);
+
     }
 
     // Update is called once per frame
