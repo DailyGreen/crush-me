@@ -9,7 +9,6 @@ public class REnemyMove : MonoBehaviour
     {
         E_NORMAL = 0,
         E_FOLLOW,
-        //E_LASER,
         E_MAX
     }
 
@@ -66,7 +65,6 @@ public class REnemyMove : MonoBehaviour
             {
                 BulletRezen();
                 Move();
-                //SGameMng.I.bStartCheck = false;
             }
         }
         else
@@ -87,7 +85,6 @@ public class REnemyMove : MonoBehaviour
                     transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
                 }
                 else
-                    //Destroy(transform.gameObject, 1f);
 
                     transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
 
@@ -111,19 +108,6 @@ public class REnemyMove : MonoBehaviour
 
 
                 break;
-            //case E_MONSTERTYPE.E_LASER:         // 레이저
-
-            //    if (SGameMng.I.TimeCtrl(1, 2f))
-            //    {
-            //        bStay = true;
-            //    }
-
-            //    if (bStay)
-            //    {
-            //        transform.GetChild(1).transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);        // LASER_BULLET 속도
-            //    }
-
-            //    break;
         }
     }
 

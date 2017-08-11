@@ -20,10 +20,10 @@ public class SkillSuffle : MonoBehaviour {
     {
         for (int i = 0; i < SkillGams.Length; i++)
         {
-            Vector3 temp = SkillGams[i].transform.position;
-            int randomIndex = Random.Range(0, SkillGams.Length);
-            SkillGams[i].transform.position = SkillGams[randomIndex].transform.position;
-            SkillGams[randomIndex].transform.position = temp;
+            Vector3 SkillPos = SkillGams[i].transform.position;
+            int RandomIndex = Random.Range(0, SkillGams.Length);
+            SkillGams[i].transform.position = SkillGams[RandomIndex].transform.position;
+            SkillGams[RandomIndex].transform.position = SkillPos;
         }
     }
 
