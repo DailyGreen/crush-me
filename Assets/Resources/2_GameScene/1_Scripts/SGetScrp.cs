@@ -7,10 +7,9 @@ public class SGetScrp : MonoBehaviour
 {
 
     public Text HightTimeText;
-    int nHightTime;
     void Awake()
     {
-        nHightTime = PlayerPrefs.GetInt("Time");       // 시간
+
     }
     // Use this for initialization
     void Start()
@@ -21,6 +20,7 @@ public class SGetScrp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HightTimeText.text = nHightTime.ToString();
+        SGameMng.I.nHightTimeCount = PlayerPrefs.GetInt("HightTime");       // 시간
+        HightTimeText.text = SGameMng.I.nHightTimeCount.ToString() + " 초";
     }
 }

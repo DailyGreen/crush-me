@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SSaveData : MonoBehaviour
 {
-    void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt("Time", SGameMng.I.nTimeCount);
-    }
+
+    //void OnApplicationQuit()
+    //{
+    //    PlayerPrefs.SetInt("HightTime", SGameMng.I.nHightTimeCount);
+    //}
 }

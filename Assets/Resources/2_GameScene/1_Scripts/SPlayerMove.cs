@@ -109,6 +109,13 @@ public class SPlayerMove : MonoBehaviour
             DestroySkill.transform.localPosition = Vector3.zero;
         }
         SKillCoolSet();
+
+        if (SGameMng.I.nTimeCount > SGameMng.I.nHightTimeCount)
+        {
+            PlayerPrefs.SetInt("HightTime", SGameMng.I.nTimeCount);
+        }
+
+
     }
 
     void Move()
@@ -188,7 +195,6 @@ public class SPlayerMove : MonoBehaviour
                 {
                     LazerSc.fPosValue[j] = 100f;
                 }
-                //bDmgAccess = true;
                 DestroySkill.transform.parent = BackGround.transform;
                 DestroySkill.SetActive(true);
                 bDesCool = true;
@@ -199,7 +205,6 @@ public class SPlayerMove : MonoBehaviour
             if (Time.time > fBdSkillTime + 1f)                     //쿨타임 10초
             {
                 bBdSkill = false;
-                //bDmgAccess = false;
                 bSkills[0] = false;
                 DestroySkill.transform.parent = transform;
                 bDesCool = false;
@@ -232,11 +237,6 @@ public class SPlayerMove : MonoBehaviour
                 bSkills[1] = false;
                 bMjSkill = false;
             }
-
-            //if (Time.time > fMjSkill + 1f)                                  //쿨타임 7초
-            //{
-            //    bMjSkill = false;
-            //}
         }
     }
 
@@ -266,11 +266,6 @@ public class SPlayerMove : MonoBehaviour
                 bSuSkill = false;
                 bSkills[2] = false;
             }
-
-            //if (Time.time > fSuSkill + 4f)                                  //쿨타임 5초(이속증가 끝난시점)
-            //{
-            //    bSuSkill = false;
-            //}
         }
 
     }

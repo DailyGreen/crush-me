@@ -64,6 +64,7 @@ public class SGameMng : MonoBehaviour
     public bool bMoveAccess = false;
 
     public int nTimeCount;
+    public int nHightTimeCount;
 
     float[] gTime = new float[(int)E_TIME.E_MAX];
 
