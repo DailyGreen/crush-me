@@ -5,12 +5,11 @@ using UnityEngine;
 public class LazerAni : MonoBehaviour {
 
     public BoxCollider2D LazerBox;
-    public Lazer LazerSc;
+    public GameObject LazerPre;
 
     public void LazerAniEnd()
     {
-        LazerSc.bLazerUsed = false;
-        gameObject.SetActive(false);
+        Destroy(LazerPre);
     }
 
     public void LazerDmg()

@@ -39,6 +39,7 @@ public class SPlayerMove : MonoBehaviour
     bool bDesCool = false;
     bool bSpeedSkillCheck;
     public bool bTimeCorutinStart = false;
+    public bool bBdSkillUse = false;
 
     public bool bCountSetCom;
     public bool[] bSkills;
@@ -189,12 +190,9 @@ public class SPlayerMove : MonoBehaviour
                     }
                 }
                 bBdSkill = true;
+                bBdSkillUse = true;
                 fBdSkillTime = Time.time;
                 LazerGams[0].transform.localPosition = new Vector3(0f, -100f, 0f);
-                for (int j = 0; j < 2; j++)                                         //레이저의 X,Y값만 바꿈
-                {
-                    LazerSc.fPosValue[j] = 100f;
-                }
                 DestroySkill.transform.parent = BackGround.transform;
                 DestroySkill.SetActive(true);
                 bDesCool = true;
@@ -211,6 +209,8 @@ public class SPlayerMove : MonoBehaviour
             }
         }
 
+        if (bBdSkillUse)                        //레이저 지우기 위함
+            bBdSkillUse = false;
     }
 
     public void Mujuck()
@@ -280,8 +280,6 @@ public class SPlayerMove : MonoBehaviour
                     REnemyMove.v_bullet[i].transform.localScale = new Vector2(0.5f, 0.5f);
             }
             bBsSkill = true;
-            if (LazerSc.bLazerUsed)
-                LazerGams[1].transform.localScale = new Vector3(0.5f, 1f, 1f);
 
             fBsSkillCt = Time.time;
             bSkills[3] = false;

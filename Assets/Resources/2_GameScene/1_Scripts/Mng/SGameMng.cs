@@ -68,6 +68,8 @@ public class SGameMng : MonoBehaviour
 
     float[] gTime = new float[(int)E_TIME.E_MAX];
 
+    public float fLazerTime = 5f;
+
     public bool TimeCtrl(int nindex, float DelTime)
     {
         if (gTime[nindex] + DelTime <= Time.time)
@@ -77,5 +79,14 @@ public class SGameMng : MonoBehaviour
         }
         return false;
     }
+
+    public IEnumerator LazerSpeedUp()
+    {
+        yield return new WaitForSeconds(5f);
+        if (fLazerTime >= 0.5f)
+            fLazerTime -= 0.3f;
+        StartCoroutine(LazerSpeedUp());
+    }
+
 }
 

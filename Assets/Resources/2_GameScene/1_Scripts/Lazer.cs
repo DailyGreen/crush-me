@@ -5,56 +5,24 @@ using UnityEngine;
 public class Lazer : MonoBehaviour
 {
 
-    public GameObject LazerGams;
-    public GameObject LazerLine;
-    public Vector3 LazerPos;
-    public float[] fPosValue;
-    public bool bLazerUsed = false;
+    public GameObject LazerPrefab;
+    
 
-    // Use this for initialization
-
-    void LazerPosSet()
+    void Start()
     {
-        fPosValue[2] = Random.Range(0, 180);
-        if (fPosValue[2] <= 20 && fPosValue[2] >= -20)
-        {
-            fPosValue[1] = Random.Range(-2.5f, 2.5f);
-        }
-        else if (fPosValue[2] >= 160 && fPosValue[2] <= -160)
-        {
-            fPosValue[1] = Random.Range(-2.5f, 2.5f);
-        }
-        else
-        {
-            fPosValue[0] = Random.Range(-2.4f, 2.4f);
-            fPosValue[1] = Random.Range(-4f, 4f);
-        }
+
+    }
+ 
+    void Update()
+    {
+
     }
 
-    void LazerNotice()
+    public IEnumerator LazerIns()
     {
-        bLazerUsed = true;
-        LazerLine.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
-        LazerLine.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
-    }
-
-    void LazerComeOut()
-    {
-        LazerGams.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
-        LazerGams.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
-        LazerGams.SetActive(true);
-    }
-
-    public IEnumerator LazerUse()
-    {
-        LazerPosSet();
-        yield return new WaitForSeconds(5f);
-        LazerNotice();
-        LazerGams.transform.localScale = Vector3.one;
-        yield return new WaitForSeconds(1f);
-        LazerLine.transform.localPosition = new Vector3(-100f, 0f, 0f);
-        LazerComeOut();
-        StartCoroutine(LazerUse());
+        yield return new WaitForSeconds(SGameMng.I.fLazerTime);
+        Instantiate(LazerPrefab, transform);
+        StartCoroutine(LazerIns());
     }
 
 }

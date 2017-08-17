@@ -29,7 +29,9 @@ public class SCount : MonoBehaviour
             StartCoroutine(TextEnable());
             if (!bLazerCorutineUse)
             {
-                StartCoroutine(LazerSc.LazerUse());
+                StartCoroutine(SGameMng.I.LazerSpeedUp());
+                //StartCoroutine(LazerSc.LazerUse());
+                StartCoroutine(LazerSc.LazerIns());
                 bLazerCorutineUse = true;
             }
         }
