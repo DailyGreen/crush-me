@@ -92,37 +92,42 @@ public class SkillBtn : MonoBehaviour
     IEnumerator SkillCount1()
     {
         yield return new WaitForSeconds(1f);
-        HeroSc.SkillCool[0]--;
+        if (!SGameMng.I.bPuaseBtn)
+        {
+            HeroSc.SkillCool[0]--;
+            if (HeroSc.SkillCool[0] == 0)
+            {
+                HeroSc.SkillCool[0] = HeroSc.SkillCoolBackUp[0];
+                bSkillUseAccess[0] = false;
+                SkillImg[0].color = new Color(255f, 255f, 255f, 200 / 255f);
+                SkillBtns[0].enabled = true;
+                SkillCoolGams[0].SetActive(false);
+            }
+        }
         if (HeroSc.SkillCool[0] > 0)
         {
             StartCoroutine(SkillCount1());
         }
-        if (HeroSc.SkillCool[0] == 0)
-        {
-            HeroSc.SkillCool[0] = HeroSc.SkillCoolBackUp[0];
-            bSkillUseAccess[0] = false;
-            SkillImg[0].color = new Color(255f, 255f, 255f, 200 / 255f);
-            SkillBtns[0].enabled = true;
-            SkillCoolGams[0].SetActive(false);
-        }
     }
-
     IEnumerator SkillCount2()
     {
         yield return new WaitForSeconds(1f);
-        HeroSc.SkillCool[1]--;
+        if (!SGameMng.I.bPuaseBtn)
+        {
+            HeroSc.SkillCool[1]--;
+            if (HeroSc.SkillCool[1] == 0)
+            {
+                HeroSc.SkillCool[1] = HeroSc.SkillCoolBackUp[1];
+                bSkillUseAccess[1] = false;
+                SkillImg[1].color = new Color(255f, 255f, 255f, 200 / 255f);
+                SkillBtns[1].enabled = true;
+                SkillCoolGams[1].SetActive(false);
+            }
+        }
         if (HeroSc.SkillCool[1] > 0)
         {
             StartCoroutine(SkillCount2());
         }
-        if (HeroSc.SkillCool[1] == 0)
-        {
-            HeroSc.SkillCool[1] = HeroSc.SkillCoolBackUp[1];
-            bSkillUseAccess[1] = false;
-            SkillImg[1].color = new Color(255f, 255f, 255f, 200 / 255f);
-            SkillBtns[1].enabled = true;
-            SkillCoolGams[1].SetActive(false);
-        }
-    }
 
+    }
 }

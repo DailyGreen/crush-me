@@ -16,7 +16,6 @@ public class NewBehaviourScript : MonoBehaviour {
         if(asdf.FadeCtrl())
         {
             SceneManager.LoadScene("1_MenuScene");
-            Debug.Log(asdf.FadeCtrl());
         }
     }
 }

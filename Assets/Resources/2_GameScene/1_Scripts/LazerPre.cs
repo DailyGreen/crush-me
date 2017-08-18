@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LazerPre : MonoBehaviour {
     public GameObject LazerGams;
-    public GameObject LazerLine;
+    //public GameObject LazerLine;
     public Vector3 LazerPos;
     public float[] fPosValue;
 
@@ -12,7 +12,8 @@ public class LazerPre : MonoBehaviour {
     void Start()
     {
         LazerPosSet();
-        LazerNotice();
+        LazerComeOut();
+        //LazerNotice();
     }
 
     void LazerPosSet()
@@ -33,12 +34,12 @@ public class LazerPre : MonoBehaviour {
         }
     }
 
-    void LazerNotice()
-    {
-        LazerLine.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
-        LazerLine.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
-        StartCoroutine(Lazer());
-    }
+    //void LazerNotice()
+    //{
+    //    LazerLine.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
+    //    LazerLine.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
+    //    StartCoroutine(Lazer());
+    //}
 
     void LazerComeOut()
     {
@@ -47,11 +48,11 @@ public class LazerPre : MonoBehaviour {
         LazerGams.SetActive(true);
     }
 
-    IEnumerator Lazer()
-    {
-        yield return new WaitForSeconds(1f);
-        LazerLine.transform.localPosition = new Vector3(-100f, 0f, 0f);
-        LazerComeOut();
-    }
+    //IEnumerator Lazer()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    //LazerLine.transform.localPosition = new Vector3(-100f, 0f, 0f);
+    //    LazerComeOut();
+    //}
 
 }

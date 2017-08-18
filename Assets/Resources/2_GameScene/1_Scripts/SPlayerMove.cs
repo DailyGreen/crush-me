@@ -16,12 +16,10 @@ public class SPlayerMove : MonoBehaviour
     public GameObject ShieldGams;
     public GameObject DestroySkill;
     public GameObject DieGams;
-    public GameObject[] LazerGams;
     public GameObject[] Explaying;
-
     public GameObject BackGround;
+    //public GameObject[] LazerGams;
 
-    public float fSpeed;
 
     //public float fTimeCount;
 
@@ -29,25 +27,27 @@ public class SPlayerMove : MonoBehaviour
     public SpriteRenderer[] HeroFireSr;
 
     public CapsuleCollider2D Ccol2d;
+
     bool bBdSkill = false;               //주변 총알 없애기
-    bool bSuSkill = false;               //주인공 이속 증가
-    bool bMjSkill = false;               //주인공 무적
+    public bool bSuSkill = false;               //주인공 이속 증가
+    public bool bMjSkill = false;               //주인공 무적
     bool bBsSkill = false;               //총알 크기 작아짐
     bool bHeroDie = false;
-    bool bDmgAccess = false;                    //false일때만 데미지 입음
     bool bSkillSet = false;
     bool bDesCool = false;
-    bool bSpeedSkillCheck;
+    public bool bSpeedSkillCheck;
+    public bool bDmgAccess = false;                    //false일때만 데미지 입음
     public bool bTimeCorutinStart = false;
     public bool bBdSkillUse = false;
-
     public bool bCountSetCom;
     public bool[] bSkills;
+    public bool bDbUse = false;
 
     float fBdSkillTime;                         //총알 없애는 스킬 지속시간
     float fSuSkill;                             //주인공 이속 증가 지속시간
     float fMjSkill;                             //주인공 무적 지속시간
     float fBsSkillCt;                           //총알 작아지는 스킬 쿨타임
+    public float fSpeed;
 
 
     public int nSkillCount = 2;
@@ -56,6 +56,7 @@ public class SPlayerMove : MonoBehaviour
     public int[] SkillCoolBackUp = new int[2];
 
     public Image[] HaveSKillImg;
+
     public Sprite[] SkillSpr;
 
     //화면 크기 가로2.5 세로4.5
@@ -192,10 +193,10 @@ public class SPlayerMove : MonoBehaviour
                 bBdSkill = true;
                 bBdSkillUse = true;
                 fBdSkillTime = Time.time;
-                LazerGams[0].transform.localPosition = new Vector3(0f, -100f, 0f);
                 DestroySkill.transform.parent = BackGround.transform;
                 DestroySkill.SetActive(true);
                 bDesCool = true;
+                bDbUse = true;
             }
         }
         if (bBdSkill)
@@ -230,13 +231,13 @@ public class SPlayerMove : MonoBehaviour
         if (bMjSkill)                                                       //2초간 무적
         {
             bDmgAccess = true;
-            if (Time.time > fMjSkill + 3f)
-            {
-                bDmgAccess = false;
-                ShieldGams.SetActive(false);
-                bSkills[1] = false;
-                bMjSkill = false;
-            }
+            //if (Time.time > fMjSkill + 3f)
+            //{
+            //    bDmgAccess = false;
+            //    ShieldGams.SetActive(false);
+            //    bSkills[1] = false;
+            //    bMjSkill = false;
+            //}
         }
     }
 
@@ -256,17 +257,17 @@ public class SPlayerMove : MonoBehaviour
             }
         }
 
-        if (bSuSkill)                                                       //3초간 이속 증가
-        {
-            if (Time.time > fSuSkill + 3f)
-            {
-                bSpeedSkillCheck = false;
-                HeroFireGams[0].SetActive(true);
-                HeroFireGams[1].SetActive(false);
-                bSuSkill = false;
-                bSkills[2] = false;
-            }
-        }
+        //if (bSuSkill)                                                       //3초간 이속 증가
+        //{
+        //    if (Time.time > fSuSkill + 3f)
+        //    {
+        //        bSpeedSkillCheck = false;
+        //        HeroFireGams[0].SetActive(true);
+        //        HeroFireGams[1].SetActive(false);
+        //        bSuSkill = false;
+        //        bSkills[2] = false;
+        //    }
+        //}
 
     }
 

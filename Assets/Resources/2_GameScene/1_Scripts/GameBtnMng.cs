@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameBtnMng : MonoBehaviour
 {
 
+    public SPlayerMove HeroSc;
     public GameObject PauseSceneGams;
     public GameObject RePlayCountGams;
     public GameObject ReplayLayerGams;
@@ -20,6 +21,8 @@ public class GameBtnMng : MonoBehaviour
         PauseBtnImg.color = new Color(255f, 255f, 255f, 0f);
         ReplayLayerGams.SetActive(true);
         SGameMng.I.bPause = true;
+        HeroSc.bDmgAccess = true;
+        SGameMng.I.bPuaseBtn = true;
     }
 
     public void RePlayBtn()
@@ -68,7 +71,10 @@ public class GameBtnMng : MonoBehaviour
         PauseSceneGams.SetActive(false);
         RePlayCountGams.SetActive(false);
         SGameMng.I.bMoveAccess = false;
+        SGameMng.I.bPuaseBtn = false;
         PauseBtnImg.color = new Color(255f, 255f, 255f, 255f);
+        if (!HeroSc.bMjSkill)
+            HeroSc.bDmgAccess = false;
     }
 
 }

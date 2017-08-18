@@ -6,13 +6,13 @@ public class Lazer : MonoBehaviour
 {
 
     public GameObject LazerPrefab;
-    
+
 
     void Start()
     {
 
     }
- 
+
     void Update()
     {
 
@@ -21,7 +21,9 @@ public class Lazer : MonoBehaviour
     public IEnumerator LazerIns()
     {
         yield return new WaitForSeconds(SGameMng.I.fLazerTime);
-        Instantiate(LazerPrefab, transform);
+        if (!SGameMng.I.bPuaseBtn)
+            Instantiate(LazerPrefab, transform);
+
         StartCoroutine(LazerIns());
     }
 

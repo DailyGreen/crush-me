@@ -62,6 +62,7 @@ public class SGameMng : MonoBehaviour
     public bool bStartCheck;
     public GameObject PlayerGame = null;
     public bool bMoveAccess = false;
+    public bool bPuaseBtn = false;
 
     public int nTimeCount;
     public int nHightTimeCount;
