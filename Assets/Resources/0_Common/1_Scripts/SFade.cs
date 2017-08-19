@@ -15,15 +15,6 @@ public class SFade : MonoBehaviour
 
     public Image FadeImage;
 
-    // Use this for initialization
-    void Start()
-    {
-        //FadeImage = GetComponent<Image>();
-    }
-    void Update()
-    {
-    }
-
     public bool FadeCtrl()       // 밝아지는거
     {
         if ((int)ValueEnum == 0)

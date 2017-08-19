@@ -8,12 +8,6 @@ public class Lables : MonoBehaviour
     public Text TimeText;
     public Text ResultTime;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

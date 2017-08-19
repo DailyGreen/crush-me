@@ -10,11 +10,6 @@ public class SkillSuffle : MonoBehaviour {
 	void Start () {
         Suffle();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void Suffle()
     {
