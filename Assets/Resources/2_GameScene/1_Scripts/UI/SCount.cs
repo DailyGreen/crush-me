@@ -30,7 +30,6 @@ public class SCount : MonoBehaviour
             if (!bLazerCorutineUse)
             {
                 StartCoroutine(SGameMng.I.LazerSpeedUp());
-                //StartCoroutine(LazerSc.LazerUse());
                 StartCoroutine(LazerSc.LazerIns());
                 bLazerCorutineUse = true;
             }
