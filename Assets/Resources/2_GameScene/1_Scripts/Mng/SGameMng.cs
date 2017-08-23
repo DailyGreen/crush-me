@@ -84,7 +84,7 @@ public class SGameMng : MonoBehaviour
     public IEnumerator LazerSpeedUp()
     {
         yield return new WaitForSeconds(5f);
-        if (fLazerTime >= 0.5f)
+        if (fLazerTime >= 0.8f)
             fLazerTime -= 0.3f;
         StartCoroutine(LazerSpeedUp());
     }

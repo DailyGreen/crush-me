@@ -6,7 +6,6 @@ public class MenuBtnMng : MonoBehaviour
 {
 
     public Transform SettingPopUpTr;
-    public Transform CreditTr;
     bool bPopUpAccess = false;
 
     void Update()
@@ -34,21 +33,6 @@ public class MenuBtnMng : MonoBehaviour
     public void SettingCloseBtn()
     {
         SettingPopUpTr.localPosition = new Vector2(800f, 0f);
-        bPopUpAccess = false;
-    }
-
-    public void EarthCredit()
-    {
-        if (!bPopUpAccess)
-        {
-            CreditTr.localPosition = Vector2.zero;
-            bPopUpAccess = true;
-        }
-    }
-
-    public void CreditClose()
-    {
-        CreditTr.localPosition = new Vector2(-800f, 0f);
         bPopUpAccess = false;
     }
 
