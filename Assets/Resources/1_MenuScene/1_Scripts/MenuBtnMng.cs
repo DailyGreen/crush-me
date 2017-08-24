@@ -36,19 +36,25 @@ public class MenuBtnMng : MonoBehaviour
         bPopUpAccess = false;
     }
 
-    public void SoundOn()
-    {
-        if (SSoundMng.I.bSoundOnOff)
-            SSoundMng.I.Play("Main", false, true);
+    //public void SoundOn()
+    //{
+    //    if (SSoundMng.I.bSoundOnOff)
+    //        SSoundMng.I.Play("Main", false, true);
 
-        SSoundMng.I.bSoundOnOff = false;
+    //    SSoundMng.I.bSoundOnOff = false;
+    //}
+
+    //public void SoundOff()
+    //{
+    //    SSoundMng.I.Stop();
+    //    SSoundMng.I.bSoundOnOff = true;
+    //}
+
+    public void Sound()
+    {
+        Debug.Log("Touch");
     }
 
-    public void SoundOff()
-    {
-        SSoundMng.I.Stop();
-        SSoundMng.I.bSoundOnOff = true;
-    }
 
     public void JoyStickLeft()
     {
