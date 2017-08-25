@@ -5,12 +5,25 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
 
+    public GameObject[] SoundOnOffGams;
     public GameObject Earth;
 
     // Use this for initialization
     void Start()
     {
+        if (!SSoundMng.I.bSoundOnOff)
+        {
+            SSoundMng.I.Play("Main", false, true);
+            SoundOnOffGams[0].SetActive(true);
+            SoundOnOffGams[1].SetActive(false);
+        }
 
+        if (SSoundMng.I.bSoundOnOff)
+        {
+            SSoundMng.I.Stop();
+            SoundOnOffGams[0].SetActive(false);
+            SoundOnOffGams[1].SetActive(true);
+        }
     }
 
     // Update is called once per frame

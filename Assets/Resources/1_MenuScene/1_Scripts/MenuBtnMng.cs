@@ -5,6 +5,7 @@ using UnityEngine;
 public class MenuBtnMng : MonoBehaviour
 {
 
+    public GameObject[] SoundOnOffGams;
     public Transform SettingPopUpTr;
     bool bPopUpAccess = false;
 
@@ -19,6 +20,7 @@ public class MenuBtnMng : MonoBehaviour
         {
             SSoundMng.I.nJoyStickNum = 1;
         }
+
     }
 
     public void SettingBtn()
@@ -36,26 +38,25 @@ public class MenuBtnMng : MonoBehaviour
         bPopUpAccess = false;
     }
 
-    //public void SoundOn()
-    //{
-    //    if (SSoundMng.I.bSoundOnOff)
-    //        SSoundMng.I.Play("Main", false, true);
-
-    //    SSoundMng.I.bSoundOnOff = false;
-    //}
-
-    //public void SoundOff()
-    //{
-    //    SSoundMng.I.Stop();
-    //    SSoundMng.I.bSoundOnOff = true;
-    //}
-
-    public void Sound()
+    public void SoundOn()
     {
-        Debug.Log("Touch");
+        if (SSoundMng.I.bSoundOnOff)
+            SSoundMng.I.Play("Main", false, true);
+
+        SSoundMng.I.bSoundOnOff = false;
+        SoundOnOffGams[0].SetActive(true);
+        SoundOnOffGams[1].SetActive(false);
     }
 
+    public void SoundOff()
+    {
+        SSoundMng.I.Stop();
+        SSoundMng.I.bSoundOnOff = true;
+        SoundOnOffGams[0].SetActive(false);
+        SoundOnOffGams[1].SetActive(true);
+    }
 
+    
     public void JoyStickLeft()
     {
         SSoundMng.I.bJoyPos = false;

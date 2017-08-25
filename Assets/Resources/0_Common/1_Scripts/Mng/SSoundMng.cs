@@ -40,10 +40,6 @@ public class SSoundMng : MonoBehaviour
         Screen.SetResolution(540, 960, false);
         _Instance = this;
         DontDestroyOnLoad(transform.gameObject);
-        if (!bSoundOnOff)
-        {
-            Play("Main", false, true);
-        }
     }
 
     public void Play(string sSoundName, bool bEffectAudio, bool bAutoPlay)
