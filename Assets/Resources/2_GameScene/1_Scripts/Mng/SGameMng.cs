@@ -58,9 +58,9 @@ public class SGameMng : MonoBehaviour
         EarthGams.transform.Rotate(new Vector3(0f, 0f, -360f) * 0.2f * Time.deltaTime, Space.World);
     }
 
+    public GameObject PlayerGame = null;
     public bool bPause;
     public bool bStartCheck;
-    public GameObject PlayerGame = null;
     public bool bMoveAccess = false;
     public bool bPuaseBtn = false;
 
@@ -84,8 +84,11 @@ public class SGameMng : MonoBehaviour
     public IEnumerator LazerSpeedUp()
     {
         yield return new WaitForSeconds(5f);
-        if (fLazerTime >= 0.8f)
-            fLazerTime -= 0.3f;
+        if (!bPuaseBtn)
+        {
+            if (fLazerTime >= 0.8f)
+                fLazerTime -= 0.3f;
+        }
         StartCoroutine(LazerSpeedUp());
     }
 

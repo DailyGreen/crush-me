@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuBtnMng : MonoBehaviour
 {
 
     public GameObject[] SoundOnOffGams;
     public Transform SettingPopUpTr;
+    public Image[] JoystickPosImg;
     bool bPopUpAccess = false;
+
+    void Start()
+    {
+
+    }
 
     void Update()
     {
@@ -56,15 +63,19 @@ public class MenuBtnMng : MonoBehaviour
         SoundOnOffGams[1].SetActive(true);
     }
 
-    
+
     public void JoyStickLeft()
     {
         SSoundMng.I.bJoyPos = false;
+        JoystickPosImg[0].color = new Color(255f, 255f, 255f, 255f);
+        JoystickPosImg[1].color = new Color(255f, 255f, 255f, 100 / 255f);
     }
 
     public void JoyStickRight()
     {
         SSoundMng.I.bJoyPos = true;
+        JoystickPosImg[0].color = new Color(255f, 255f, 255f, 100 / 255f);
+        JoystickPosImg[1].color = new Color(255f, 255f, 255f, 255f);
     }
 
 }

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
 
     public GameObject[] SoundOnOffGams;
+    public Image[] JoyStickPosImg;
     public GameObject Earth;
 
     // Use this for initialization
@@ -23,6 +25,18 @@ public class Rocket : MonoBehaviour
             SSoundMng.I.Stop();
             SoundOnOffGams[0].SetActive(false);
             SoundOnOffGams[1].SetActive(true);
+        }
+
+        if (!SSoundMng.I.bJoyPos)
+        {
+            JoyStickPosImg[0].color = new Color(255f, 255f, 255f, 255f);
+            JoyStickPosImg[1].color = new Color(255f, 255f, 255f, 100 / 255f);
+        }
+
+        if (SSoundMng.I.bJoyPos)
+        {
+            JoyStickPosImg[0].color = new Color(255f, 255f, 255f, 100 / 255f);
+            JoyStickPosImg[1].color = new Color(255f, 255f, 255f, 255f);
         }
     }
 

@@ -11,8 +11,24 @@ public class GameBtnMng : MonoBehaviour
     public GameObject PauseSceneGams;
     public GameObject RePlayCountGams;
     public GameObject ReplayLayerGams;
+    public GameObject[] SoundBtnGams;
     public Image PauseBtnImg;
     public Text CountText;
+
+
+    void Start()
+    {
+        if (SSoundMng.I.bSoundOnOff)
+        {
+            SoundBtnGams[0].SetActive(false);
+            SoundBtnGams[1].SetActive(true);
+        }
+        if (!SSoundMng.I.bSoundOnOff)
+        {
+            SoundBtnGams[0].SetActive(true);
+            SoundBtnGams[1].SetActive(false);
+        }
+    }
 
     public void PauseBtn()
     {
@@ -44,12 +60,16 @@ public class GameBtnMng : MonoBehaviour
             SSoundMng.I.Play("Game", false, true);
 
         SSoundMng.I.bSoundOnOff = false;
+        SoundBtnGams[0].SetActive(true);
+        SoundBtnGams[1].SetActive(false);
     }
 
     public void SoundOffBtn()
     {
         SSoundMng.I.Stop();
         SSoundMng.I.bSoundOnOff = true;
+        SoundBtnGams[0].SetActive(false);
+        SoundBtnGams[1].SetActive(true);
     }
 
     IEnumerator Replay()
@@ -71,10 +91,11 @@ public class GameBtnMng : MonoBehaviour
         PauseSceneGams.SetActive(false);
         RePlayCountGams.SetActive(false);
         SGameMng.I.bMoveAccess = false;
-        SGameMng.I.bPuaseBtn = false;
         PauseBtnImg.color = new Color(255f, 255f, 255f, 255f);
         if (!HeroSc.bMjSkill)
             HeroSc.bDmgAccess = false;
+        yield return new WaitForSeconds(0.01f);
+        SGameMng.I.bPuaseBtn = false;
     }
 
 }
