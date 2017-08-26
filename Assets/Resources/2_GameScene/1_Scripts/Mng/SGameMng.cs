@@ -83,7 +83,7 @@ public class SGameMng : MonoBehaviour
 
     public IEnumerator LazerSpeedUp()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         if (!bPuaseBtn)
         {
             if (fLazerTime >= 0.8f)
@@ -93,4 +93,3 @@ public class SGameMng : MonoBehaviour
     }
 
 }
-

@@ -32,7 +32,6 @@ public class GameBtnMng : MonoBehaviour
 
     public void PauseBtn()
     {
-        //Time.timeScale = 0;
         PauseSceneGams.SetActive(true);
         PauseBtnImg.color = new Color(255f, 255f, 255f, 0f);
         ReplayLayerGams.SetActive(true);
@@ -50,7 +49,6 @@ public class GameBtnMng : MonoBehaviour
     public void HomeBtn()
     {
         SceneManager.LoadScene("1_MenuScene");
-        //Time.timeScale = 1;
         SSoundMng.I.Stop();
     }
 
@@ -74,7 +72,6 @@ public class GameBtnMng : MonoBehaviour
 
     IEnumerator Replay()
     {
-        //Time.timeScale = 1;
         SGameMng.I.bMoveAccess = true;
         ReplayLayerGams.SetActive(false);
         CountText.text = 3.ToString();
