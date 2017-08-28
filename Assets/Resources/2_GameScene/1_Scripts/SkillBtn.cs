@@ -12,6 +12,7 @@ public class SkillBtn : MonoBehaviour
     public Image[] SkillImg;
 
     public bool[] bSkillUseAccess;
+    public bool[] bSkillEnd;
 
     public GameObject[] SkillCoolGams;
 
@@ -30,6 +31,7 @@ public class SkillBtn : MonoBehaviour
             {
                 StartCoroutine(SkillCount1());
                 bSkillUseAccess[0] = true;
+                bSkillEnd[0] = true;
             }
 
             SkillBtns[0].enabled = false;
@@ -66,6 +68,7 @@ public class SkillBtn : MonoBehaviour
             {
                 StartCoroutine(SkillCount2());
                 bSkillUseAccess[1] = true;
+                bSkillEnd[1] = true;
             }
 
             SkillBtns[1].enabled = false;
@@ -101,10 +104,11 @@ public class SkillBtn : MonoBehaviour
                 bSkillUseAccess[0] = false;
                 SkillImg[0].color = new Color(255f, 255f, 255f, 200 / 255f);
                 SkillBtns[0].enabled = true;
+                bSkillEnd[0] = false;
                 SkillCoolGams[0].SetActive(false);
             }
         }
-        if (HeroSc.SkillCool[0] > 0)
+        if (HeroSc.SkillCool[0] > 0 && bSkillEnd[0])
         {
             StartCoroutine(SkillCount1());
         }
@@ -121,10 +125,11 @@ public class SkillBtn : MonoBehaviour
                 bSkillUseAccess[1] = false;
                 SkillImg[1].color = new Color(255f, 255f, 255f, 200 / 255f);
                 SkillBtns[1].enabled = true;
+                bSkillEnd[1] = false;
                 SkillCoolGams[1].SetActive(false);
             }
         }
-        if (HeroSc.SkillCool[1] > 0)
+        if (HeroSc.SkillCool[1] > 0 && bSkillEnd[1])
         {
             StartCoroutine(SkillCount2());
         }
