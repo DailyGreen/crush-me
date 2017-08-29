@@ -10,6 +10,7 @@ public class SCount : MonoBehaviour
     public SPlayerMove HeroSc;
     int nCount = 10;
     public GameObject PauseBtnGams;
+    public GameObject GameTimeLable;
     bool bLazerCorutineUse = false;
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class SCount : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         CountText.enabled = false;
+        GameTimeLable.SetActive(true);
         PauseBtnGams.SetActive(true);
     }
 }

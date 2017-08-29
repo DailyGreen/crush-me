@@ -18,35 +18,32 @@ public class SPlayerMove : MonoBehaviour
     public GameObject DieGams;
     public GameObject[] Explaying;
     public GameObject BackGround;
-    //public GameObject[] LazerGams;
 
-
-    //public float fTimeCount;
 
     SpriteRenderer Sr;
     public SpriteRenderer[] HeroFireSr;
 
     public CapsuleCollider2D Ccol2d;
-
-    bool bBdSkill = false;               //주변 총알 없애기
-    public bool bSuSkill = false;               //주인공 이속 증가
-    public bool bMjSkill = false;               //주인공 무적
-    bool bBsSkill = false;               //총알 크기 작아짐
+                                       
+    bool bBdSkill = false;             
+    public bool bSuSkill = false;      
+    public bool bMjSkill = false;      
+    bool bBsSkill = false;             
     bool bHeroDie = false;
     bool bSkillSet = false;
     bool bDesCool = false;
-    public bool bSpeedSkillCheck;
-    public bool bDmgAccess = false;                    //false일때만 데미지 입음
+    public bool bSpeedSkillCheck;              
+    public bool bDmgAccess = false;            
     public bool bTimeCorutinStart = false;
     public bool bBdSkillUse = false;
     public bool bCountSetCom;
     public bool[] bSkills;
     public bool bDbUse = false;
 
-    float fBdSkillTime;                         //총알 없애는 스킬 지속시간
-    float fSuSkill;                             //주인공 이속 증가 지속시간
-    float fMjSkill;                             //주인공 무적 지속시간
-    float fBsSkillCt;                           //총알 작아지는 스킬 쿨타임
+    float fBdSkillTime;                        
+    float fSuSkill;                            
+    float fMjSkill;                            
+    float fBsSkillCt;                          
     public float fSpeed;
 
 
@@ -59,9 +56,8 @@ public class SPlayerMove : MonoBehaviour
 
     public Sprite[] SkillSpr;
 
-    //화면 크기 가로2.5 세로4.5
+    //////////////////////////////////////////////////////////////////화면 크기 가로2.5 세로4.5////////////////////////////////////////////////////////////////////////
 
-    // Use this for initialization
     void Start()
     {
         Sr = GetComponent<SpriteRenderer>();
@@ -69,6 +65,7 @@ public class SPlayerMove : MonoBehaviour
 
     void Update()
     {
+
         if (!SGameMng.I.bPause && !SGameMng.I.bMoveAccess)
         {
             Move();
@@ -180,7 +177,7 @@ public class SPlayerMove : MonoBehaviour
 
         if (!bBdSkill)
         {
-            if (!bBdSkill)                       //화면 총알 없애기 실행 Z키
+            if (!bBdSkill)                     
             {
                 for (int i = 0; i < REnemyMove.v_bullet.Count; i++)
                 {
@@ -210,13 +207,13 @@ public class SPlayerMove : MonoBehaviour
             }
         }
 
-        if (bBdSkillUse)                        //레이저 지우기 위함
+        if (bBdSkillUse)                      
             bBdSkillUse = false;
     }
 
     public void Mujuck()
     {
-        if (!bMjSkill)                                                  //주인공 무적 실행 X키
+        if (!bMjSkill)                                              
         {
 
             bMjSkill = true;
@@ -231,19 +228,12 @@ public class SPlayerMove : MonoBehaviour
         if (bMjSkill)                                                       //2초간 무적
         {
             bDmgAccess = true;
-            //if (Time.time > fMjSkill + 3f)
-            //{
-            //    bDmgAccess = false;
-            //    ShieldGams.SetActive(false);
-            //    bSkills[1] = false;
-            //    bMjSkill = false;
-            //}
         }
     }
 
     public void SpeedUp()
     {
-        if (!bSuSkill)                                                  //주인공 이속증가 실행 C키
+        if (!bSuSkill)                                       
         {
 
             bSpeedSkillCheck = true;
@@ -257,17 +247,7 @@ public class SPlayerMove : MonoBehaviour
             }
         }
 
-        //if (bSuSkill)                                                       //3초간 이속 증가
-        //{
-        //    if (Time.time > fSuSkill + 3f)
-        //    {
-        //        bSpeedSkillCheck = false;
-        //        HeroFireGams[0].SetActive(true);
-        //        HeroFireGams[1].SetActive(false);
-        //        bSuSkill = false;
-        //        bSkills[2] = false;
-        //    }
-        //}
+
 
     }
 

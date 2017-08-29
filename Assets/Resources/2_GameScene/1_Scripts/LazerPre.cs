@@ -30,7 +30,7 @@ public class LazerPre : MonoBehaviour {
         else
         {
             fPosValue[0] = Random.Range(-2.4f, 2.4f);
-            fPosValue[1] = Random.Range(-4f, 4f);
+            fPosValue[1] = Random.Range(-2f, 2f);
         }
     }
 
