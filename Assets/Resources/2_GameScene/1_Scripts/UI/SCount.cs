@@ -13,7 +13,6 @@ public class SCount : MonoBehaviour
     public GameObject GameTimeLable;
     bool bLazerCorutineUse = false;
 
-    // Update is called once per frame
     void Update()
     {
         if (SGameMng.I.TimeCtrl((int)E_TIME.E_COUNT, 1f) && nCount > 0)

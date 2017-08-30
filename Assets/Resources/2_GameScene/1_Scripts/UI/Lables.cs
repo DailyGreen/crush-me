@@ -8,7 +8,6 @@ public class Lables : MonoBehaviour
     public Text TimeText;
     public Text ResultTime;
 
-    // Update is called once per frame
     void Update()
     {
         TimeText.text = SGameMng.I.nTimeCount.ToString() + " 초";

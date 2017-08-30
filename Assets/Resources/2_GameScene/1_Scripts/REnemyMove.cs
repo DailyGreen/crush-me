@@ -14,7 +14,7 @@ public class REnemyMove : MonoBehaviour
 
     public E_MONSTERTYPE nMonsterType;        // Monster Type, 유도인지 일반인지 레이저인지 걸러주기 위함.
 
-    public Transform tfPlayer;      // Player Transfrom 
+    public Transform tfPlayer;               // Player Transfrom 
     public BulletCount BulletCt;
     public SpriteRenderer Sr;
 
@@ -23,7 +23,7 @@ public class REnemyMove : MonoBehaviour
 
     public bool bStay = false;
     public bool bBulletColAccess = false;               //총알 충돌 허용
-    public bool bBulletCol = false;                 //총알 충돌 판단
+    public bool bBulletCol = false;                     //총알 충돌 판단
 
     float fPosZ = 0f;
     int nTag = 0;
@@ -31,7 +31,7 @@ public class REnemyMove : MonoBehaviour
     public Vector3 BulletRezenVec3;
 
     public static List<REnemyMove> v_bullet = new List<REnemyMove>();           // Bullet 오브젝트를 이곳에 모두 저장함
-    public bool isColliding = false;                                    // true : 충돌중
+    public bool isColliding = false;                                            // true : 충돌중
 
     // Use this for initialization
     void Awake()
