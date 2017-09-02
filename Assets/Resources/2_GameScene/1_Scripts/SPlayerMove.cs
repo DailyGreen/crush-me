@@ -8,6 +8,7 @@ public class SPlayerMove : MonoBehaviour
 {
     public JoyStick JoystickScrp = null;
     public Lazer LazerSc;
+    public SkillBtn SkillBtnSc;
 
     public Transform PlayerParentTr;
 
@@ -361,6 +362,7 @@ public class SPlayerMove : MonoBehaviour
                     nSkillNum[0] = i + 1;
                     Explaying[i].SetActive(false);
                     nSkillCount--;
+                    SkillBtnSc.bSkillSet[0] = true;
                     StartCoroutine(SkillCount());
                 }
             }
@@ -374,6 +376,7 @@ public class SPlayerMove : MonoBehaviour
                     HaveSKillImg[1].sprite = SkillSpr[i];
                     bSkillSet = true;
                     nSkillNum[1] = i + 1;
+                    SkillBtnSc.bSkillSet[1] = true;
                     Explaying[i].SetActive(false);
                     nSkillCount--;
                 }

@@ -13,6 +13,7 @@ public class SkillBtn : MonoBehaviour
 
     public bool[] bSkillUseAccess;
     public bool[] bSkillEnd;
+    public bool[] bSkillSet;
 
     public GameObject[] SkillCoolGams;
 
@@ -20,74 +21,80 @@ public class SkillBtn : MonoBehaviour
 
     public void FirstSkill()
     {
-        if (HeroSc.bCountSetCom)
+        if (bSkillSet[0])
         {
-            SkillText[0].SetActive(true);
-
-            SkillImg[0].color = new Color(255f, 255f, 255f, 50 / 255f);
-
-
-            if (!bSkillUseAccess[0])
+            if (HeroSc.bCountSetCom)
             {
-                StartCoroutine(SkillCount1());
-                bSkillUseAccess[0] = true;
-                bSkillEnd[0] = true;
-            }
+                SkillText[0].SetActive(true);
 
-            SkillBtns[0].enabled = false;
+                SkillImg[0].color = new Color(255f, 255f, 255f, 50 / 255f);
 
-            if (HeroSc.nSkillNum[0] == 1)
-            {
-                HeroSc.bSkills[0] = true;
-            }
-            else if (HeroSc.nSkillNum[0] == 2)
-            {
-                HeroSc.bSkills[1] = true;
-            }
-            else if (HeroSc.nSkillNum[0] == 3)
-            {
-                HeroSc.bSkills[2] = true;
-            }
-            else if (HeroSc.nSkillNum[0] == 4)
-            {
-                HeroSc.bSkills[3] = true;
+
+                if (!bSkillUseAccess[0])
+                {
+                    StartCoroutine(SkillCount1());
+                    bSkillUseAccess[0] = true;
+                    bSkillEnd[0] = true;
+                }
+
+                SkillBtns[0].enabled = false;
+
+                if (HeroSc.nSkillNum[0] == 1)
+                {
+                    HeroSc.bSkills[0] = true;
+                }
+                else if (HeroSc.nSkillNum[0] == 2)
+                {
+                    HeroSc.bSkills[1] = true;
+                }
+                else if (HeroSc.nSkillNum[0] == 3)
+                {
+                    HeroSc.bSkills[2] = true;
+                }
+                else if (HeroSc.nSkillNum[0] == 4)
+                {
+                    HeroSc.bSkills[3] = true;
+                }
             }
         }
     }
 
     public void SecondSkill()
     {
-        if (HeroSc.bCountSetCom)
+        if (bSkillSet[1])
         {
-            SkillText[1].SetActive(true);
-
-            SkillImg[1].color = new Color(255f, 255f, 255f, 50 / 255f);
-
-
-            if (!bSkillUseAccess[1])
+            if (HeroSc.bCountSetCom)
             {
-                StartCoroutine(SkillCount2());
-                bSkillUseAccess[1] = true;
-                bSkillEnd[1] = true;
-            }
+                SkillText[1].SetActive(true);
 
-            SkillBtns[1].enabled = false;
+                SkillImg[1].color = new Color(255f, 255f, 255f, 50 / 255f);
 
-            if (HeroSc.nSkillNum[1] == 1)
-            {
-                HeroSc.bSkills[0] = true;
-            }
-            else if (HeroSc.nSkillNum[1] == 2)
-            {
-                HeroSc.bSkills[1] = true;
-            }
-            else if (HeroSc.nSkillNum[1] == 3)
-            {
-                HeroSc.bSkills[2] = true;
-            }
-            else if (HeroSc.nSkillNum[1] == 4)
-            {
-                HeroSc.bSkills[3] = true;
+
+                if (!bSkillUseAccess[1])
+                {
+                    StartCoroutine(SkillCount2());
+                    bSkillUseAccess[1] = true;
+                    bSkillEnd[1] = true;
+                }
+
+                SkillBtns[1].enabled = false;
+
+                if (HeroSc.nSkillNum[1] == 1)
+                {
+                    HeroSc.bSkills[0] = true;
+                }
+                else if (HeroSc.nSkillNum[1] == 2)
+                {
+                    HeroSc.bSkills[1] = true;
+                }
+                else if (HeroSc.nSkillNum[1] == 3)
+                {
+                    HeroSc.bSkills[2] = true;
+                }
+                else if (HeroSc.nSkillNum[1] == 4)
+                {
+                    HeroSc.bSkills[3] = true;
+                }
             }
         }
     }

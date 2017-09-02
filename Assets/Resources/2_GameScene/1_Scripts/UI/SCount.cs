@@ -8,10 +8,10 @@ public class SCount : MonoBehaviour
     public Lazer LazerSc;
     public Text CountText = null;
     public SPlayerMove HeroSc;
-    int nCount = 10;
     public GameObject PauseBtnGams;
     public GameObject GameTimeLable;
     bool bLazerCorutineUse = false;
+    int nCount = 10;
 
     void Update()
     {

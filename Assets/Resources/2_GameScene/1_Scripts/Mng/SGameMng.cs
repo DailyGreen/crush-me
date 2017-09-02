@@ -64,6 +64,9 @@ public class SGameMng : MonoBehaviour
     public bool bMoveAccess = false;
     public bool bPuaseBtn = false;
 
+    public bool bLeftTouch = false;
+    public bool bRightTouch = false;
+
     public int nTimeCount;
     public int nHightTimeCount;
 

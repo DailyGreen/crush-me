@@ -11,11 +11,6 @@ public class MenuBtnMng : MonoBehaviour
     public Image[] JoystickPosImg;
     bool bPopUpAccess = false;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (!SSoundMng.I.bJoyPos)
