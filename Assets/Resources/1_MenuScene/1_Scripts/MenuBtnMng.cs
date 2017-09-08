@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MenuBtnMng : MonoBehaviour
 {
-
+    public GameObject BackGroundGams;
     public GameObject[] SoundOnOffGams;
     public Transform SettingPopUpTr;
     public Image[] JoystickPosImg;
@@ -23,6 +23,24 @@ public class MenuBtnMng : MonoBehaviour
             SSoundMng.I.nJoyStickNum = 1;
         }
 
+        if (bPopUpAccess)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                SettingCloseBtn();
+                BackGroundGams.SetActive(false);
+            }
+        }
+
+    }
+
+    public void BackGroundBtn()
+    {
+        if (bPopUpAccess)
+        {
+            SettingCloseBtn();
+            BackGroundGams.SetActive(false);
+        }
     }
 
     public void SettingBtn()
@@ -30,6 +48,7 @@ public class MenuBtnMng : MonoBehaviour
         if (!bPopUpAccess)
         {
             SettingPopUpTr.localPosition = Vector2.zero;
+            BackGroundGams.SetActive(true);
             bPopUpAccess = true;
         }
     }
@@ -37,6 +56,7 @@ public class MenuBtnMng : MonoBehaviour
     public void SettingCloseBtn()
     {
         SettingPopUpTr.localPosition = new Vector2(800f, 0f);
+        BackGroundGams.SetActive(false);
         bPopUpAccess = false;
     }
 

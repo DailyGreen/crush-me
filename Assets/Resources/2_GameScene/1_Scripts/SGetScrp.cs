@@ -12,5 +12,10 @@ public class SGetScrp : MonoBehaviour
     {
         SGameMng.I.nHightTimeCount = PlayerPrefs.GetInt("HightTime");       // 시간
         HightTimeText.text = SGameMng.I.nHightTimeCount.ToString() + " 초";
+
+        if (SGameMng.I.nTimeCount > SGameMng.I.nHightTimeCount)
+        {
+            PlayerPrefs.SetInt("HightTime", SGameMng.I.nTimeCount);
+        }
     }
 }

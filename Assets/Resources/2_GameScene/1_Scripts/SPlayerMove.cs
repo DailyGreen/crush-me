@@ -17,12 +17,15 @@ public class SPlayerMove : MonoBehaviour
     public GameObject ShieldGams;
     public GameObject DestroySkill;
     public GameObject DieGams;
-    public GameObject[] Explaying;
+    public GameObject Explaying;
     public GameObject BackGround;
 
+    public Image[] HaveSKillImg;
 
-    SpriteRenderer Sr;
+    public Sprite[] SkillSpr;
+
     public SpriteRenderer[] HeroFireSr;
+    SpriteRenderer Sr;
 
     public CapsuleCollider2D Ccol2d;
                                        
@@ -47,15 +50,11 @@ public class SPlayerMove : MonoBehaviour
     float fBsSkillCt;                          
     public float fSpeed;
 
-
     public int nSkillCount = 2;
     public int[] nSkillNum;
     public int[] SkillCool = new int[2];
     public int[] SkillCoolBackUp = new int[2];
 
-    public Image[] HaveSKillImg;
-
-    public Sprite[] SkillSpr;
 
     //////////////////////////////////////////////////////////////////화면 크기 가로2.5 세로4.5////////////////////////////////////////////////////////////////////////
 
@@ -98,10 +97,7 @@ public class SPlayerMove : MonoBehaviour
         {
             SkillsGams.SetActive(false);
 
-            for (int i = 0; i < 5; i++)
-            {
-                Explaying[i].SetActive(false);
-            }
+            Explaying.SetActive(false);
 
         }
         if (!bDesCool)
@@ -109,11 +105,6 @@ public class SPlayerMove : MonoBehaviour
             DestroySkill.transform.localPosition = Vector3.zero;
         }
         SKillCoolSet();
-
-        if (SGameMng.I.nTimeCount > SGameMng.I.nHightTimeCount)
-        {
-            PlayerPrefs.SetInt("HightTime", SGameMng.I.nTimeCount);
-        }
 
 
     }
@@ -360,7 +351,6 @@ public class SPlayerMove : MonoBehaviour
                     HaveSKillImg[0].sprite = SkillSpr[i];
                     bSkillSet = true;
                     nSkillNum[0] = i + 1;
-                    Explaying[i].SetActive(false);
                     nSkillCount--;
                     SkillBtnSc.bSkillSet[0] = true;
                     StartCoroutine(SkillCount());
@@ -377,7 +367,6 @@ public class SPlayerMove : MonoBehaviour
                     bSkillSet = true;
                     nSkillNum[1] = i + 1;
                     SkillBtnSc.bSkillSet[1] = true;
-                    Explaying[i].SetActive(false);
                     nSkillCount--;
                 }
             }
