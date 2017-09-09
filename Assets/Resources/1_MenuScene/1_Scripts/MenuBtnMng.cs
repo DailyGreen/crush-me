@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class MenuBtnMng : MonoBehaviour
 {
+    public GameObject ExitGams;
     public GameObject BackGroundGams;
     public GameObject[] SoundOnOffGams;
     public Transform SettingPopUpTr;
     public Image[] JoystickPosImg;
     bool bPopUpAccess = false;
-
+    bool bExit = false;
     void Update()
     {
         if (!SSoundMng.I.bJoyPos)
@@ -25,11 +26,16 @@ public class MenuBtnMng : MonoBehaviour
 
         if (bPopUpAccess)
         {
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 SettingCloseBtn();
                 BackGroundGams.SetActive(false);
             }
+        }
+        if (!bExit && !bPopUpAccess)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+                ExitGams.SetActive(true);
         }
 
     }
@@ -57,7 +63,8 @@ public class MenuBtnMng : MonoBehaviour
     {
         SettingPopUpTr.localPosition = new Vector2(800f, 0f);
         BackGroundGams.SetActive(false);
-        bPopUpAccess = false;
+        StartCoroutine(PopUpControl());
+        //bPopUpAccess = false;
     }
 
     public void SoundOn()
@@ -93,4 +100,19 @@ public class MenuBtnMng : MonoBehaviour
         JoystickPosImg[1].color = new Color(255f, 255f, 255f, 255f);
     }
 
+    public void ExitYes()
+    {
+        Application.Quit();
+    }
+
+    public void ExitNo()
+    {
+        ExitGams.SetActive(false);
+        bExit = false;
+    }
+    IEnumerator PopUpControl()
+    {
+        yield return new WaitForSeconds(0.5f);
+        bPopUpAccess = false;
+    }
 }

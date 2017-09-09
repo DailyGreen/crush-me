@@ -21,7 +21,7 @@ public class JoyStick : MonoBehaviour {
         OldVec = StickImg.transform.position;
 
         // 반지름으로 이동가능한 범위 설정
-        fStickRadius = StickImg.rectTransform.sizeDelta.x / 2;
+        fStickRadius = StickImg.rectTransform.sizeDelta.x / 3.5f;
     }
 
     public void Drag()

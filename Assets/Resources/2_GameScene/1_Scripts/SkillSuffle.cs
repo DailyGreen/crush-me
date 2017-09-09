@@ -7,9 +7,7 @@ public class SkillSuffle : MonoBehaviour {
     public GameObject[] SkillGams;
 
 	void Start () {
-
         Suffle();
-
 	}
 
     void Suffle()
