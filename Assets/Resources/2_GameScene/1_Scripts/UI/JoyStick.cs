@@ -26,9 +26,11 @@ public class JoyStick : MonoBehaviour {
 
     public void Drag()
     {
-        bUse = true;
-
-        Vector3 touch = Input.mousePosition;
+		bUse = true;
+		if (Input.touchCount.Equals (1)) 
+		{
+			Vector3 touch = Input.mousePosition;
+		}
 
         DirVec = (new Vector3(touch.x, touch.y, OldVec.z) - OldVec).normalized;
 
@@ -36,18 +38,17 @@ public class JoyStick : MonoBehaviour {
 
         if (fTouchArea > fStickRadius)
         {
-            // 조이스틱이 범위 밖에 있을때 방향으로 반지름 만큼만 가도록 계산
+         	// 조이스틱이 범위 밖에 있을때 방향으로 반지름 만큼만 가도록 계산
             StickImg.rectTransform.position = OldVec + (DirVec * fStickRadius);
         }
         else
         {
             // 조이스틱이 반경 안에서 움직일대 마우스 좌표로 움직이게
-            StickImg.rectTransform.position = touch;
+        	StickImg.rectTransform.position = touch;
         }
-        Vector3 vtPos3 = StickTrans.position - transform.position;
-        PlayerAngle = Mathf.Atan2(vtPos3.y, vtPos3.x) * Mathf.Rad2Deg;
-    }
-
+       	Vector3 vtPos3 = StickTrans.position - transform.position;
+       	PlayerAngle = Mathf.Atan2(vtPos3.y, vtPos3.x) * Mathf.Rad2Deg;
+	}
     public void EndDrag()
     {
         StickImg.rectTransform.position = OldVec;
