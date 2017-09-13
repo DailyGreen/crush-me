@@ -27,9 +27,10 @@ public class JoyStick : MonoBehaviour {
     public void Drag()
     {
 		bUse = true;
+		Vector3 touch = Vector3.zero;
 		if (Input.touchCount.Equals (1)) 
 		{
-			Vector3 touch = Input.mousePosition;
+			touch = Input.mousePosition;
 		}
 
         DirVec = (new Vector3(touch.x, touch.y, OldVec.z) - OldVec).normalized;
