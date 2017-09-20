@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class SPlayerMove : MonoBehaviour
 {
-    public JoyStick JoystickScrp = null;
     public Lazer LazerSc;
     public SkillBtn SkillBtnSc;
 
@@ -60,15 +59,15 @@ public class SPlayerMove : MonoBehaviour
 
     void Start()
     {
+        _rigidBody = GetComponent<Rigidbody2D>();
         Sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-
         if (!SGameMng.I.bPause && !SGameMng.I.bMoveAccess)
         {
-            Move();
+            getKey();
             TimeCount();
             if (bSkills[0])
             {
@@ -107,43 +106,6 @@ public class SPlayerMove : MonoBehaviour
         SKillCoolSet();
 
 
-    }
-
-    void Move()
-    {
-        if (!bHeroDie)
-        {
-            if (!JoystickScrp.bUse)
-            {
-                fSpeed = 0f;
-            }
-            else
-            {
-                if (!bSpeedSkillCheck)
-                {
-                    fSpeed = 3f;
-                }
-                PlayerParentTr.localPosition += new Vector3(JoystickScrp.DirVec.x, JoystickScrp.DirVec.y, JoystickScrp.DirVec.z) * fSpeed * Time.deltaTime;
-                transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, JoystickScrp.PlayerAngle - 90));
-            }
-        }
-
-        if (PlayerParentTr.localPosition.x >= 2.5f)
-        {
-            PlayerParentTr.Translate(Vector2.left * fSpeed * Time.deltaTime);
-        }
-        if (PlayerParentTr.localPosition.x <= -2.5f)
-        {
-            PlayerParentTr.Translate(Vector2.right * fSpeed * Time.deltaTime);
-        }
-        if (PlayerParentTr.localPosition.y >= 4.5f)
-        {
-            PlayerParentTr.Translate(Vector2.down * fSpeed * Time.deltaTime);
-        }
-        if (PlayerParentTr.localPosition.y <= -4.5f)
-        {
-            PlayerParentTr.Translate(Vector2.up * fSpeed * Time.deltaTime);
-        }
     }
 
     void TimeCount()
@@ -371,5 +333,39 @@ public class SPlayerMove : MonoBehaviour
                 }
             }
         }
+    }
+
+	public static float _moveSpeed = 5.5f;
+
+	Rigidbody2D _rigidBody;
+
+	Vector3 _moveVector = Vector3.zero;
+	Vector3 _rotateVector = Vector3.zero;
+	const float correction = 90f * Mathf.Deg2Rad;
+
+	void FixedUpdate()
+	{
+		movement();
+		rotation();
+	}
+
+	void getKey()
+	{
+		_moveVector = new Vector3(CnControls.CnInputManager.GetAxis("Horizontal"), CnControls.CnInputManager.GetAxis("Vertical"));
+		_rotateVector = new Vector3(CnControls.CnInputManager.GetAxis("RotateX"), CnControls.CnInputManager.GetAxis("RotateY"));
+	}
+
+	void movement()
+	{
+		_rigidBody.velocity = _moveVector * _moveSpeed;
+	}
+
+	void rotation()
+	{
+		if (_rotateVector.Equals(Vector3.zero))
+			return;
+
+		float value = (Mathf.Atan2(_rotateVector.y, _rotateVector.x) - correction) * Mathf.Rad2Deg;
+		_rigidBody.rotation = value;
     }
 }
