@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{BC25AB71-894D-7C89-6443-B689C0F79272}|">
   <MonoDevelop.Ide.ItemProperties.crush-me PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/2_GameScene/1_Scripts/SPlayerMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/2_GameScene/1_Scripts/REnemyMove.cs">
     <Files>
       <File FileName="Assets/Resources/0_Common/1_Scripts/VirtualButton.cs" Line="1" Column="1" />
       <File FileName="Assets/Resources/2_GameScene/1_Scripts/HeroMover.cs" Line="35" Column="16" />
-      <File FileName="Assets/Resources/2_GameScene/1_Scripts/SPlayerMove.cs" Line="353" Column="3" />
+      <File FileName="Assets/Resources/2_GameScene/1_Scripts/SPlayerMove.cs" Line="17" Column="35" />
       <File FileName="Assets/Resources/0_Common/1_Scripts/Mng/CnInputManager.cs" Line="99" Column="1" />
       <File FileName="Assets/Resources/2_GameScene/1_Scripts/UI/SimpleJoystick.cs" Line="6" Column="21" />
       <File FileName="Assets/Resources/2_GameScene/1_Scripts/TouchMng.cs" Line="31" Column="1" />
+      <File FileName="Assets/Resources/2_GameScene/1_Scripts/REnemyMove.cs" Line="127" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

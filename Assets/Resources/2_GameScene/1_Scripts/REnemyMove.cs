@@ -136,6 +136,7 @@ public class REnemyMove : MonoBehaviour
         if (col.CompareTag("BackGround"))
         {
             isColliding = true;
+            Debug.Log(("colliding true"));
         }
         if (bBulletColAccess)
         {
