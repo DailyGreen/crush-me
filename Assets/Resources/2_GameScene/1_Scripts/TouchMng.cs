@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class TouchMng : MonoBehaviour
 {
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -28,15 +20,13 @@ public class TouchMng : MonoBehaviour
                         if (hit.transform.CompareTag("LeftTouch"))
                         {
                             SGameMng.I.bLeftTouch = true;
-                            Debug.Log("LeftTouchOn");
                         }
                     }
-                    if (!SGameMng.I.bRightTouch)
+                    else if (!SGameMng.I.bRightTouch)
                     {
                         if (hit.transform.CompareTag("RightTouch"))
                         {
                             SGameMng.I.bRightTouch = true;
-                            Debug.Log("RightTouchOn");
                         }
                     }
                 }
@@ -48,15 +38,12 @@ public class TouchMng : MonoBehaviour
             if (SGameMng.I.bLeftTouch)
             {
                 SGameMng.I.bLeftTouch = false;
-                Debug.Log("LeftTouchOff");
             }
 
             if (SGameMng.I.bRightTouch)
             {
                 SGameMng.I.bRightTouch = false;
-                Debug.Log("RightTouchOff");
             }
         }
-
     }
 }

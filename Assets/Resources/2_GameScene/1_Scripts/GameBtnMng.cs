@@ -15,7 +15,6 @@ public class GameBtnMng : MonoBehaviour
     public Image PauseBtnImg;
     public Text CountText;
 
-
     void Start()
     {
         if (SSoundMng.I.bSoundOnOff)
@@ -23,7 +22,7 @@ public class GameBtnMng : MonoBehaviour
             SoundBtnGams[0].SetActive(false);
             SoundBtnGams[1].SetActive(true);
         }
-        if (!SSoundMng.I.bSoundOnOff)
+        else
         {
             SoundBtnGams[0].SetActive(true);
             SoundBtnGams[1].SetActive(false);

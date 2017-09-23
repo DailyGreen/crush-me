@@ -14,7 +14,7 @@ public class HeroAnimaitionSpeed : MonoBehaviour {
         if (!SGameMng.I.bPuaseBtn)
             SkillAni.speed = 1f;
 
-        if (SGameMng.I.bPuaseBtn)
+        else
             SkillAni.speed = 0f;
 	}
 }

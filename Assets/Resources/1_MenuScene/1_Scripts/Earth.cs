@@ -12,8 +12,8 @@ public class Earth : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update () 
+    {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;

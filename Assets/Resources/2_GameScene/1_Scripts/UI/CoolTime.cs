@@ -8,11 +8,6 @@ public class CoolTime : MonoBehaviour {
     public Text FirstSkill;
     public Text SecondSkill;
     public SPlayerMove HeroSc;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {

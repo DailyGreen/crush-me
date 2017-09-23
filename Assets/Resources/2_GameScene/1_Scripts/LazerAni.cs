@@ -21,7 +21,7 @@ public class LazerAni : MonoBehaviour
         if (!SGameMng.I.bPuaseBtn)
             LazerAnimator.speed = 1f;
 
-        if (SGameMng.I.bPuaseBtn)
+        else
             LazerAnimator.speed = 0f;
 
         if (HeroSc.bDbUse)

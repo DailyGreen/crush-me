@@ -14,30 +14,26 @@ public class MenuBtnMng : MonoBehaviour
     bool bPopUpAccess = false;
     bool bExit = false;
     public bool bExitPos = false;
+
     void Update()
     {
         if (!SSoundMng.I.bJoyPos)
         {
             SSoundMng.I.nJoyStickNum = 0;
         }
-
-        if (SSoundMng.I.bJoyPos)
+        else
         {
             SSoundMng.I.nJoyStickNum = 1;
         }
-
-        if (bPopUpAccess)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (bPopUpAccess)
             {
                 SettingCloseBtn();
                 BackGroundGams.SetActive(false);
             }
-        }
 
-        if (!bExit && !bPopUpAccess)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (!bExit && !bPopUpAccess)
             {
                 ExitGams.SetActive(true);
                 ExitAni.enabled = true;

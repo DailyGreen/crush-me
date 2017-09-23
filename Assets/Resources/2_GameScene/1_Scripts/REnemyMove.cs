@@ -15,14 +15,13 @@ public class REnemyMove : MonoBehaviour
     public E_MONSTERTYPE nMonsterType;        // Monster Type, 유도인지 일반인지 레이저인지 걸러주기 위함.
 
     public Transform tfPlayer;               // Player Transfrom 
-    public BulletCount BulletCt;
     public SpriteRenderer Sr;
 
     public float fRotateSpeed = 0.0f;   // 몬스터 회전 속도
     public float fMoveSpeed = 0.0f;     // 몬스터 움직이는 속도
 
-    public bool bStay = false;
-    public bool bBulletColAccess = false;               //총알 충돌 허용
+    public bool bStay = false;      // 안쓰는거면 지워
+	public bool bBulletColAccess = false;               //총알 충돌 허용
     public bool bBulletCol = false;                     //총알 충돌 판단
 
     float fPosZ = 0f;
@@ -125,7 +124,7 @@ public class REnemyMove : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Hero")
+        if (col.CompareTag("Hero"))
         {
             Sr.color = new Color(255f, 255f, 255f, 0f);
         }
@@ -136,7 +135,6 @@ public class REnemyMove : MonoBehaviour
         if (col.CompareTag("BackGround"))
         {
             isColliding = true;
-            Debug.Log(("colliding true"));
         }
         if (bBulletColAccess)
         {

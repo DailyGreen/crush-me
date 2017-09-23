@@ -23,7 +23,7 @@ public class SGameMng : MonoBehaviour
     {
         get
         {
-            if (_Instance == null)
+            if (_Instance.Equals(null))
             {
                 Debug.Log("instance is null");
             }
@@ -38,13 +38,13 @@ public class SGameMng : MonoBehaviour
         if (!SSoundMng.I.bSoundOnOff)
             SSoundMng.I.Play("Game", false, true);
 
-        if (SSoundMng.I.nJoyStickNum == 0)                                                      //Left
+        if (SSoundMng.I.nJoyStickNum.Equals(0))                                                      //Left
         {
             JoystickGams.transform.localPosition = new Vector2(-140f, -380f);
             SkillBtnGams.transform.localPosition = new Vector2(135f, -375f);
             SkillCoolLabelGams.transform.localPosition = Vector2.zero;
         }
-        else if (SSoundMng.I.nJoyStickNum == 1)                                                 //Right
+        else if (SSoundMng.I.nJoyStickNum.Equals(1))                                                 //Right
         {
             JoystickGams.transform.localPosition = new Vector2(160f, -380f);
             SkillBtnGams.transform.localPosition = new Vector2(-85f, -375f);

@@ -105,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\0_Common\1_Scripts\Mng\CnInputManager.cs" />
-    <Compile Include="Assets\Resources\0_Common\1_Scripts\Mng\SMng.cs" />
     <Compile Include="Assets\Resources\0_Common\1_Scripts\Mng\SSoundMng.cs" />
     <Compile Include="Assets\Resources\0_Common\1_Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Resources\0_Common\1_Scripts\SFade.cs" />
@@ -132,9 +131,7 @@
     <Compile Include="Assets\Resources\2_GameScene\1_Scripts\SkillSuffle.cs" />
     <Compile Include="Assets\Resources\2_GameScene\1_Scripts\SPlayerMove.cs" />
     <Compile Include="Assets\Resources\2_GameScene\1_Scripts\TouchMng.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\1_Scripts\UI\BulletCount.cs" />
     <Compile Include="Assets\Resources\2_GameScene\1_Scripts\UI\CoolTime.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\1_Scripts\UI\JoyStick.cs" />
     <Compile Include="Assets\Resources\2_GameScene\1_Scripts\UI\Lables.cs" />
     <Compile Include="Assets\Resources\2_GameScene\1_Scripts\UI\SCount.cs" />
     <Compile Include="Assets\Resources\2_GameScene\1_Scripts\UI\SimpleJoystick.cs" />

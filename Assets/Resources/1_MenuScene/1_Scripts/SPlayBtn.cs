@@ -11,6 +11,5 @@ public class SPlayBtn : MonoBehaviour
         StartAni[0].enabled = true;
 
         StartAni[1].enabled = true;
-        //SceneManager.LoadScene("2_GameScene");
     }
 }

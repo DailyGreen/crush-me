@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class SPlayerMove : MonoBehaviour
 {
-    public Lazer LazerSc;
-    public SkillBtn SkillBtnSc;
+    public Lazer LazerSc;       // 안쓰는거면 지워
+	public SkillBtn SkillBtnSc;
 
     public Transform PlayerParentTr;
 
-    public GameObject SkillsGams;
+	public GameObject SkillsGams;
     public GameObject[] HeroFireGams;
     public GameObject ShieldGams;
     public GameObject DestroySkill;
@@ -35,7 +35,7 @@ public class SPlayerMove : MonoBehaviour
     bool bHeroDie = false;
     bool bSkillSet = false;
     bool bDesCool = false;
-    public bool bSpeedSkillCheck;              
+    public bool bSpeedSkillCheck = false;              
     public bool bDmgAccess = false;            
     public bool bTimeCorutinStart = false;
     public bool bBdSkillUse = false;

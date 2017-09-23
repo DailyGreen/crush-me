@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BtnMng : MonoBehaviour {
-
-
+public class BtnMng : MonoBehaviour 
+{
     public void HomeBtn()
     {
         SSoundMng.I.Stop();

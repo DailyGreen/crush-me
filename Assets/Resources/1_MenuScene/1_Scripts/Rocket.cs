@@ -20,7 +20,7 @@ public class Rocket : MonoBehaviour
             SoundOnOffGams[1].SetActive(false);
         }
 
-        if (SSoundMng.I.bSoundOnOff)
+        else
         {
             SSoundMng.I.Stop();
             SoundOnOffGams[0].SetActive(false);
@@ -32,8 +32,7 @@ public class Rocket : MonoBehaviour
             JoyStickPosImg[0].color = new Color(255f, 255f, 255f, 255f);
             JoyStickPosImg[1].color = new Color(255f, 255f, 255f, 100 / 255f);
         }
-
-        if (SSoundMng.I.bJoyPos)
+        else
         {
             JoyStickPosImg[0].color = new Color(255f, 255f, 255f, 100 / 255f);
             JoyStickPosImg[1].color = new Color(255f, 255f, 255f, 255f);

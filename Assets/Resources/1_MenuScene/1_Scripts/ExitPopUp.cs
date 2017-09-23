@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExitPopUp : MonoBehaviour {
-
+public class ExitPopUp : MonoBehaviour
+{
     Animator ExitAni;
 
 	// Use this for initialization
@@ -11,10 +11,6 @@ public class ExitPopUp : MonoBehaviour {
         ExitAni = GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
     void ExitAniEnd()
     {
         ExitAni.enabled = false;

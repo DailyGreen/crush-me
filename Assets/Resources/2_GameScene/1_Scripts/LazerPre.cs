@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class LazerPre : MonoBehaviour {
     public GameObject LazerGams;
-    //public GameObject LazerLine;
-    public Vector3 LazerPos;
-    public float[] fPosValue;
-
+    public Vector3 LazerPos;        // 안쓰는거면 지워
+	public float[] fPosValue;
 
     void Start()
     {
         LazerPosSet();
         LazerComeOut();
-        //LazerNotice();
     }
 
     void LazerPosSet()
@@ -34,25 +31,10 @@ public class LazerPre : MonoBehaviour {
         }
     }
 
-    //void LazerNotice()
-    //{
-    //    LazerLine.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
-    //    LazerLine.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
-    //    StartCoroutine(Lazer());
-    //}
-
     void LazerComeOut()
     {
         LazerGams.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
         LazerGams.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
         LazerGams.SetActive(true);
     }
-
-    //IEnumerator Lazer()
-    //{
-    //    yield return new WaitForSeconds(1f);
-    //    //LazerLine.transform.localPosition = new Vector3(-100f, 0f, 0f);
-    //    LazerComeOut();
-    //}
-
 }
