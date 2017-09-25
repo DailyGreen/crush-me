@@ -54,6 +54,8 @@ public class SPlayerMove : MonoBehaviour
     public int[] SkillCool = new int[2];
     public int[] SkillCoolBackUp = new int[2];
 
+    [SerializeField]
+    Hero.HeroMover heroScrp;
 
     //////////////////////////////////////////////////////////////////화면 크기 가로2.5 세로4.5////////////////////////////////////////////////////////////////////////
 
@@ -80,7 +82,7 @@ public class SPlayerMove : MonoBehaviour
             if (bSkills[2])
             {
                 SpeedUp();
-                fSpeed = 5f;
+                //fSpeed = 5f;
             }
             if (bSkills[3])
             {
@@ -193,7 +195,7 @@ public class SPlayerMove : MonoBehaviour
             bSpeedSkillCheck = true;
             bSuSkill = true;
             fSuSkill = Time.time;
-            fSpeed = 5f;
+            heroScrp._moveSpeed = 5f;
             if (!bHeroDie)
             {
                 HeroFireGams[0].SetActive(false);

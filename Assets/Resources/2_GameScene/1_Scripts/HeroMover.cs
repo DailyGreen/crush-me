@@ -7,8 +7,8 @@ namespace Hero
 {
 	public class HeroMover : MonoBehaviour
 	{
-		// [SerializeField]
-		public static float _moveSpeed = 5.5f;
+        // [SerializeField]
+        public float _moveSpeed = 2.5f;
 
 		Rigidbody2D _rigidBody;
 
