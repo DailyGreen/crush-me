@@ -6,6 +6,7 @@ public class SkillEnd : MonoBehaviour {
 
     public GameObject[] Scene;
     public SPlayerMove HeroSc;
+    public Hero.HeroMover HeroMoveSc;
 
     public void Boom()
     {
@@ -36,6 +37,7 @@ public class SkillEnd : MonoBehaviour {
             HeroSc.HeroFireGams[1].SetActive(false);
             HeroSc.bSuSkill = false;
             HeroSc.bSkills[2] = false;
+            HeroMoveSc._moveSpeed = 3.5f;
         }
     }
 }

@@ -75,16 +75,16 @@ public class SPlayerMove : MonoBehaviour
             {
                 DestroyBullet();
             }
-            if (bSkills[1])
+            else if (bSkills[1])
             {
                 Mujuck();
             }
-            if (bSkills[2])
+            else if (bSkills[2])
             {
                 SpeedUp();
                 //fSpeed = 5f;
             }
-            if (bSkills[3])
+            else if (bSkills[3])
             {
                 BulletSmall();
             }
@@ -195,7 +195,7 @@ public class SPlayerMove : MonoBehaviour
             bSpeedSkillCheck = true;
             bSuSkill = true;
             fSuSkill = Time.time;
-            heroScrp._moveSpeed = 5f;
+            heroScrp._moveSpeed = 6f;
             if (!bHeroDie)
             {
                 HeroFireGams[0].SetActive(false);
