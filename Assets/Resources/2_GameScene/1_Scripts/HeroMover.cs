@@ -45,10 +45,10 @@ namespace Hero
 
 		void rotation()
 		{
-			if (_rotateVector.Equals(Vector3.zero))
+			if (_moveVector.Equals(Vector3.zero))
 				return;
 
-			float value = (Mathf.Atan2(_rotateVector.y, _rotateVector.x) - correction) * Mathf.Rad2Deg;
+			float value = (Mathf.Atan2(_moveVector.y, _moveVector.x) - correction) * Mathf.Rad2Deg;
 			_rigidBody.rotation = value;
 		}
 	}

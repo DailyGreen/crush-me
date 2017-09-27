@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/2_GameScene/1_Scripts/HeroMover.cs">
     <Files>
       <File FileName="Assets/Resources/2_GameScene/1_Scripts/SPlayerMove.cs" Line="85" Column="19" />
-      <File FileName="Assets/Resources/2_GameScene/1_Scripts/HeroMover.cs" Line="23" Column="9" />
+      <File FileName="Assets/Resources/2_GameScene/1_Scripts/HeroMover.cs" Line="44" Column="4" />
       <File FileName="Assets/Resources/0_Common/1_Scripts/Mng/SSoundMng.cs" Line="30" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
