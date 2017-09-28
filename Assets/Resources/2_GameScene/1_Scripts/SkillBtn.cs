@@ -39,19 +39,19 @@ public class SkillBtn : MonoBehaviour
 
                 SkillBtns[0].enabled = false;
 
-                if (HeroSc.nSkillNum[0] == 1)
+                if (HeroSc.nSkillNum[0].Equals(1))
                 {
                     HeroSc.bSkills[0] = true;
                 }
-                else if (HeroSc.nSkillNum[0] == 2)
+                else if (HeroSc.nSkillNum[0].Equals(2))
                 {
                     HeroSc.bSkills[1] = true;
                 }
-                else if (HeroSc.nSkillNum[0] == 3)
+                else if (HeroSc.nSkillNum[0].Equals(3))
                 {
                     HeroSc.bSkills[2] = true;
                 }
-                else if (HeroSc.nSkillNum[0] == 4)
+                else if (HeroSc.nSkillNum[0].Equals(4))
                 {
                     HeroSc.bSkills[3] = true;
                 }
@@ -67,7 +67,7 @@ public class SkillBtn : MonoBehaviour
             {
                 SkillText[1].SetActive(true);
 
-                SkillImg[1].color = new Color(255f, 255f, 255f, 50 / 255f);
+                SkillImg[1].color = new Color(255f, 255f, 255f, 50f / 255f);
 
 
                 if (!bSkillUseAccess[1])
@@ -105,11 +105,11 @@ public class SkillBtn : MonoBehaviour
         if (!SGameMng.I.bPuaseBtn)
         {
             HeroSc.SkillCool[0]--;
-            if (HeroSc.SkillCool[0] == 0)
+            if (HeroSc.SkillCool[0].Equals(0))
             {
                 HeroSc.SkillCool[0] = HeroSc.SkillCoolBackUp[0];
                 bSkillUseAccess[0] = false;
-                SkillImg[0].color = new Color(255f, 255f, 255f, 200 / 255f);
+                SkillImg[0].color = new Color(255f, 255f, 255f, 200f / 255f);
                 SkillBtns[0].enabled = true;
                 bSkillEnd[0] = false;
                 SkillCoolGams[0].SetActive(false);
@@ -126,11 +126,11 @@ public class SkillBtn : MonoBehaviour
         if (!SGameMng.I.bPuaseBtn)
         {
             HeroSc.SkillCool[1]--;
-            if (HeroSc.SkillCool[1] == 0)
+            if (HeroSc.SkillCool[1].Equals(0))
             {
                 HeroSc.SkillCool[1] = HeroSc.SkillCoolBackUp[1];
                 bSkillUseAccess[1] = false;
-                SkillImg[1].color = new Color(255f, 255f, 255f, 200 / 255f);
+                SkillImg[1].color = new Color(255f, 255f, 255f, 200f / 255f);
                 SkillBtns[1].enabled = true;
                 bSkillEnd[1] = false;
                 SkillCoolGams[1].SetActive(false);
