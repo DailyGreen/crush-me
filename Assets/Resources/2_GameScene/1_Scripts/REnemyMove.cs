@@ -90,7 +90,7 @@ public class REnemyMove : MonoBehaviour
                 break;
             case E_MONSTERTYPE.E_FOLLOW:        // 유도형 몬스터
 
-                if (nTag == 0)
+                if (nTag.Equals(0))
                 {
                     fPosZ = transform.localRotation.z;
                 }

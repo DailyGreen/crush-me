@@ -79,19 +79,19 @@ public class SkillBtn : MonoBehaviour
 
                 SkillBtns[1].enabled = false;
 
-                if (HeroSc.nSkillNum[1] == 1)
+                if (HeroSc.nSkillNum[1].Equals(1))
                 {
                     HeroSc.bSkills[0] = true;
                 }
-                else if (HeroSc.nSkillNum[1] == 2)
+                else if (HeroSc.nSkillNum[1].Equals(2))
                 {
                     HeroSc.bSkills[1] = true;
                 }
-                else if (HeroSc.nSkillNum[1] == 3)
+                else if (HeroSc.nSkillNum[1].Equals(3))
                 {
                     HeroSc.bSkills[2] = true;
                 }
-                else if (HeroSc.nSkillNum[1] == 4)
+                else if (HeroSc.nSkillNum[1].Equals(4))
                 {
                     HeroSc.bSkills[3] = true;
                 }

@@ -75,16 +75,16 @@ public class SPlayerMove : MonoBehaviour
             {
                 DestroyBullet();
             }
-            else if (bSkills[1])
+            if (bSkills[1])
             {
                 Mujuck();
             }
-            else if (bSkills[2])
+            if (bSkills[2])
             {
                 SpeedUp();
                 //fSpeed = 5f;
             }
-            else if (bSkills[3])
+            if (bSkills[3])
             {
                 BulletSmall();
             }
@@ -94,7 +94,7 @@ public class SPlayerMove : MonoBehaviour
             // 일시정지 일때
         }
 
-        if (nSkillCount == 0 || SGameMng.I.bStartCheck)
+        if (nSkillCount.Equals(0) || SGameMng.I.bStartCheck)
         {
             SkillsGams.SetActive(false);
 
@@ -294,7 +294,7 @@ public class SPlayerMove : MonoBehaviour
     {
         if (!bDmgAccess)
         {
-            if (col.tag == ("Bullet") || col.CompareTag("Lazer"))
+            if (col.CompareTag("Bullet") || col.CompareTag("Lazer"))
             {
                 bHeroDie = true;
                 Sr.enabled = false;
@@ -306,7 +306,7 @@ public class SPlayerMove : MonoBehaviour
             }
         }
 
-        if (nSkillCount == 2 && !bSkillSet)
+        if (nSkillCount.Equals(2) && !bSkillSet)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -321,7 +321,7 @@ public class SPlayerMove : MonoBehaviour
                 }
             }
         }
-        if (nSkillCount == 1 && !bSkillSet)
+        if (nSkillCount.Equals(1) && !bSkillSet)
         {
             for (int i = 0; i < 4; i++)
             {
