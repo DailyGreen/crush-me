@@ -19,16 +19,27 @@ public class SkillBtn : MonoBehaviour
 
     public Button[] SkillBtns;
 
+    [SerializeField]
+    float[] fSkillColValue = new float[2];
+
+    void Start()
+    {
+        fSkillColValue[0] = 0f;
+        fSkillColValue[1] = 0f;
+    }
+
     public void FirstSkill()
     {
         if (bSkillSet[0])
         {
+			if (fSkillColValue[0].Equals(0)) fSkillColValue[0] = HeroSc.SkillCool[0];
             if (HeroSc.bCountSetCom)
             {
                 SkillText[0].SetActive(true);
 
                 SkillImg[0].color = new Color(255f, 255f, 255f, 50 / 255f);
 
+                SkillImg[0].fillAmount = 0f;
 
                 if (!bSkillUseAccess[0])
                 {
@@ -63,12 +74,14 @@ public class SkillBtn : MonoBehaviour
     {
         if (bSkillSet[1])
         {
+            if (fSkillColValue[1].Equals(0)) fSkillColValue[1] =  HeroSc.SkillCool[1];
             if (HeroSc.bCountSetCom)
             {
                 SkillText[1].SetActive(true);
 
                 SkillImg[1].color = new Color(255f, 255f, 255f, 50f / 255f);
 
+				SkillImg[1].fillAmount = 0f;
 
                 if (!bSkillUseAccess[1])
                 {
@@ -96,6 +109,18 @@ public class SkillBtn : MonoBehaviour
                     HeroSc.bSkills[3] = true;
                 }
             }
+        }
+    }
+
+    void Update()
+    {
+        if (SkillImg[0].fillAmount < 1f)
+        {
+            SkillImg[0].fillAmount += (1f / fSkillColValue[0]) / 60f;
+        }
+        if (SkillImg[1].fillAmount < 1f)
+        {
+            SkillImg[1].fillAmount += (1f / fSkillColValue[1]) / 60f;
         }
     }
 
@@ -140,6 +165,5 @@ public class SkillBtn : MonoBehaviour
         {
             StartCoroutine(SkillCount2());
         }
-
     }
 }
