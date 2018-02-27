@@ -15,7 +15,7 @@ public class SFade : MonoBehaviour
 
     public Image FadeImage;
 
-    public bool FadeCtrl()       // 밝아지는거
+    public bool FadeCtrl()      
     {
         if ((int)ValueEnum == 0)
         {

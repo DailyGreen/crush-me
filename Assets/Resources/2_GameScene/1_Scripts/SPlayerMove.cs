@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class SPlayerMove : MonoBehaviour
 {
-    public Lazer LazerSc;       // 안쓰는거면 지워
 	public SkillBtn SkillBtnSc;
 
     public Transform PlayerParentTr;
