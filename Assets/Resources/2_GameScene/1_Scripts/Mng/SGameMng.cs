@@ -13,11 +13,11 @@ public class SGameMng : MonoBehaviour
 {
     private static SGameMng _Instance = null;
 
-    public GameObject JoystickGams;
-    public GameObject SkillBtnGams;
-    public GameObject SkillCoolLabelGams;
+    public GameObject JoystickGams = null;
+    public GameObject SkillBtnGams = null;
+    public GameObject SkillCoolLabelGams = null;
 
-    public GameObject EarthGams;
+    public GameObject EarthGams = null;
 
     public static SGameMng I
     {

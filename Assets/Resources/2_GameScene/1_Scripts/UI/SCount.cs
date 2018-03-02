@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class SCount : MonoBehaviour
 {
-    public Lazer LazerSc;
+    public Lazer LazerSc = null;
     public Text CountText = null;
-    public SPlayerMove HeroSc;
-    public GameObject PauseBtnGams;
-    public GameObject GameTimeLable;
+    public SPlayerMove HeroSc = null;
+    public GameObject PauseBtnGams = null;
+    public GameObject GameTimeLable = null;
     bool bLazerCorutineUse = false;
     int nCount = 10;
 

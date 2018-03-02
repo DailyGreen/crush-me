@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
+    public GameObject[] SoundOnOffGams = null;
+    public GameObject Earth = null;
 
-    public GameObject[] SoundOnOffGams;
-    public Image[] JoyStickPosImg;
-    public GameObject Earth;
+    public Image[] JoyStickPosImg = null;
 
     // Use this for initialization
     void Start()
@@ -43,11 +43,23 @@ public class Rocket : MonoBehaviour
     void Update()
     {
         Earth.transform.Rotate(new Vector3(0f, 0f, -360f) * 0.2f * Time.deltaTime, Space.World);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 100.0f))
+            {
+                if (hit.transform.CompareTag("Char"))
+                {
+                    Debug.Log("캐릭터 선택 팝업 띄우기.");
+                }
+            }
+        }
     }
 
     public void GameScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("2_GameScene");
     }
-
 }

@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class Earth : MonoBehaviour {
 
-    public Animation EarthAni;
+    //public GameObject PlayerBtnGams = null;
+    public GameObject CreditPopUpGams = null;
+
+    public Animation EarthAni = null;
+
+    public int nEarthClickNum = 0;
+
+    public bool bEarthTouchAccess = false;
+    public bool bEasterEggPlay = false;
 
 	// Use this for initialization
 	void Start () {
@@ -20,14 +28,29 @@ public class Earth : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                if (hit.transform.CompareTag("Earth"))
+                if (hit.transform.CompareTag("Earth") && !bEarthTouchAccess)
                 {
                     EarthAni.Play();
                 }
-
             }
         }
 
+        EasterEgg();
     }
 
+    void EasterEgg()
+    {
+        if (nEarthClickNum == 5 && !bEasterEggPlay)
+        {
+            //PlayerBtnGams.SetActive(false);
+            bEarthTouchAccess = true;
+            CreditPopUpGams.SetActive(true);
+            bEasterEggPlay = true;
+        }
+    }
+
+    public void EarthClick()
+    {
+        nEarthClickNum++;
+    }
 }

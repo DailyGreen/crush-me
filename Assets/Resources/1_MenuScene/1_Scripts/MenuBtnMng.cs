@@ -5,12 +5,19 @@ using UnityEngine.UI;
 
 public class MenuBtnMng : MonoBehaviour
 {
-    public GameObject ExitGams;
-    public GameObject BackGroundGams;
-    public GameObject[] SoundOnOffGams;
-    public Transform SettingPopUpTr;
-    public Animator ExitAni;
-    public Image[] JoystickPosImg;
+    public Earth EarthSc = null;
+
+    public GameObject ExitGams = null;
+    public GameObject BackGroundGams = null;
+    public GameObject[] SoundOnOffGams = null;
+    public GameObject CreditPopUpGams = null;
+
+    public Transform SettingPopUpTr = null;
+
+    public Animator ExitAni = null;
+
+    public Image[] JoystickPosImg = null;
+
     bool bPopUpAccess = false;
     bool bExit = false;
     public bool bExitPos = false;
@@ -122,6 +129,16 @@ public class MenuBtnMng : MonoBehaviour
     {
         bExitPos = true;
     }
+
+    public void CreditExit()
+    {
+        EarthSc.bEarthTouchAccess = false;
+        CreditPopUpGams.SetActive(false);
+        EarthSc.bEasterEggPlay = false;
+        //++EarthSc.nEarthClickNum;
+        EarthSc.nEarthClickNum = 0;
+    }
+
     IEnumerator PopUpControl()
     {
         yield return new WaitForSeconds(0.1f);

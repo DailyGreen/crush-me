@@ -5,19 +5,19 @@ using UnityEngine.UI;
 public class SkillBtn : MonoBehaviour
 {
 
-    public SPlayerMove HeroSc;
+    public SPlayerMove HeroSc = null;
 
-    public GameObject[] SkillText;
+    public GameObject[] SkillText = null;
 
-    public Image[] SkillImg;
+    public Image[] SkillImg = null;
 
     public bool[] bSkillUseAccess;
     public bool[] bSkillEnd;
     public bool[] bSkillSet;
 
-    public GameObject[] SkillCoolGams;
+    public GameObject[] SkillCoolGams = null;
 
-    public Button[] SkillBtns;
+    public Button[] SkillBtns = null;
 
     [SerializeField]
     float[] fSkillColValue = new float[2];

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkillSuffle : MonoBehaviour {
 
-    public GameObject[] SkillGams;
+    public GameObject[] SkillGams = null;
 
 	void Start () {
         Suffle();

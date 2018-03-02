@@ -6,26 +6,26 @@ using UnityEngine.UI;
 
 public class SPlayerMove : MonoBehaviour
 {
-	public SkillBtn SkillBtnSc;
+	public SkillBtn SkillBtnSc = null;
 
-    public Transform PlayerParentTr;
+    public Transform PlayerParentTr = null;
 
-	public GameObject SkillsGams;
-    public GameObject[] HeroFireGams;
-    public GameObject ShieldGams;
-    public GameObject DestroySkill;
-    public GameObject DieGams;
-    public GameObject Explaying;
-    public GameObject BackGround;
+    public GameObject SkillsGams = null;
+    public GameObject[] HeroFireGams = null;
+    public GameObject ShieldGams = null;
+    public GameObject DestroySkill = null;
+    public GameObject DieGams = null;
+    public GameObject Explaying = null;
+    public GameObject BackGround = null;
 
-    public Image[] HaveSKillImg;
+    public Image[] HaveSKillImg = null;
 
-    public Sprite[] SkillSpr;
+    public Sprite[] SkillSpr = null;
 
-    public SpriteRenderer[] HeroFireSr;
-    SpriteRenderer Sr;
+    public SpriteRenderer[] HeroFireSr = null;
+    SpriteRenderer Sr = null;
 
-    public CapsuleCollider2D Ccol2d;
+    public CapsuleCollider2D Ccol2d = null;
                                        
     bool bBdSkill = false;             
     public bool bSuSkill = false;      
