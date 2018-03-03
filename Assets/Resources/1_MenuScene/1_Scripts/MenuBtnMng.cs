@@ -24,6 +24,7 @@ public class MenuBtnMng : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(EarthSc.bEarthTouchAccess);
         if (!SSoundMng.I.bJoyPos)
         {
             SSoundMng.I.nJoyStickNum = 0;
@@ -44,8 +45,16 @@ public class MenuBtnMng : MonoBehaviour
             {
                 ExitGams.SetActive(true);
                 ExitAni.enabled = true;
+                EarthSc.bEarthTouchAccess = true;
                 bExit = true;
+                Debug.Log("QWQEQWEQWEQ");
             }
+
+            //if (EarthSc.bEarthTouchAccess) 
+            //{
+            //    CreditExit();
+            //    Debug.Log("ASDFASDFADSFADSFA");
+            //}
         }
 
         if (bExitPos)
@@ -128,11 +137,12 @@ public class MenuBtnMng : MonoBehaviour
     public void ExitNo()
     {
         bExitPos = true;
+        EarthSc.bEarthTouchAccess = false;
     }
 
     public void CreditExit()
     {
-        EarthSc.bEarthTouchAccess = false;
+        EarthSc.bEarthTouchAccess = false;        /////////////////////////////////////////
         CreditPopUpGams.SetActive(false);
         EarthSc.bEasterEggPlay = false;
         //++EarthSc.nEarthClickNum;

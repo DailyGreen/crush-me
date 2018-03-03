@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Earth : MonoBehaviour {
 
+    public MenuBtnMng MenuBtnSc = null;
+
     //public GameObject PlayerBtnGams = null;
     public GameObject CreditPopUpGams = null;
 
@@ -32,6 +34,15 @@ public class Earth : MonoBehaviour {
                 {
                     EarthAni.Play();
                 }
+            }
+        }
+
+        if (bEasterEggPlay)
+        {
+            //MenuBtnSc.CreditExit();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                MenuBtnSc.CreditExit();
             }
         }
 
