@@ -5,6 +5,7 @@ using UnityEngine;
 public class Earth : MonoBehaviour {
 
     public MenuBtnMng MenuBtnSc = null;
+    public Rocket RocketSc = null;
 
     //public GameObject PlayerBtnGams = null;
     public GameObject CreditPopUpGams = null;
@@ -43,6 +44,8 @@ public class Earth : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 MenuBtnSc.CreditExit();
+                RocketSc.bCharSelectOn = false;
+                StartCoroutine(EasterEggDelay());
             }
         }
 
@@ -57,6 +60,7 @@ public class Earth : MonoBehaviour {
             bEarthTouchAccess = true;
             CreditPopUpGams.SetActive(true);
             bEasterEggPlay = true;
+            RocketSc.bCharSelectOn = true;
         }
     }
 
@@ -65,4 +69,11 @@ public class Earth : MonoBehaviour {
         nEarthClickNum++;
         SSoundMng.I.Play("Earth", true, false);
     }
+
+    public IEnumerator EasterEggDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        bEasterEggPlay = false;
+    }
+
 }

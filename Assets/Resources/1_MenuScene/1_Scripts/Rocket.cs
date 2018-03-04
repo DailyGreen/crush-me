@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
+    public MenuBtnMng MenuBtnSc = null;
+
     public GameObject CharSelectGams = null;
     public GameObject CharSelectCloseBtn = null;
     public GameObject[] SoundOnOffGams = null;
@@ -60,10 +62,10 @@ public class Rocket : MonoBehaviour
             {
                 if (hit.transform.CompareTag("Char") && !bCharSelectOn)
                 {
-                    Debug.Log("캐릭터 선택 팝업 띄우기.");
                     CharSelectGams.SetActive(true);
                     CharSelectCloseBtn.SetActive(true);
                     bCharSelectOn = true;
+                    MenuBtnSc.bExit = true;
                 }
             }
         }

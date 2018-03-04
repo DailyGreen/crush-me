@@ -20,11 +20,12 @@ public class MenuBtnMng : MonoBehaviour
     public Image[] JoystickPosImg = null;
 
     bool bPopUpAccess = false;
-    bool bExit = false;
+    public bool bExit = false;
     public bool bExitPos = false;
 
     void Update()
     {
+
         //Debug.Log(EarthSc.bEarthTouchAccess);
         if (!SSoundMng.I.bJoyPos)
         {
@@ -40,15 +41,16 @@ public class MenuBtnMng : MonoBehaviour
             {
                 SettingCloseBtn();
                 BackGroundGams.SetActive(false);
+                RocketSc.bCharSelectOn = false;
             }
 
-            if (!bExit && !bPopUpAccess)
+            if (!bExit && !bPopUpAccess && !EarthSc.bEasterEggPlay)
             {
                 ExitGams.SetActive(true);
                 ExitAni.enabled = true;
                 EarthSc.bEarthTouchAccess = true;
+                RocketSc.bCharSelectOn = true;
                 bExit = true;
-                Debug.Log("QWQEQWEQWEQ");
             }
 
             //if (EarthSc.bEarthTouchAccess) 
@@ -86,6 +88,7 @@ public class MenuBtnMng : MonoBehaviour
             SettingPopUpTr.localPosition = Vector2.zero;
             BackGroundGams.SetActive(true);
             bPopUpAccess = true;
+            RocketSc.bCharSelectOn = true;
         }
     }
 
@@ -94,6 +97,7 @@ public class MenuBtnMng : MonoBehaviour
         SettingPopUpTr.localPosition = new Vector2(800f, 0f);
         BackGroundGams.SetActive(false);
         StartCoroutine(PopUpControl());
+        RocketSc.bCharSelectOn = false;
         //bPopUpAccess = false;
     }
 
@@ -139,14 +143,17 @@ public class MenuBtnMng : MonoBehaviour
     {
         bExitPos = true;
         EarthSc.bEarthTouchAccess = false;
+        RocketSc.bCharSelectOn = false;
     }
 
     public void CreditExit()
     {
         EarthSc.bEarthTouchAccess = false;        /////////////////////////////////////////
         CreditPopUpGams.SetActive(false);
-        EarthSc.bEasterEggPlay = false;
+        //EarthSc.bEasterEggPlay = false;
+        StartCoroutine(EarthSc.EasterEggDelay());
         //++EarthSc.nEarthClickNum;
+        RocketSc.bCharSelectOn = false;
         EarthSc.nEarthClickNum = 0;
     }
 
@@ -155,6 +162,7 @@ public class MenuBtnMng : MonoBehaviour
         RocketSc.CharSelectGams.SetActive(false);
         RocketSc.CharSelectCloseBtn.SetActive(false);
         RocketSc.bCharSelectOn = false;
+        bExit = false;
     }
 
     IEnumerator PopUpControl()
