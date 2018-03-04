@@ -63,5 +63,6 @@ public class Earth : MonoBehaviour {
     public void EarthClick()
     {
         nEarthClickNum++;
+        SSoundMng.I.Play("Earth", true, false);
     }
 }

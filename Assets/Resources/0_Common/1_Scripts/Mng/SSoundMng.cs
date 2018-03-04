@@ -10,6 +10,10 @@ public class SSoundMng : MonoBehaviour
     [SerializeField]
     AudioSource EffectAudio2 = null;
     [SerializeField]
+    AudioSource EffectAudio3 = null;
+    [SerializeField]
+    AudioSource EffectAudio4 = null;
+    [SerializeField]
     AudioClip[] SoundClip = null;
 
     private static SSoundMng _Instance = null;
