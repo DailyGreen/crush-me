@@ -297,6 +297,8 @@
     <Compile Include="Assets\Resources\0_Common\1_Scripts\SFade.cs" />
     <Compile Include="Assets\Resources\0_Common\1_Scripts\VirtualAxis.cs" />
     <Compile Include="Assets\Resources\0_Common\1_Scripts\VirtualButton.cs" />
+    <Compile Include="Assets\Resources\1_MenuScene\1_Scripts\CharMng.cs" />
+    <Compile Include="Assets\Resources\1_MenuScene\1_Scripts\CharSelect.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\1_Scripts\Earth.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\1_Scripts\ExitPopUp.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\1_Scripts\MenuBtnMng.cs" />

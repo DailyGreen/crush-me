@@ -18,6 +18,9 @@ public class SSoundMng : MonoBehaviour
 
     private static SSoundMng _Instance = null;
 
+    public int nJoyStickNum;
+    public int nCharNum;
+
     public bool bBackGroundSound;       // true 배경음악 나옴 false 안나옴
     public bool bEffectSound;           // true 효과음 나옴 false 안나옴
 
@@ -25,7 +28,6 @@ public class SSoundMng : MonoBehaviour
 
     public bool bJoyPos;
 
-    public int nJoyStickNum;
 
     public static SSoundMng I
     {
