@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
+    public GameObject CharSelectGams = null;
+    public GameObject CharSelectCloseBtn = null;
     public GameObject[] SoundOnOffGams = null;
     public GameObject Earth = null;
 
     public Image[] JoyStickPosImg = null;
+
+    public bool bCharSelectOn = false;
 
     // Use this for initialization
     void Start()
@@ -50,9 +54,12 @@ public class Rocket : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                if (hit.transform.CompareTag("Char"))
+                if (hit.transform.CompareTag("Char") && !bCharSelectOn)
                 {
                     Debug.Log("캐릭터 선택 팝업 띄우기.");
+                    CharSelectGams.SetActive(true);
+                    CharSelectCloseBtn.SetActive(true);
+                    bCharSelectOn = true;
                 }
             }
         }

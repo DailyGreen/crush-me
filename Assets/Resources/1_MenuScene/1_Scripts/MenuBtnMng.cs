@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MenuBtnMng : MonoBehaviour
 {
     public Earth EarthSc = null;
+    public Rocket RocketSc = null;
 
     public GameObject ExitGams = null;
     public GameObject BackGroundGams = null;
@@ -147,6 +148,13 @@ public class MenuBtnMng : MonoBehaviour
         EarthSc.bEasterEggPlay = false;
         //++EarthSc.nEarthClickNum;
         EarthSc.nEarthClickNum = 0;
+    }
+
+    public void CharSelectCloseBtn()
+    {
+        RocketSc.CharSelectGams.SetActive(false);
+        RocketSc.CharSelectCloseBtn.SetActive(false);
+        RocketSc.bCharSelectOn = false;
     }
 
     IEnumerator PopUpControl()
