@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Rocket : MonoBehaviour
 {
     public MenuBtnMng MenuBtnSc = null;
+    public Earth EarthSc = null;
 
     public GameObject CharSelectGams = null;
     public GameObject CharSelectCloseBtn = null;
@@ -70,6 +71,7 @@ public class Rocket : MonoBehaviour
                     CharSelectCloseBtn.SetActive(true);
                     bCharSelectOn = true;
                     MenuBtnSc.bExit = true;
+                    EarthSc.bEarthTouchAccess = true;
                 }
             }
         }

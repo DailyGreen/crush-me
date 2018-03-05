@@ -153,6 +153,7 @@ public class MenuBtnMng : MonoBehaviour
         RocketSc.CharSelectCloseBtn.SetActive(false);
         RocketSc.bCharSelectOn = false;
         bExit = false;
+        EarthSc.bEarthTouchAccess = false;
     }
 
     IEnumerator PopUpControl()
