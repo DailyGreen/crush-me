@@ -19,14 +19,12 @@ public class MenuBtnMng : MonoBehaviour
 
     public Image[] JoystickPosImg = null;
 
-    bool bPopUpAccess = false;
     public bool bExit = false;
     public bool bExitPos = false;
+    bool bPopUpAccess = false;
 
     void Update()
     {
-
-        //Debug.Log(EarthSc.bEarthTouchAccess);
         if (!SSoundMng.I.bJoyPos)
         {
             SSoundMng.I.nJoyStickNum = 0;
@@ -53,11 +51,6 @@ public class MenuBtnMng : MonoBehaviour
                 bExit = true;
             }
 
-            //if (EarthSc.bEarthTouchAccess) 
-            //{
-            //    CreditExit();
-            //    Debug.Log("ASDFASDFADSFADSFA");
-            //}
         }
 
         if (bExitPos)
@@ -98,7 +91,6 @@ public class MenuBtnMng : MonoBehaviour
         BackGroundGams.SetActive(false);
         StartCoroutine(PopUpControl());
         RocketSc.bCharSelectOn = false;
-        //bPopUpAccess = false;
     }
 
     public void SoundOn()
@@ -148,11 +140,9 @@ public class MenuBtnMng : MonoBehaviour
 
     public void CreditExit()
     {
-        EarthSc.bEarthTouchAccess = false;        /////////////////////////////////////////
+        EarthSc.bEarthTouchAccess = false;
         CreditPopUpGams.SetActive(false);
-        //EarthSc.bEasterEggPlay = false;
         StartCoroutine(EarthSc.EasterEggDelay());
-        //++EarthSc.nEarthClickNum;
         RocketSc.bCharSelectOn = false;
         EarthSc.nEarthClickNum = 0;
     }

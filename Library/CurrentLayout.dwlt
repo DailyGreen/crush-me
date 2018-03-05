@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 392}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 93
+  controlID: 91
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 1121, y: 392}
   m_MaxSize: {x: 26016, y: 14042}
   vertical: 1
-  controlID: 176
+  controlID: 180
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_MinSize: {x: 1121, y: 392}
   m_MaxSize: {x: 26016, y: 14042}
   vertical: 0
-  controlID: 177
+  controlID: 181
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -443,9 +443,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ce270000
-    m_LastClickedID: 0
-    m_ExpandedIDs: e269feff1081feff0a85feff7688feff98adfeffe6b3feffc2c4feff78c6feffd6e6feff5eedfefff002ffff0e08ffffa610ffff2625ffff684effff2e59ffff5caeffff22d7ffff76deffff8eecffff74f2ffff9efbffff0000000098360000fa370000fe3c0000603e00000a4000006c410000184300007a440000244600008647000030490000924a0000ee4b0000504d0000be54000020560000f45c00008e5d0000ee5d0000f05e0000c462000006630000006400006e6900007269000000740000047400009c770000a0770000
+    m_SelectedIDs: 06ab0000
+    m_LastClickedID: 43782
+    m_ExpandedIDs: 3823fdffc86afdff4881fdff0682fdff788efdfff2bcfdff2c3efeffba48feff7249feffca4ffeff0452feffb25bfeffba6bfefff27ffeff2082feff0091feff36b5feffdab6feff58f4ffffa0f5ffff9efbffff00000000942f0000d62f0000ec2f00002e3000006a30000006310000903100001236000054360000963600004e370000583800002c3900006e390000683a0000e03a0000b83e0000fa3e00003c3f0000f43f0000a05a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,14 +496,14 @@ MonoBehaviour:
     height: 926
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1448.1609245324717
+  lastFramingTime: 3697.6474287302176
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.10979949, y: 0.21257341, z: 0.092876315}
+    m_Target: {x: -0.13571593, y: 0.33530265, z: 0.13867188}
     speed: 2
-    m_Value: {x: -0.10979949, y: 0.21257341, z: 0.092876315}
+    m_Value: {x: -0.13571593, y: 0.33530265, z: 0.13867188}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -531,9 +531,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.844055
+    m_Target: 5.580427
     speed: 2
-    m_Value: 10.844055
+    m_Value: 5.580427
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -584,7 +584,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Resources/2_GameScene/1_Scripts
   m_ViewMode: 0
   m_StartGridSize: 61
   m_LastFolders: []
@@ -620,21 +620,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 1426}
+    scrollPos: {x: 0, y: 966}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: bc270000f2270000642800006c28000074280000ac280000b2280000ee28000012290000242900002c290000322900003a290000522900006a29000088290000dc290000de290000e42900002a2a0000402a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 0_LogoScene
-      m_OriginalName: 0_LogoScene
+      m_Name: SkillBtn
+      m_OriginalName: SkillBtn
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10190
+      m_UserData: 2090
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

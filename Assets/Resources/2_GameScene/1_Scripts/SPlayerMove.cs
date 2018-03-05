@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SPlayerMove : MonoBehaviour
 {
-	public SkillBtn SkillBtnSc = null;
+    public SkillBtn SkillBtnSc = null;
 
     public Transform PlayerParentTr = null;
 
@@ -29,26 +29,26 @@ public class SPlayerMove : MonoBehaviour
     public CapsuleCollider2D Ccol2d = null;
 
     public Color CharColor = new Color(225f, 255f, 255f, 255f);
-                                       
-    bool bBdSkill = false;             
-    public bool bSuSkill = false;      
-    public bool bMjSkill = false;      
-    bool bBsSkill = false;             
+
+    bool bBdSkill = false;
+    public bool bSuSkill = false;
+    public bool bMjSkill = false;
+    bool bBsSkill = false;
     bool bHeroDie = false;
     bool bSkillSet = false;
     bool bDesCool = false;
-    public bool bSpeedSkillCheck = false;              
-    public bool bDmgAccess = false;            
+    public bool bSpeedSkillCheck = false;
+    public bool bDmgAccess = false;
     public bool bTimeCorutinStart = false;
     public bool bBdSkillUse = false;
     public bool bCountSetCom;
     public bool[] bSkills;
     public bool bDbUse = false;
 
-    float fBdSkillTime;                        
-    float fSuSkill;                            
-    float fMjSkill;                            
-    float fBsSkillCt;                          
+    float fBdSkillTime;
+    float fSuSkill;
+    float fMjSkill;
+    float fBsSkillCt;
     public float fSpeed;
 
     public int nSkillCount = 2;
@@ -136,7 +136,7 @@ public class SPlayerMove : MonoBehaviour
 
         if (!bBdSkill)
         {
-            if (!bBdSkill)                     
+            if (!bBdSkill)
             {
                 for (int i = 0; i < REnemyMove.v_bullet.Count; i++)
                 {
@@ -154,6 +154,7 @@ public class SPlayerMove : MonoBehaviour
                 bDesCool = true;
                 bDbUse = true;
             }
+            SSoundMng.I.Play("Red_Skill", true, false);
         }
         if (bBdSkill)
         {
@@ -166,13 +167,13 @@ public class SPlayerMove : MonoBehaviour
             }
         }
 
-        if (bBdSkillUse)                      
+        if (bBdSkillUse)
             bBdSkillUse = false;
     }
 
     public void Mujuck()
     {
-        if (!bMjSkill)                                              
+        if (!bMjSkill)
         {
 
             bMjSkill = true;
@@ -182,6 +183,7 @@ public class SPlayerMove : MonoBehaviour
                 ShieldGams.SetActive(true);
             }
 
+            SSoundMng.I.Play("Shield", true, false);
         }
 
         if (bMjSkill)                                                       //2초간 무적
@@ -192,7 +194,7 @@ public class SPlayerMove : MonoBehaviour
 
     public void SpeedUp()
     {
-        if (!bSuSkill)                                       
+        if (!bSuSkill)
         {
 
             bSpeedSkillCheck = true;
@@ -204,10 +206,8 @@ public class SPlayerMove : MonoBehaviour
                 HeroFireGams[0].SetActive(false);
                 HeroFireGams[1].SetActive(true);
             }
+            SSoundMng.I.Play("SpeedUp", true, false);
         }
-
-
-
     }
 
     public void BulletSmall()
@@ -223,6 +223,7 @@ public class SPlayerMove : MonoBehaviour
 
             fBsSkillCt = Time.time;
             bSkills[3] = false;
+            SSoundMng.I.Play("Magic", true, false);
         }
 
         if (bBsSkill)
@@ -264,8 +265,6 @@ public class SPlayerMove : MonoBehaviour
                     break;
             }
 
-
-
             switch (nSkillNum[1])
             {
                 case 1:
@@ -288,7 +287,6 @@ public class SPlayerMove : MonoBehaviour
                     SkillCoolBackUp[1] = 15;
                     bCountSetCom = true;
                     break;
-
             }
 
         }
@@ -359,6 +357,7 @@ public class SPlayerMove : MonoBehaviour
                 Ccol2d.enabled = false;
                 DieGams.transform.parent = BackGround.transform;
                 DieGams.SetActive(true);
+                SSoundMng.I.Play("Boom", true, false);
             }
         }
 
@@ -393,37 +392,37 @@ public class SPlayerMove : MonoBehaviour
         }
     }
 
-	public static float _moveSpeed = 5.5f;
+    public static float _moveSpeed = 5.5f;
 
-	Rigidbody2D _rigidBody;
+    Rigidbody2D _rigidBody;
 
-	Vector3 _moveVector = Vector3.zero;
-	Vector3 _rotateVector = Vector3.zero;
-	const float correction = 90f * Mathf.Deg2Rad;
+    Vector3 _moveVector = Vector3.zero;
+    Vector3 _rotateVector = Vector3.zero;
+    const float correction = 90f * Mathf.Deg2Rad;
 
-	void FixedUpdate()
-	{
-		movement();
-		rotation();
-	}
+    void FixedUpdate()
+    {
+        movement();
+        rotation();
+    }
 
-	void getKey()
-	{
-		_moveVector = new Vector3(CnControls.CnInputManager.GetAxis("Horizontal"), CnControls.CnInputManager.GetAxis("Vertical"));
-		_rotateVector = new Vector3(CnControls.CnInputManager.GetAxis("RotateX"), CnControls.CnInputManager.GetAxis("RotateY"));
-	}
+    void getKey()
+    {
+        _moveVector = new Vector3(CnControls.CnInputManager.GetAxis("Horizontal"), CnControls.CnInputManager.GetAxis("Vertical"));
+        _rotateVector = new Vector3(CnControls.CnInputManager.GetAxis("RotateX"), CnControls.CnInputManager.GetAxis("RotateY"));
+    }
 
-	void movement()
-	{
-		_rigidBody.velocity = _moveVector * _moveSpeed;
-	}
+    void movement()
+    {
+        _rigidBody.velocity = _moveVector * _moveSpeed;
+    }
 
-	void rotation()
-	{
-		if (_rotateVector.Equals(Vector3.zero))
-			return;
+    void rotation()
+    {
+        if (_rotateVector.Equals(Vector3.zero))
+            return;
 
-		float value = (Mathf.Atan2(_rotateVector.y, _rotateVector.x) - correction) * Mathf.Rad2Deg;
-		_rigidBody.rotation = value;
+        float value = (Mathf.Atan2(_rotateVector.y, _rotateVector.x) - correction) * Mathf.Rad2Deg;
+        _rigidBody.rotation = value;
     }
 }
