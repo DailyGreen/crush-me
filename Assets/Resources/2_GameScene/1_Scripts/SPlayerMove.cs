@@ -21,11 +21,14 @@ public class SPlayerMove : MonoBehaviour
     public Image[] HaveSKillImg = null;
 
     public Sprite[] SkillSpr = null;
+    public Sprite[] CharSprite = null;
 
     public SpriteRenderer[] HeroFireSr = null;
     SpriteRenderer Sr = null;
 
     public CapsuleCollider2D Ccol2d = null;
+
+    public Color CharColor = new Color(225f, 255f, 255f, 255f);
                                        
     bool bBdSkill = false;             
     public bool bSuSkill = false;      
@@ -62,6 +65,7 @@ public class SPlayerMove : MonoBehaviour
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         Sr = GetComponent<SpriteRenderer>();
+        CharSelect();
     }
 
     void Update()
@@ -289,6 +293,59 @@ public class SPlayerMove : MonoBehaviour
 
         }
     }
+
+    void CharSelect()
+    {
+        if (SSoundMng.I.nCharNum == 0)
+        {
+            Sr.sprite = CharSprite[0];
+            CharColor = new Color(255f, 255f, 255f, 255f);
+            Sr.color = CharColor;
+        }
+        else if (SSoundMng.I.nCharNum == 1)
+        {
+            Sr.sprite = CharSprite[1];
+            CharColor = new Color(255f, 255f, 255f, 255f);
+            Sr.color = CharColor;
+        }
+        else if (SSoundMng.I.nCharNum == 2)
+        {
+            Sr.sprite = CharSprite[0];
+            CharColor = new Color(210 / 255f, 68 / 255f, 68 / 255f, 255f);
+            Sr.color = CharColor;
+        }
+        else if (SSoundMng.I.nCharNum == 3)
+        {
+            Sr.sprite = CharSprite[0];
+            CharColor = new Color(84 / 255f, 105 / 255f, 248 / 255f, 255f);
+            Sr.color = CharColor;
+        }
+        else if (SSoundMng.I.nCharNum == 4)
+        {
+            Sr.sprite = CharSprite[0];
+            CharColor = new Color(230 / 255f, 233 / 255f, 56 / 255f, 255f);
+            Sr.color = CharColor;
+        }
+        else if (SSoundMng.I.nCharNum == 5)
+        {
+            Sr.sprite = CharSprite[0];
+            CharColor = new Color(62 / 255f, 220 / 255f, 227 / 255f, 255f);
+            Sr.color = CharColor;
+        }
+        else if (SSoundMng.I.nCharNum == 6)
+        {
+            Sr.sprite = CharSprite[0];
+            CharColor = new Color(169 / 255f, 169 / 255f, 169 / 255f, 255f);
+            Sr.color = CharColor;
+        }
+        else if (SSoundMng.I.nCharNum == 7)
+        {
+            Sr.sprite = CharSprite[2];
+            CharColor = new Color(255f, 255f, 255f, 255f);
+            Sr.color = CharColor;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (!bDmgAccess)

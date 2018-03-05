@@ -18,6 +18,8 @@ public class Rocket : MonoBehaviour
 
     public Sprite[] CharSprite = null;
 
+    public Color CharColor = new Color(255f, 255f, 255f, 255f);
+
     public bool bCharSelectOn = false;
 
     // Use this for initialization
@@ -78,42 +80,50 @@ public class Rocket : MonoBehaviour
         if (SSoundMng.I.nCharNum == 0)
         {
             RocketSr.sprite = CharSprite[0];
-            RocketSr.color = new Color(255f, 255f, 255f, 255f);
+            CharColor = new Color(255f, 255f, 255f, 255f);
+            RocketSr.color = CharColor;
         }
         else if (SSoundMng.I.nCharNum == 1)
         {
             RocketSr.sprite = CharSprite[1];
-            RocketSr.color = new Color(255f, 255f, 255f, 255f);
+            CharColor = new Color(255f, 255f, 255f, 255f);
+            RocketSr.color = CharColor;
         }
         else if (SSoundMng.I.nCharNum == 2)
         {
             RocketSr.sprite = CharSprite[0];
-            RocketSr.color = new Color(210f, 68f, 68f, 255f);
+            CharColor = new Color(210 / 255f, 68 / 255f, 68 / 255f, 255f);
+            RocketSr.color = CharColor;
         }
         else if (SSoundMng.I.nCharNum == 3)
         {
             RocketSr.sprite = CharSprite[0];
-            RocketSr.color = new Color(84f, 105f, 248f, 255f);
+            CharColor = new Color(84 / 255f, 105 / 255f, 248 / 255f, 255f);
+            RocketSr.color = CharColor;
         }
         else if (SSoundMng.I.nCharNum == 4)
         {
             RocketSr.sprite = CharSprite[0];
-            RocketSr.color = new Color(230f, 233f, 56f, 255f);
+            CharColor = new Color(230 / 255f, 233 / 255f, 56 / 255f, 255f);
+            RocketSr.color = CharColor;
         }
         else if (SSoundMng.I.nCharNum == 5)
         {
             RocketSr.sprite = CharSprite[0];
-            RocketSr.color = new Color(62f, 220f, 227f, 255f);
+            CharColor = new Color(62 / 255f, 220 / 255f, 227 / 255f, 255f);
+            RocketSr.color = CharColor;
         }
         else if (SSoundMng.I.nCharNum == 6)
         {
             RocketSr.sprite = CharSprite[0];
-            RocketSr.color = new Color(169f, 169f, 169f, 255f);
+            CharColor = new Color(169 / 255f, 169 / 255f, 169 / 255f, 255f);
+            RocketSr.color = CharColor;
         }
         else if (SSoundMng.I.nCharNum == 7)
         {
             RocketSr.sprite = CharSprite[2];
-            RocketSr.color = new Color(255f, 255f, 255f, 255f);
+            CharColor = new Color(255f, 255f, 255f, 255f);
+            RocketSr.color = CharColor;
         }
     }
 
