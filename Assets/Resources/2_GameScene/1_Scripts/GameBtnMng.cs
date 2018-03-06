@@ -17,16 +17,10 @@ public class GameBtnMng : MonoBehaviour
 
     void Start()
     {
-        if (SSoundMng.I.bSoundOnOff)
-        {
-            SoundBtnGams[0].SetActive(false);
-            SoundBtnGams[1].SetActive(true);
-        }
-        else
-        {
+        if (SSoundMng.I.bBackGroundSound)
             SoundBtnGams[0].SetActive(true);
-            SoundBtnGams[1].SetActive(false);
-        }
+        else
+            SoundBtnGams[1].SetActive(true);
     }
 
     public void PauseBtn()
@@ -48,23 +42,20 @@ public class GameBtnMng : MonoBehaviour
     public void HomeBtn()
     {
         SceneManager.LoadScene("1_MenuScene");
-        SSoundMng.I.Stop();
     }
 
     public void SoundOnBtn()
     {
-        if (SSoundMng.I.bSoundOnOff)
-            SSoundMng.I.Play("Game", false, true);
+        SSoundMng.I.MainAudio.Play();
 
-        SSoundMng.I.bSoundOnOff = false;
+        SSoundMng.I.bBackGroundSound = true;
         SoundBtnGams[0].SetActive(true);
         SoundBtnGams[1].SetActive(false);
     }
 
     public void SoundOffBtn()
     {
-        SSoundMng.I.Stop();
-        SSoundMng.I.bSoundOnOff = true;
+        SSoundMng.I.bBackGroundSound = false;
         SoundBtnGams[0].SetActive(false);
         SoundBtnGams[1].SetActive(true);
     }

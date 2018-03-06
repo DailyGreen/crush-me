@@ -7,7 +7,6 @@ public class BtnMng : MonoBehaviour
 {
     public void HomeBtn()
     {
-        SSoundMng.I.Stop();
         SceneManager.LoadScene("1_MenuScene");
     }
 

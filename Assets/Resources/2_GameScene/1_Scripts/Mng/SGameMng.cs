@@ -35,8 +35,7 @@ public class SGameMng : MonoBehaviour
     {
         _Instance = this;
 
-        if (!SSoundMng.I.bSoundOnOff)
-            SSoundMng.I.Play("Game", false, true);
+        SSoundMng.I.Play("Game", false, true);
 
         if (SSoundMng.I.nJoyStickNum.Equals(0))                                                      //Left
         {

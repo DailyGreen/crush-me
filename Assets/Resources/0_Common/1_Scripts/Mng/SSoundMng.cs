@@ -10,16 +10,6 @@ public class SSoundMng : MonoBehaviour
     [SerializeField]
     AudioSource EffectAudio2 = null;
     [SerializeField]
-    AudioSource EffectAudio3 = null;
-    [SerializeField]
-    AudioSource EffectAudio4 = null;
-    [SerializeField]
-    AudioSource EffectAudio5 = null;
-    [SerializeField]
-    AudioSource EffectAudio6 = null;
-    [SerializeField]
-    AudioSource EffectAudio7 = null;
-    [SerializeField]
     AudioClip[] SoundClip = null;
 
     private static SSoundMng _Instance = null;
@@ -29,8 +19,6 @@ public class SSoundMng : MonoBehaviour
 
     public bool bBackGroundSound;       // true 배경음악 나옴 false 안나옴
     public bool bEffectSound;           // true 효과음 나옴 false 안나옴
-
-    public bool bSoundOnOff = false;
 
     public bool bJoyPos;
 
@@ -51,6 +39,7 @@ public class SSoundMng : MonoBehaviour
     {
         Screen.SetResolution(540, 960, false);
         _Instance = this;
+        StartCoroutine("SoundCtrl");
         DontDestroyOnLoad(transform.gameObject);
     }
 
@@ -87,17 +76,11 @@ public class SSoundMng : MonoBehaviour
         }
     }
 
-    public void Stop()
-    {
-        MainAudio.Stop();
-    }
-
     void SoundOff()
     {
         if (bBackGroundSound)
         {
             MainAudio.enabled = true;
-            MainAudio.Play();
         }
         else
         {
@@ -114,5 +97,13 @@ public class SSoundMng : MonoBehaviour
             EffectAudio.enabled = false;
             EffectAudio2.enabled = false;
         }
+    }
+
+    IEnumerator SoundCtrl()
+    {
+        yield return null;
+        SoundOff();
+
+        StartCoroutine("SoundCtrl");
     }
 }

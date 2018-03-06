@@ -23,8 +23,21 @@ public class MenuBtnMng : MonoBehaviour
     public bool bExitPos = false;
     bool bPopUpAccess = false;
 
-    void Update()
+	void Start()
+	{
+        if (SSoundMng.I.bBackGroundSound)
+            SoundOnOffGams[0].SetActive(true);
+        else
+            SoundOnOffGams[1].SetActive(true);
+	}
+
+	void Update()
     {
+        if (Input.GetKey(KeyCode.F2))
+        {
+            Debug.Log("test");
+            SSoundMng.I.bEffectSound = false;
+        }
         if (!SSoundMng.I.bJoyPos)
         {
             SSoundMng.I.nJoyStickNum = 0;
@@ -95,18 +108,15 @@ public class MenuBtnMng : MonoBehaviour
 
     public void SoundOn()
     {
-        if (SSoundMng.I.bSoundOnOff)
-            SSoundMng.I.Play("Main", false, true);
-
-        SSoundMng.I.bSoundOnOff = false;
+        SSoundMng.I.MainAudio.Play();
+        SSoundMng.I.bBackGroundSound = true;
         SoundOnOffGams[0].SetActive(true);
         SoundOnOffGams[1].SetActive(false);
     }
 
     public void SoundOff()
     {
-        SSoundMng.I.Stop();
-        SSoundMng.I.bSoundOnOff = true;
+        SSoundMng.I.bBackGroundSound = false;
         SoundOnOffGams[0].SetActive(false);
         SoundOnOffGams[1].SetActive(true);
     }
