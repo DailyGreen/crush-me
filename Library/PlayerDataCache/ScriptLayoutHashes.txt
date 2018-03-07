@@ -18,7 +18,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 382f0a0ac1f146797e1f3d4c9227e862 Assembly-CSharp.dll:.LazerAni
 dbc4051fd521c3755b5ddb32f798b1d9 Assembly-CSharp.dll:.SFade
-baaabb89b5802a60d47e5d5b8f028072 Assembly-CSharp.dll:.SSoundMng
+ade932ca80dc019c3802c8cc10430b9f Assembly-CSharp.dll:.SSoundMng
 3efc30a812a88cd493d9b0bc873056cf Assembly-CSharp.dll:.GameBtnMng
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -135,7 +135,7 @@ cf7740098a8a4a50d768409d3fea8e02 Assembly-CSharp.dll:.SkillSuffle
 a1343a5c6abd7dc9c87af749da93a920 Assembly-CSharp.dll:Hero.HeroMover
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
-7a0954eb9f961e5d47aa4dee4d424773 Assembly-CSharp.dll:.Rocket
+7f6d5d3331101fa370cfcd6bc9f1a6f9 Assembly-CSharp.dll:.Rocket
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -150,6 +150,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+2aa41fcef1c3826b1931c61d85d0485e Assembly-CSharp.dll:.CharText
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HeroAnimaitionSpeed
 15b5a9fe7d809655f4178bdb9bcbf4ac Assembly-CSharp.dll:CnControls.SimpleJoystick
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback

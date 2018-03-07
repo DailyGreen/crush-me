@@ -160,7 +160,7 @@ public class MenuBtnMng : MonoBehaviour
     public void CharSelectCloseBtn()
     {
         RocketSc.CharSelectGams.SetActive(false);
-        RocketSc.CharSelectCloseBtn.SetActive(false);
+        //RocketSc.CharSelectCloseBtn.SetActive(false);
         RocketSc.bCharSelectOn = false;
         bExit = false;
         EarthSc.bEarthTouchAccess = false;

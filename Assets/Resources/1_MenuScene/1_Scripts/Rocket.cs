@@ -9,7 +9,7 @@ public class Rocket : MonoBehaviour
     public Earth EarthSc = null;
 
     public GameObject CharSelectGams = null;
-    public GameObject CharSelectCloseBtn = null;
+    //public GameObject CharSelectCloseBtn = null;
     public GameObject Earth = null;
     public GameObject CharFrameGams = null;
     public GameObject[] CharBtnGams = null;
@@ -55,7 +55,7 @@ public class Rocket : MonoBehaviour
                 if (hit.transform.CompareTag("Char") && !bCharSelectOn)
                 {
                     CharSelectGams.SetActive(true);
-                    CharSelectCloseBtn.SetActive(true);
+                    //CharSelectCloseBtn.SetActive(true);
                     bCharSelectOn = true;
                     MenuBtnSc.bExit = true;
                     EarthSc.bEarthTouchAccess = true;
@@ -64,6 +64,16 @@ public class Rocket : MonoBehaviour
         }
 
         CharSelect();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SSoundMng.I.nCredit += 100;
+
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.Log("현재 크레딧" + SSoundMng.I.nCredit);
+        }
     }
 
     void CharSelect()
