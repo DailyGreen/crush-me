@@ -54,7 +54,7 @@ public class Earth : MonoBehaviour {
 
     void EasterEgg()
     {
-        if (nEarthClickNum == 5 && !bEasterEggPlay)
+        if (nEarthClickNum.Equals(5) && !bEasterEggPlay)
         {
             //PlayerBtnGams.SetActive(false);
             bEarthTouchAccess = true;

@@ -82,7 +82,7 @@ public class SPlayerMove : MonoBehaviour
             {
                 Mujuck();
             }
-            if (bSkills[2])
+            if (bSkills[2])$
             {
                 SpeedUp();
                 //fSpeed = 5f;
@@ -294,49 +294,49 @@ public class SPlayerMove : MonoBehaviour
 
     void CharSelect()
     {
-        if (SSoundMng.I.nCharNum == 0)
+        if (SSoundMng.I.nCharNum.Equals(0))
         {
             Sr.sprite = CharSprite[0];
             CharColor = new Color(255f, 255f, 255f, 255f);
             Sr.color = CharColor;
         }
-        else if (SSoundMng.I.nCharNum == 1)
+        else if (SSoundMng.I.nCharNum.Equals(1))
         {
             Sr.sprite = CharSprite[1];
             CharColor = new Color(255f, 255f, 255f, 255f);
             Sr.color = CharColor;
         }
-        else if (SSoundMng.I.nCharNum == 2)
+        else if (SSoundMng.I.nCharNum.Equals(2))
         {
             Sr.sprite = CharSprite[0];
             CharColor = new Color(210 / 255f, 68 / 255f, 68 / 255f, 255f);
             Sr.color = CharColor;
         }
-        else if (SSoundMng.I.nCharNum == 3)
+        else if (SSoundMng.I.nCharNum.Equals(3))
         {
             Sr.sprite = CharSprite[0];
             CharColor = new Color(84 / 255f, 105 / 255f, 248 / 255f, 255f);
             Sr.color = CharColor;
         }
-        else if (SSoundMng.I.nCharNum == 4)
+        else if (SSoundMng.I.nCharNum.Equals(4))
         {
             Sr.sprite = CharSprite[0];
             CharColor = new Color(230 / 255f, 233 / 255f, 56 / 255f, 255f);
             Sr.color = CharColor;
         }
-        else if (SSoundMng.I.nCharNum == 5)
+        else if (SSoundMng.I.nCharNum.Equals(5))
         {
             Sr.sprite = CharSprite[0];
             CharColor = new Color(62 / 255f, 220 / 255f, 227 / 255f, 255f);
             Sr.color = CharColor;
         }
-        else if (SSoundMng.I.nCharNum == 6)
+        else if (SSoundMng.I.nCharNum.Equals(6))
         {
             Sr.sprite = CharSprite[0];
             CharColor = new Color(169 / 255f, 169 / 255f, 169 / 255f, 255f);
             Sr.color = CharColor;
         }
-        else if (SSoundMng.I.nCharNum == 7)
+        else if (SSoundMng.I.nCharNum.Equals(7))
         {
             Sr.sprite = CharSprite[2];
             CharColor = new Color(255f, 255f, 255f, 255f);

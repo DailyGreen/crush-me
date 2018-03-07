@@ -78,7 +78,7 @@ public class Rocket : MonoBehaviour
 
     void CharSelect()
     {
-        if (SSoundMng.I.nCharNum == 0)
+        if (SSoundMng.I.nCharNum.Equals(0))
         {
             RocketSr.sprite = CharSprite[0];
             CharColor = new Color(255f, 255f, 255f, 255f);
@@ -86,7 +86,7 @@ public class Rocket : MonoBehaviour
             CharFrameGams.transform.parent = CharBtnGams[0].transform;
             CharFrameGams.transform.localPosition = Vector3.zero;
         }
-        else if (SSoundMng.I.nCharNum == 1)
+        else if (SSoundMng.I.nCharNum.Equals(1))
         {
             RocketSr.sprite = CharSprite[1];
             CharColor = new Color(255f, 255f, 255f, 255f);
@@ -94,7 +94,7 @@ public class Rocket : MonoBehaviour
             CharFrameGams.transform.parent = CharBtnGams[1].transform;
             CharFrameGams.transform.localPosition = Vector3.zero;
         }
-        else if (SSoundMng.I.nCharNum == 2)
+        else if (SSoundMng.I.nCharNum.Equals(2))
         {
             RocketSr.sprite = CharSprite[0];
             CharColor = new Color(210 / 255f, 68 / 255f, 68 / 255f, 255f);
@@ -102,7 +102,7 @@ public class Rocket : MonoBehaviour
             CharFrameGams.transform.parent = CharBtnGams[2].transform;
             CharFrameGams.transform.localPosition = Vector3.zero;
         }
-        else if (SSoundMng.I.nCharNum == 3)
+        else if (SSoundMng.I.nCharNum.Equals(3))
         {
             RocketSr.sprite = CharSprite[0];
             CharColor = new Color(84 / 255f, 105 / 255f, 248 / 255f, 255f);
@@ -110,7 +110,7 @@ public class Rocket : MonoBehaviour
             CharFrameGams.transform.parent = CharBtnGams[3].transform;
             CharFrameGams.transform.localPosition = Vector3.zero;
         }
-        else if (SSoundMng.I.nCharNum == 4)
+        else if (SSoundMng.I.nCharNum.Equals(4))
         {
             RocketSr.sprite = CharSprite[0];
             CharColor = new Color(230 / 255f, 233 / 255f, 56 / 255f, 255f);
@@ -118,7 +118,7 @@ public class Rocket : MonoBehaviour
             CharFrameGams.transform.parent = CharBtnGams[4].transform;
             CharFrameGams.transform.localPosition = Vector3.zero;
         }
-        else if (SSoundMng.I.nCharNum == 5)
+        else if (SSoundMng.I.nCharNum.Equals(5))
         {
             RocketSr.sprite = CharSprite[0];
             CharColor = new Color(62 / 255f, 220 / 255f, 227 / 255f, 255f);
@@ -126,7 +126,7 @@ public class Rocket : MonoBehaviour
             CharFrameGams.transform.parent = CharBtnGams[5].transform;
             CharFrameGams.transform.localPosition = Vector3.zero;
         }
-        else if (SSoundMng.I.nCharNum == 6)
+        else if (SSoundMng.I.nCharNum.Equals(6))
         {
             RocketSr.sprite = CharSprite[0];
             CharColor = new Color(169 / 255f, 169 / 255f, 169 / 255f, 255f);
@@ -134,7 +134,7 @@ public class Rocket : MonoBehaviour
             CharFrameGams.transform.parent = CharBtnGams[6].transform;
             CharFrameGams.transform.localPosition = Vector3.zero;
         }
-        else if (SSoundMng.I.nCharNum == 7)
+        else if (SSoundMng.I.nCharNum.Equals(7))
         {
             RocketSr.sprite = CharSprite[2];
             CharColor = new Color(255f, 255f, 255f, 255f);
