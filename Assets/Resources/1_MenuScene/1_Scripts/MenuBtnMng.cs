@@ -11,6 +11,7 @@ public class MenuBtnMng : MonoBehaviour
     public GameObject ExitGams = null;
     public GameObject BackGroundGams = null;
     public GameObject[] SoundOnOffGams = null;
+    public GameObject[] SfxSoundOnOffGame = null;
     public GameObject CreditPopUpGams = null;
 
     public Transform SettingPopUpTr = null;
@@ -25,15 +26,16 @@ public class MenuBtnMng : MonoBehaviour
 
 	void Start()
 	{
-        if (SSoundMng.I.bBackGroundSound)
-            SoundOnOffGams[0].SetActive(true);
-        else
-            SoundOnOffGams[1].SetActive(true);
-	}
+        if (SSoundMng.I.bBackGroundSound) SoundOnOffGams[0].SetActive(true);
+        else SoundOnOffGams[1].SetActive(true);
+
+        if (SSoundMng.I.bEffectSound) SfxSoundOnOffGame[0].SetActive(true);
+        else SfxSoundOnOffGame[1].SetActive(true);
+        }
 
 	void Update()
     {
-        if (Input.GetKey(KeyCode.F2))
+        if (Input.GetKey(KeyCode.F2))   // 이거 쓰나?
         {
             Debug.Log("test");
             SSoundMng.I.bEffectSound = false;
@@ -121,6 +123,19 @@ public class MenuBtnMng : MonoBehaviour
         SoundOnOffGams[1].SetActive(true);
     }
 
+    public void SfxSoundOn()
+    {
+        SSoundMng.I.bEffectSound = true;
+        SfxSoundOnOffGame[0].SetActive(true);
+        SfxSoundOnOffGame[1].SetActive(false);
+    }
+
+    public void SfxSoundOff()
+    {
+        SSoundMng.I.bEffectSound = false;
+        SfxSoundOnOffGame[0].SetActive(false);
+        SfxSoundOnOffGame[1].SetActive(true);
+    }
 
     public void JoyStickLeft()
     {
@@ -160,7 +175,6 @@ public class MenuBtnMng : MonoBehaviour
     public void CharSelectCloseBtn()
     {
         RocketSc.CharSelectGams.SetActive(false);
-        //RocketSc.CharSelectCloseBtn.SetActive(false);
         RocketSc.bCharSelectOn = false;
         bExit = false;
         EarthSc.bEarthTouchAccess = false;

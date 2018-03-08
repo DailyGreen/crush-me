@@ -18,6 +18,7 @@ public class LazerAni : MonoBehaviour
 
     void Update()
     {
+        // 수정해보장
         if (!SGameMng.I.bPuaseBtn)
             LazerAnimator.speed = 1f;
 

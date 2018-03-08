@@ -82,19 +82,14 @@ public class SPlayerMove : MonoBehaviour
             {
                 Mujuck();
             }
-            if (bSkills[2])$
+            if (bSkills[2])
             {
                 SpeedUp();
-                //fSpeed = 5f;
             }
             if (bSkills[3])
             {
                 BulletSmall();
             }
-        }
-        else
-        {
-            // 일시정지 일때
         }
 
         if (nSkillCount.Equals(0) || SGameMng.I.bStartCheck)
@@ -102,7 +97,6 @@ public class SPlayerMove : MonoBehaviour
             SkillsGams.SetActive(false);
 
             Explaying.SetActive(false);
-
         }
         if (!bDesCool)
         {

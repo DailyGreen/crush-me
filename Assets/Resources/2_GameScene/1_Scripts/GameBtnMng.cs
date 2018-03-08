@@ -12,15 +12,18 @@ public class GameBtnMng : MonoBehaviour
     public GameObject RePlayCountGams;
     public GameObject ReplayLayerGams;
     public GameObject[] SoundBtnGams;
+
+    public GameObject[] SfxSoundOnOffGame = null;
     public Image PauseBtnImg;
     public Text CountText;
 
     void Start()
     {
-        if (SSoundMng.I.bBackGroundSound)
-            SoundBtnGams[0].SetActive(true);
-        else
-            SoundBtnGams[1].SetActive(true);
+        if (SSoundMng.I.bBackGroundSound) SoundBtnGams[0].SetActive(true);
+        else SoundBtnGams[1].SetActive(true);
+
+        if (SSoundMng.I.bEffectSound) SfxSoundOnOffGame[0].SetActive(true);
+        else SfxSoundOnOffGame[1].SetActive(true);
     }
 
     public void PauseBtn()
@@ -58,6 +61,20 @@ public class GameBtnMng : MonoBehaviour
         SSoundMng.I.bBackGroundSound = false;
         SoundBtnGams[0].SetActive(false);
         SoundBtnGams[1].SetActive(true);
+    }
+
+    public void SfxSoundOn()
+    {
+        SSoundMng.I.bEffectSound = true;
+        SfxSoundOnOffGame[0].SetActive(true);
+        SfxSoundOnOffGame[1].SetActive(false);
+    }
+
+    public void SfxSoundOff()
+    {
+        SSoundMng.I.bEffectSound = false;
+        SfxSoundOnOffGame[0].SetActive(false);
+        SfxSoundOnOffGame[1].SetActive(true);
     }
 
     IEnumerator Replay()

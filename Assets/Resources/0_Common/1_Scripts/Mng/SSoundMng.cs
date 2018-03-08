@@ -83,6 +83,11 @@ public class SSoundMng : MonoBehaviour
     {
         if (bBackGroundSound)
         {
+            if (!MainAudio.playOnAwake || !MainAudio.loop)
+            {
+                MainAudio.playOnAwake = true;
+                MainAudio.loop = true;
+            }
             MainAudio.enabled = true;
         }
         else

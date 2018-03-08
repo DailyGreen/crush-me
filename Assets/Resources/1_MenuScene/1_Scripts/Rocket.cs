@@ -55,7 +55,6 @@ public class Rocket : MonoBehaviour
                 if (hit.transform.CompareTag("Char") && !bCharSelectOn)
                 {
                     CharSelectGams.SetActive(true);
-                    //CharSelectCloseBtn.SetActive(true);
                     bCharSelectOn = true;
                     MenuBtnSc.bExit = true;
                     EarthSc.bEarthTouchAccess = true;
@@ -64,16 +63,17 @@ public class Rocket : MonoBehaviour
         }
 
         CharSelect();
-
+        // =====완성하고 지우기======
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SSoundMng.I.nCredit += 100;
 
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))   
         {
             Debug.Log("현재 크레딧" + SSoundMng.I.nCredit);
         }
+        // =======================
     }
 
     void CharSelect()

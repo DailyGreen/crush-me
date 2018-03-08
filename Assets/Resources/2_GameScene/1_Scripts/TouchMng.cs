@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// 이거 쓰나요?
 public class TouchMng : MonoBehaviour
 {
     // Update is called once per frame

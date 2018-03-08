@@ -66,10 +66,6 @@ public class REnemyMove : MonoBehaviour
                 Move();
             }
         }
-        else
-        {
-            // 일시정지 아닐때
-        }
     }
 
     void Move()
