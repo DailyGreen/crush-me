@@ -127,4 +127,9 @@ public class SSoundMng : MonoBehaviour
 
         StartCoroutine("SoundCtrl");
     }
+
+	private void OnApplicationQuit()
+	{
+        PlayerPrefs.SetInt("Credit", nAC);
+	}
 }
