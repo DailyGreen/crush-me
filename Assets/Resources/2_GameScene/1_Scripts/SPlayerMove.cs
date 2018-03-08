@@ -34,6 +34,7 @@ public class SPlayerMove : MonoBehaviour
     public bool bSuSkill = false;
     public bool bMjSkill = false;
     bool bBsSkill = false;
+    [SerializeField]
     bool bHeroDie = false;
     bool bSkillSet = false;
     bool bDesCool = false;

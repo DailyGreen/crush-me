@@ -19,12 +19,12 @@ public class CharSelect : MonoBehaviour {
         }
         else
         {
-            if (SSoundMng.I.nCredit >= 100)
+            if (SSoundMng.I.nAC >= 100)
             {
-                SSoundMng.I.nCredit -= 100;
+                SSoundMng.I.nAC -= 100;
                 SSoundMng.I.bCharLock[1] = false;
             }
-            else if (SSoundMng.I.nCredit < 100)
+            else if (SSoundMng.I.nAC < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -42,12 +42,12 @@ public class CharSelect : MonoBehaviour {
         }
         else
         {
-            if (SSoundMng.I.nCredit >= 100)
+            if (SSoundMng.I.nAC >= 100)
             {
-                SSoundMng.I.nCredit -= 100;
+                SSoundMng.I.nAC -= 100;
                 SSoundMng.I.bCharLock[2] = false;
             }
-            else if (SSoundMng.I.nCredit < 100)
+            else if (SSoundMng.I.nAC < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -65,12 +65,12 @@ public class CharSelect : MonoBehaviour {
         }
         else
         {
-            if (SSoundMng.I.nCredit >= 100)
+            if (SSoundMng.I.nAC >= 100)
             {
-                SSoundMng.I.nCredit -= 100;
+                SSoundMng.I.nAC -= 100;
                 SSoundMng.I.bCharLock[3] = false;
             }
-            else if (SSoundMng.I.nCredit < 100)
+            else if (SSoundMng.I.nAC < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -88,12 +88,12 @@ public class CharSelect : MonoBehaviour {
         }
         else
         {
-            if (SSoundMng.I.nCredit >= 100)
+            if (SSoundMng.I.nAC >= 100)
             {
-                SSoundMng.I.nCredit -= 100;
+                SSoundMng.I.nAC -= 100;
                 SSoundMng.I.bCharLock[4] = false;
             }
-            else if (SSoundMng.I.nCredit < 100)
+            else if (SSoundMng.I.nAC < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -111,12 +111,12 @@ public class CharSelect : MonoBehaviour {
         }
         else
         {
-            if (SSoundMng.I.nCredit >= 100)
+            if (SSoundMng.I.nAC >= 100)
             {
-                SSoundMng.I.nCredit -= 100;
+                SSoundMng.I.nAC -= 100;
                 SSoundMng.I.bCharLock[5] = false;
             }
-            else if (SSoundMng.I.nCredit < 100)
+            else if (SSoundMng.I.nAC < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -134,12 +134,12 @@ public class CharSelect : MonoBehaviour {
         }
         else
         {
-            if (SSoundMng.I.nCredit >= 100)
+            if (SSoundMng.I.nAC >= 100)
             {
-                SSoundMng.I.nCredit -= 100;
+                SSoundMng.I.nAC -= 100;
                 SSoundMng.I.bCharLock[6] = false;
             }
-            else if (SSoundMng.I.nCredit < 100)
+            else if (SSoundMng.I.nAC < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -157,12 +157,12 @@ public class CharSelect : MonoBehaviour {
         }
         else
         {
-            if (SSoundMng.I.nCredit >= 100)
+            if (SSoundMng.I.nAC >= 100)
             {
-                SSoundMng.I.nCredit -= 100;
+                SSoundMng.I.nAC -= 100;
                 SSoundMng.I.bCharLock[7] = false;
             }
-            else if (SSoundMng.I.nCredit < 100)
+            else if (SSoundMng.I.nAC < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }

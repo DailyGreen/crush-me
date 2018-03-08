@@ -66,12 +66,12 @@ public class Rocket : MonoBehaviour
         // =====완성하고 지우기======
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SSoundMng.I.nCredit += 100;
+            SSoundMng.I.nAC += 100;
 
         }
         if (Input.GetKeyDown(KeyCode.A))   
         {
-            Debug.Log("현재 크레딧" + SSoundMng.I.nCredit);
+            Debug.Log("현재 크레딧" + SSoundMng.I.nAC);
         }
         // =======================
     }

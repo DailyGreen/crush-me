@@ -16,7 +16,19 @@ public class SSoundMng : MonoBehaviour
 
     public int nJoyStickNum;
     public int nCharNum;
-    public int nCredit;
+    private int nCredit;
+
+    public int nAC
+    {
+        get
+        {
+            return nCredit;
+        }
+        set
+        {
+            nCredit = value;
+        }
+    }
 
     public bool[] bCharLock;
 
@@ -24,7 +36,6 @@ public class SSoundMng : MonoBehaviour
     public bool bEffectSound;           // true 효과음 나옴 false 안나옴
 
     public bool bJoyPos;
-
 
     public static SSoundMng I
     {
@@ -44,6 +55,8 @@ public class SSoundMng : MonoBehaviour
         _Instance = this;
         StartCoroutine("SoundCtrl");
         DontDestroyOnLoad(transform.gameObject);
+        nAC = PlayerPrefs.GetInt("Credit");
+        Debug.Log(nAC);
     }
 
     public void Play(string sSoundName, bool bEffectAudio, bool bAutoPlay)
