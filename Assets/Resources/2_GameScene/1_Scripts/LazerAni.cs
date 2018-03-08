@@ -39,6 +39,7 @@ public class LazerAni : MonoBehaviour
     public void LazerDmg()
     {
         LazerBox.enabled = true;
+        SSoundMng.I.Play("Lazer", true, false);
     }
 
     public void LazerDmgOff()

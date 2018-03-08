@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LazerPre : MonoBehaviour {
     public GameObject LazerGams;
-    public Vector3 LazerPos;        // 안쓰는거면 지워
 	public float[] fPosValue;
 
     void Start()

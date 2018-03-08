@@ -20,7 +20,6 @@ public class REnemyMove : MonoBehaviour
     public float fRotateSpeed = 0.0f;   // 몬스터 회전 속도
     public float fMoveSpeed = 0.0f;     // 몬스터 움직이는 속도
 
-    public bool bStay = false;      // 안쓰는거면 지워
 	public bool bBulletColAccess = false;               //총알 충돌 허용
     public bool bBulletCol = false;                     //총알 충돌 판단
 
