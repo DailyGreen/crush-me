@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/0_LogoScene.unity
-  isLoaded: 1
-  isActive: 1
