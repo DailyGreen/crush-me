@@ -10,7 +10,6 @@ public class Rocket : MonoBehaviour
 
     public GameObject CharSelectGams = null;
     //public GameObject CharSelectCloseBtn = null;
-    public GameObject Earth = null;
     public GameObject CharFrameGams = null;
     public GameObject[] CharBtnGams = null;
 
@@ -44,8 +43,6 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Earth.transform.Rotate(new Vector3(0f, 0f, -360f) * 0.2f * Time.deltaTime, Space.World);
-
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;

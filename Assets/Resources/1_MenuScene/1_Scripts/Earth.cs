@@ -10,7 +10,7 @@ public class Earth : MonoBehaviour {
     //public GameObject PlayerBtnGams = null;
     public GameObject CreditPopUpGams = null;
 
-    public Animation EarthAni = null;
+    // public Animation EarthAni = null;
 
     public int nEarthClickNum = 0;
 
@@ -19,7 +19,7 @@ public class Earth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        EarthAni.Stop();
+        // EarthAni.Stop();
 	}
 	
 	// Update is called once per frame
@@ -31,10 +31,10 @@ public class Earth : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                if (hit.transform.CompareTag("Earth") && !bEarthTouchAccess)
-                {
-                    EarthAni.Play();
-                }
+                // if (hit.transform.CompareTag("Earth") && !bEarthTouchAccess)
+                // {
+                //     EarthAni.Play();
+                // }
             }
         }
 

@@ -21,9 +21,11 @@ public class SPlayBtn : MonoBehaviour
 
     public void PlayBtn()
     {
+        StartAni[0].SetTrigger("Start");
         for (int i = 0; i < StartAni.Length; i++)
         {
-            StartAni[i].enabled = true;
+            if(i != 0)
+                StartAni[i].enabled = true;
         }
 
         bTitleAlpha = true;
