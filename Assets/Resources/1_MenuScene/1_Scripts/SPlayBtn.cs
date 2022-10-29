@@ -12,6 +12,7 @@ public class SPlayBtn : MonoBehaviour
     public SpriteRenderer TitleSr = null;
 
     public bool bTitleAlpha = false;
+    public GameObject gameObjectObj;
 
     private void Update()
     {
@@ -21,6 +22,7 @@ public class SPlayBtn : MonoBehaviour
 
     public void PlayBtn()
     {
+        gameObjectObj.SetActive(false);
         StartAni[0].SetTrigger("Start");
         for (int i = 0; i < StartAni.Length; i++)
         {

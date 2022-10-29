@@ -24,16 +24,16 @@ public class MenuBtnMng : MonoBehaviour
     public bool bExitPos = false;
     bool bPopUpAccess = false;
 
-	void Start()
-	{
+    void Start()
+    {
         if (SSoundMng.I.bBackGroundSound) SoundOnOffGams[0].SetActive(true);
         else SoundOnOffGams[1].SetActive(true);
 
         if (SSoundMng.I.bEffectSound) SfxSoundOnOffGame[0].SetActive(true);
         else SfxSoundOnOffGame[1].SetActive(true);
-        }
+    }
 
-	void Update()
+    void Update()
     {
         if (Input.GetKey(KeyCode.F2))   // 이거 쓰나?
         {
