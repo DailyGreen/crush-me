@@ -10,23 +10,19 @@ public class Rocket : MonoBehaviour
 
     public GameObject CharSelectGams = null;
     //public GameObject CharSelectCloseBtn = null;
-    public GameObject CharFrameGams = null;
-    public GameObject[] CharBtnGams = null;
+    //public GameObject CharFrameGams = null;
+    //public GameObject[] CharBtnGams = null;
 
     public Image[] JoyStickPosImg = null;
 
     public SpriteRenderer RocketSr = null;
-
-    public Sprite[] CharSprite = null;
-
-    public Color CharColor = new Color(255f, 255f, 255f, 255f);
 
     public bool bCharSelectOn = false;
 
     // Use this for initialization
     void Start()
     {
-     SSoundMng.I.Play("Main", false, true);
+        SSoundMng.I.Play("Main", false, true);
 
         if (!SSoundMng.I.bJoyPos)
         {
@@ -38,6 +34,9 @@ public class Rocket : MonoBehaviour
             JoyStickPosImg[0].color = new Color(255f, 255f, 255f, 100 / 255f);
             JoyStickPosImg[1].color = new Color(255f, 255f, 255f, 255f);
         }
+
+        SSoundMng.I.nAC = 1000;
+        Debug.Log("현재 크레딧 1000으로 강제 조정중");
     }
 
     // Update is called once per frame
@@ -57,87 +56,6 @@ public class Rocket : MonoBehaviour
                     EarthSc.bEarthTouchAccess = true;
                 }
             }
-        }
-
-        CharSelect();
-        // =====완성하고 지우기======
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SSoundMng.I.nAC += 100;
-
-        }
-        if (Input.GetKeyDown(KeyCode.A))   
-        {
-            Debug.Log("현재 크레딧" + SSoundMng.I.nAC);
-        }
-        // =======================
-    }
-
-    void CharSelect()
-    {
-        if (SSoundMng.I.nCharNum.Equals(0))
-        {
-            RocketSr.sprite = CharSprite[0];
-            CharColor = new Color(255f, 255f, 255f, 255f);
-            RocketSr.color = CharColor;
-            CharFrameGams.transform.parent = CharBtnGams[0].transform;
-            CharFrameGams.transform.localPosition = Vector3.zero;
-        }
-        else if (SSoundMng.I.nCharNum.Equals(1))
-        {
-            RocketSr.sprite = CharSprite[1];
-            CharColor = new Color(255f, 255f, 255f, 255f);
-            RocketSr.color = CharColor;
-            CharFrameGams.transform.parent = CharBtnGams[1].transform;
-            CharFrameGams.transform.localPosition = Vector3.zero;
-        }
-        else if (SSoundMng.I.nCharNum.Equals(2))
-        {
-            RocketSr.sprite = CharSprite[0];
-            CharColor = new Color(210 / 255f, 68 / 255f, 68 / 255f, 255f);
-            RocketSr.color = CharColor;
-            CharFrameGams.transform.parent = CharBtnGams[2].transform;
-            CharFrameGams.transform.localPosition = Vector3.zero;
-        }
-        else if (SSoundMng.I.nCharNum.Equals(3))
-        {
-            RocketSr.sprite = CharSprite[0];
-            CharColor = new Color(84 / 255f, 105 / 255f, 248 / 255f, 255f);
-            RocketSr.color = CharColor;
-            CharFrameGams.transform.parent = CharBtnGams[3].transform;
-            CharFrameGams.transform.localPosition = Vector3.zero;
-        }
-        else if (SSoundMng.I.nCharNum.Equals(4))
-        {
-            RocketSr.sprite = CharSprite[0];
-            CharColor = new Color(230 / 255f, 233 / 255f, 56 / 255f, 255f);
-            RocketSr.color = CharColor;
-            CharFrameGams.transform.parent = CharBtnGams[4].transform;
-            CharFrameGams.transform.localPosition = Vector3.zero;
-        }
-        else if (SSoundMng.I.nCharNum.Equals(5))
-        {
-            RocketSr.sprite = CharSprite[0];
-            CharColor = new Color(62 / 255f, 220 / 255f, 227 / 255f, 255f);
-            RocketSr.color = CharColor;
-            CharFrameGams.transform.parent = CharBtnGams[5].transform;
-            CharFrameGams.transform.localPosition = Vector3.zero;
-        }
-        else if (SSoundMng.I.nCharNum.Equals(6))
-        {
-            RocketSr.sprite = CharSprite[0];
-            CharColor = new Color(169 / 255f, 169 / 255f, 169 / 255f, 255f);
-            RocketSr.color = CharColor;
-            CharFrameGams.transform.parent = CharBtnGams[6].transform;
-            CharFrameGams.transform.localPosition = Vector3.zero;
-        }
-        else if (SSoundMng.I.nCharNum.Equals(7))
-        {
-            RocketSr.sprite = CharSprite[2];
-            CharColor = new Color(255f, 255f, 255f, 255f);
-            RocketSr.color = CharColor;
-            CharFrameGams.transform.parent = CharBtnGams[7].transform;
-            CharFrameGams.transform.localPosition = Vector3.zero;
         }
     }
 
