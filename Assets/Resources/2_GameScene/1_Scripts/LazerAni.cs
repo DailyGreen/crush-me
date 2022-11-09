@@ -9,11 +9,13 @@ public class LazerAni : MonoBehaviour
     public GameObject LazerPre;
     public Animator LazerAnimator;
     public SPlayerMove HeroSc;
+    LazerPre parent;
 
 
     void Start()
     {
         HeroSc = GameObject.Find("PLAYER").GetComponent<SPlayerMove>();
+        parent = transform.parent.GetComponent<LazerPre>();
     }
 
     void Update()
@@ -32,8 +34,10 @@ public class LazerAni : MonoBehaviour
 
     public void LazerAniEnd()
     {
+        Debug.Log("Release");
         HeroSc.bDbUse = false;
-        Destroy(LazerPre);
+        parent.Release();
+        // Destroy(LazerPre);
     }
 
     public void LazerDmg()

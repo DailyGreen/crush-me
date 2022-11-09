@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SCount : MonoBehaviour
 {
-    public Lazer LazerSc = null;
+    public LazerPool LazerSc = null;
     public Text CountText = null;
     public SPlayerMove HeroSc = null;
     public GameObject PauseBtnGams = null;
