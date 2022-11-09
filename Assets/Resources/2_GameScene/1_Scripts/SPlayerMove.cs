@@ -121,8 +121,11 @@ public class SPlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         if (!SGameMng.I.bPause)
+        {
             SGameMng.I.nTimeCount++;
-
+            if (!bHeroDie)
+                SSoundMng.I.nAC++;
+        }
         StartCoroutine(TimeCountCor());
     }
 
