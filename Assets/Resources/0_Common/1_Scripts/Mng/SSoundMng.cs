@@ -51,12 +51,19 @@ public class SSoundMng : MonoBehaviour
 
     void Awake()
     {
+        string[] charUnLock;
         Screen.SetResolution(540, 960, false);
         _Instance = this;
         StartCoroutine("SoundCtrl");
         DontDestroyOnLoad(transform.gameObject);
         nAC = PlayerPrefs.GetInt("Credit");
-        Debug.Log(nAC);
+        charUnLock = PlayerPrefs.GetString("Char").Split(',');
+        for (int i = 0; i < bCharLock.Length; i++)
+        {
+            int temp = System.Convert.ToInt32(charUnLock[i]);
+            bCharLock[i] = System.Convert.ToBoolean(temp);
+        }
+        nCharNum = PlayerPrefs.GetInt("EquipChar");
     }
 
     public void Play(string sSoundName, bool bEffectAudio, bool bAutoPlay)
@@ -130,6 +137,18 @@ public class SSoundMng : MonoBehaviour
 
 	private void OnApplicationQuit()
 	{
+        string charUnlock = "";
         PlayerPrefs.SetInt("Credit", nAC);
-	}
+        for(int i = 0; i < bCharLock.Length; i++)
+        {
+            charUnlock = charUnlock + System.Convert.ToInt32(bCharLock[i]).ToString();
+            if(i < bCharLock.Length - 1)
+            {
+                charUnlock = charUnlock + ",";
+            }
+        }
+        PlayerPrefs.SetString("Char", charUnlock);
+        //PlayerPrefs.SetString("Char", "0,0,0,0,0,0,0,0");         // 캐릭터 잠김 초기화
+        PlayerPrefs.SetInt("EquipChar", nCharNum);
+    }
 }
