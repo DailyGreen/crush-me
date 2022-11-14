@@ -19,6 +19,8 @@ public class Rocket : MonoBehaviour
 
     public bool bCharSelectOn = false;
 
+    public TMPro.TextMeshProUGUI CreditText;
+
     // Use this for initialization
     void Start()
     {
@@ -34,14 +36,12 @@ public class Rocket : MonoBehaviour
             JoyStickPosImg[0].color = new Color(255f, 255f, 255f, 100 / 255f);
             JoyStickPosImg[1].color = new Color(255f, 255f, 255f, 255f);
         }
-
-        SSoundMng.I.nAC = 1000;
-        Debug.Log("현재 크레딧 1000으로 강제 조정중");
     }
 
     // Update is called once per frame
     void Update()
     {
+        CreditText.text = "$ " + SSoundMng.I.nAC.ToString();
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
