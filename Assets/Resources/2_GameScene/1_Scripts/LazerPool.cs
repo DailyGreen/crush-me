@@ -10,7 +10,7 @@ public class LazerPool : MonoBehaviour
     public IObjectPool<LazerPre> LaserPool;
     void Start()
     {
-        LaserPool = new ObjectPool<LazerPre>(OnInit, OnObject, OnRelease, OnDestroy, maxSize: 5);
+        LaserPool = new ObjectPool<LazerPre>(OnInit, OnObject, OnRelease, OnDestroyLaser, maxSize: 5);
         // StartCoroutine("LazerIns");
     }
 
@@ -33,7 +33,7 @@ public class LazerPool : MonoBehaviour
         obj.gameObject.SetActive(false);
     }
 
-    void OnDestroy(LazerPre obj)
+    void OnDestroyLaser(LazerPre obj)
     {
         Destroy(obj.gameObject);
     }

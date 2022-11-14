@@ -20,7 +20,7 @@ public class REnemyMove : MonoBehaviour
     public float fRotateSpeed = 0.0f;   // 몬스터 회전 속도
     public float fMoveSpeed = 0.0f;     // 몬스터 움직이는 속도
 
-	public bool bBulletColAccess = false;               //총알 충돌 허용
+    public bool bBulletColAccess = false;               //총알 충돌 허용
     public bool bBulletCol = false;                     //총알 충돌 판단
 
     float fPosZ = 0f;
@@ -79,9 +79,7 @@ public class REnemyMove : MonoBehaviour
                     transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
                 }
                 else
-
                     transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
-
                 break;
             case E_MONSTERTYPE.E_FOLLOW:        // 유도형 몬스터
 
@@ -99,7 +97,6 @@ public class REnemyMove : MonoBehaviour
                         break;
                 }
                 transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
-
 
                 break;
         }
