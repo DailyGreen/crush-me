@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
-public class LazerPre : MonoBehaviour {
-    public GameObject LazerGams;
-	public float[] fPosValue;
+public class LazerPre : MonoBehaviour
+{
+    public float[] fPosValue;
 
-    void Start()
+    IObjectPool<LazerPre> laserPool;
+
+    public void Release()
     {
-        LazerPosSet();
-        LazerComeOut();
+        laserPool.Release(this);   
     }
 
-    void LazerPosSet()
+    public void setPool(IObjectPool<LazerPre> pool)
+    {
+        laserPool = pool;
+    }
+
+    public void LazerPosSet()
     {
         fPosValue[2] = Random.Range(0, 180);
         if (fPosValue[2] <= 20 && fPosValue[2] >= -20)
@@ -30,10 +37,10 @@ public class LazerPre : MonoBehaviour {
         }
     }
 
-    void LazerComeOut()
+    public void LazerComeOut()
     {
-        LazerGams.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
-        LazerGams.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
-        LazerGams.SetActive(true);
+        this.transform.localPosition = new Vector3(fPosValue[0], fPosValue[1], 0f);
+        this.transform.localEulerAngles = new Vector3(0f, 0f, fPosValue[2]);
+        this.gameObject.SetActive(true);
     }
 }
