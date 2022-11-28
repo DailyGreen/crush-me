@@ -40,7 +40,7 @@ public class LazerPool : MonoBehaviour
 
     public IEnumerator LazerIns()
     {
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(SGameMng.I.fLazerTime);
         if (!SGameMng.I.bPuaseBtn)
             LaserPool.Get();
 
