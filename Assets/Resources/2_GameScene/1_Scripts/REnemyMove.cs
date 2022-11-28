@@ -23,8 +23,8 @@ public class REnemyMove : MonoBehaviour
     public bool bBulletColAccess = false;               //총알 충돌 허용
     public bool bBulletCol = false;                     //총알 충돌 판단
 
-    float fPosZ = 0f;
-    int nTag = 0;
+    [SerializeField] Vector3 dir;
+    [SerializeField] float rotatetime;
 
     public Vector3 BulletRezenVec3;
 
@@ -39,19 +39,15 @@ public class REnemyMove : MonoBehaviour
     }
     void Start()
     {
-        if (transform.localPosition.x > tfPlayer.localPosition.x)
-        {
-            nTag = 1;
-        }
-        else
-        {
-            nTag = 2;
-        }
-
         BulletRezenVec3 = transform.localPosition;
 
         fMoveSpeed = Random.Range(0.5f, 1.9f);
 
+
+        if (nMonsterType.Equals(E_MONSTERTYPE.E_FOLLOW))
+        {
+            StartCoroutine(ChangeRotation());
+        }
     }
 
     // Update is called once per frame
@@ -69,37 +65,21 @@ public class REnemyMove : MonoBehaviour
 
     void Move()
     {
-        switch (nMonsterType)
+        dir = tfPlayer.position - transform.position;
+        rotatetime += Time.deltaTime;
+        if (nMonsterType.Equals(E_MONSTERTYPE.E_FOLLOW) && rotatetime <= 5)
         {
-            case E_MONSTERTYPE.E_NORMAL:        // 일반 몬스터
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-                Vector3 targetScreenPos = Camera.main.WorldToScreenPoint(transform.localPosition);
-                if (targetScreenPos.x <= Screen.width && targetScreenPos.x >= 0 && targetScreenPos.y <= Screen.height && targetScreenPos.y >= 0)
-                {
-                    transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
-                }
-                else
-                    transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
-                break;
-            case E_MONSTERTYPE.E_FOLLOW:        // 유도형 몬스터
-
-                if (nTag.Equals(0))
-                {
-                    fPosZ = transform.localRotation.z;
-                }
-                switch (nTag)
-                {
-                    case 1:
-                        transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, fPosZ++ * fRotateSpeed));
-                        break;
-                    case 2:
-                        transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, fPosZ-- * fRotateSpeed));
-                        break;
-                }
-                transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
-
-                break;
+            transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
+        transform.Translate(Vector3.up * Time.deltaTime * fMoveSpeed);
+    }
+
+    IEnumerator ChangeRotation()
+    {
+        yield return new WaitForSeconds(5.0f);
+
     }
 
     void BulletRezen()
@@ -108,7 +88,6 @@ public class REnemyMove : MonoBehaviour
         {
             transform.localPosition = BulletRezenVec3;
             bBulletCol = false;
-            bBulletColAccess = false;
             transform.localScale = Vector3.one;
             Sr.color = new Color(255f, 255f, 255f, 255f);
         }
@@ -128,15 +107,14 @@ public class REnemyMove : MonoBehaviour
         {
             isColliding = true;
         }
-        if (bBulletColAccess)
-        {
-            if (col.CompareTag(" TransparencyWall"))                                //총알이 화면밖에 투명벽에 부딪혔을때 총알 재사용을 위한 곳
-            {
-                bBulletCol = true;
 
-                if (fMoveSpeed <= 7f)
-                    fMoveSpeed += 0.01f;                                                 //총알 속도 증가
-            }
+        if (col.CompareTag(" TransparencyWall"))                                //총알이 화면밖에 투명벽에 부딪혔을때 총알 재사용을 위한 곳
+        {
+            bBulletCol = true;
+            rotatetime = 0f;
+
+            if (fMoveSpeed <= 7f)
+                fMoveSpeed += 0.01f;                                                 //총알 속도 증가
         }
     }
 
@@ -145,14 +123,6 @@ public class REnemyMove : MonoBehaviour
         if (col.CompareTag("BackGround"))
         {
             isColliding = false;
-        }
-
-        if (!bBulletColAccess)
-        {
-            if (col.CompareTag(" TransparencyWall"))
-            {
-                bBulletColAccess = true;
-            }
         }
     }
 }
