@@ -14,6 +14,6 @@ public class Lables : MonoBehaviour
     {
         TimeText.text = SGameMng.I.nTimeCount.ToString() + " 초";
         ResultTime.text = SGameMng.I.nTimeCount.ToString() + " 초";
-        CreditText.text = SSoundMng.I.nAC.ToString();
+        CreditText.text = SSoundMng.I.credit.ToString();
     }
 }

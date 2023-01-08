@@ -52,11 +52,6 @@ public class SGameMng : MonoBehaviour
 
     }
 
-    //void Update()
-    //{
-    //    EarthGams.transform.Rotate(new Vector3(0f, 0f, -360f) * 0.2f * Time.deltaTime, Space.World);
-    //}
-
     public GameObject PlayerGame = null;
     public bool bPause;
     public bool bStartCheck;
