@@ -25,7 +25,7 @@ public class CharSelect : MonoBehaviour
     }
     void CharUnLock(int idx, int credit)
     {
-        SSoundMng.I.nAC -= credit;
+        SSoundMng.I.credit -= credit;
         SSoundMng.I.bCharLock[idx] = true;
         SSoundMng.I.nCharNum = idx;
         CharLockImg[idx - 1].gameObject.SetActive(false);
@@ -87,19 +87,19 @@ public class CharSelect : MonoBehaviour
         }
         else
         {
-            if (SSoundMng.I.nAC >= 100)
+            if (SSoundMng.I.credit >= 100)
             {
                 //CharColor = new Color(255f, 255f, 255f, 255f);
                 CharUnLock(1, 100);
             }
-            else if (SSoundMng.I.nAC < 100)
+            else if (SSoundMng.I.credit < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
 
         }
         Debug.Log(SSoundMng.I.bCharLock[1]);
-        Debug.Log(SSoundMng.I.nAC);
+        Debug.Log(SSoundMng.I.credit);
     }
 
     public void Char2()
@@ -113,12 +113,12 @@ public class CharSelect : MonoBehaviour
         }
         else
         {
-            if (SSoundMng.I.nAC >= 100)
+            if (SSoundMng.I.credit >= 100)
             {
                 //CharColor = new Color(210 / 255f, 68 / 255f, 68 / 255f, 255f);
                 CharUnLock(2, 100);
             }
-            else if (SSoundMng.I.nAC < 100)
+            else if (SSoundMng.I.credit < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -138,12 +138,12 @@ public class CharSelect : MonoBehaviour
         }
         else
         {
-            if (SSoundMng.I.nAC >= 100)
+            if (SSoundMng.I.credit >= 100)
             {
                 //CharColor = new Color(84 / 255f, 105 / 255f, 248 / 255f, 255f);
                 CharUnLock(3, 100);
             }
-            else if (SSoundMng.I.nAC < 100)
+            else if (SSoundMng.I.credit < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -163,12 +163,12 @@ public class CharSelect : MonoBehaviour
         }
         else
         {
-            if (SSoundMng.I.nAC >= 100)
+            if (SSoundMng.I.credit >= 100)
             {
                 //CharColor = new Color(230 / 255f, 233 / 255f, 56 / 255f, 255f);
                 CharUnLock(4, 100);
             }
-            else if (SSoundMng.I.nAC < 100)
+            else if (SSoundMng.I.credit < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -188,12 +188,12 @@ public class CharSelect : MonoBehaviour
         }
         else
         {
-            if (SSoundMng.I.nAC >= 100)
+            if (SSoundMng.I.credit >= 100)
             {
                 //CharColor = new Color(62 / 255f, 220 / 255f, 227 / 255f, 255f);
                 CharUnLock(5, 100);
             }
-            else if (SSoundMng.I.nAC < 100)
+            else if (SSoundMng.I.credit < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -213,12 +213,12 @@ public class CharSelect : MonoBehaviour
         }
         else
         {
-            if (SSoundMng.I.nAC >= 100)
+            if (SSoundMng.I.credit >= 100)
             {
                 //CharColor = new Color(169 / 255f, 169 / 255f, 169 / 255f, 255f);
                 CharUnLock(6, 100);
             }
-            else if (SSoundMng.I.nAC < 100)
+            else if (SSoundMng.I.credit < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }
@@ -238,12 +238,12 @@ public class CharSelect : MonoBehaviour
         }
         else
         {
-            if (SSoundMng.I.nAC >= 100)
+            if (SSoundMng.I.credit >= 100)
             {
                 //CharColor = new Color(255f, 255f, 255f, 255f);
                 CharUnLock(7, 100);
             }
-            else if (SSoundMng.I.nAC < 100)
+            else if (SSoundMng.I.credit < 100)
             {
                 Debug.Log("크레딧이 부족합니다.");
             }

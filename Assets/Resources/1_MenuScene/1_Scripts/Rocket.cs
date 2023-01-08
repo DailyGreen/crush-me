@@ -41,7 +41,7 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CreditText.text = "$ " + SSoundMng.I.nAC.ToString();
+        CreditText.text = "$ " + SSoundMng.I.credit.ToString();
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;

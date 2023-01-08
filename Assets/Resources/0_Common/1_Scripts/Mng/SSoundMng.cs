@@ -18,7 +18,7 @@ public class SSoundMng : MonoBehaviour
     public int nCharNum;
     private int nCredit;
 
-    public int nAC
+    public int credit
     {
         get
         {
@@ -56,7 +56,7 @@ public class SSoundMng : MonoBehaviour
         _Instance = this;
         StartCoroutine("SoundCtrl");
         DontDestroyOnLoad(transform.gameObject);
-        nAC = PlayerPrefs.GetInt("Credit");
+        credit = PlayerPrefs.GetInt("Credit");
         charUnLock = PlayerPrefs.GetString("Char").Split(',');
         for (int i = 0; i < bCharLock.Length; i++)
         {
@@ -138,7 +138,7 @@ public class SSoundMng : MonoBehaviour
 	private void OnApplicationQuit()
 	{
         string charUnlock = "";
-        PlayerPrefs.SetInt("Credit", nAC);
+        PlayerPrefs.SetInt("Credit", credit);
         for(int i = 0; i < bCharLock.Length; i++)
         {
             charUnlock = charUnlock + System.Convert.ToInt32(bCharLock[i]).ToString();

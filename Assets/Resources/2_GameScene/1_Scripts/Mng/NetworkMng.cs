@@ -3,6 +3,8 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.Networking;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
+
 public class NetworkMng : MonoBehaviourPunCallbacks
 {
     public string nickname = "";        // <! 닉네임
@@ -26,24 +28,23 @@ public class NetworkMng : MonoBehaviourPunCallbacks
     {
         _Instance = this;
         DontDestroyOnLoad(this);
-    }
-
-    void Start()
-    {
         ConnectToServer();
     }
 
     public void ConnectToServer()
     {
+        Debug.Log("Connect To Main Server");
         PhotonNetwork.GameVersion = "1.0";      // 게임 버전
         PhotonNetwork.ConnectUsingSettings();   // 서버 연결
     }
 
     private void Update()    // <! 디버그용
     {
-        if(Input.GetKeyDown(KeyCode.A)){
-            
-        JoinRandomOrCreateRoom();
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+            PhotonNetwork.JoinRandomRoom();      // 렌덤 room 들어가는곳
+            // PhotonNetwork.JoinRandomRoom();
         }
     }
     /**
@@ -76,12 +77,18 @@ public class NetworkMng : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         //Debug.Log("Joined Lobby");
-        PhotonNetwork.JoinRandomRoom();      // 렌덤 room 들어가는곳
+    }
+
+    public override void OnJoinRandomFailed(short retrunCode, string message)
+    {
+        //Debug.Log("no room");
+        // PhotonNetwork.CreateRoom("myroom");
+        JoinRandomOrCreateRoom();
     }
 
     public void JoinRandomOrCreateRoom()
     {
-        print($"{nickname} 랜덤 매칭 시작.");
+        Debug.Log($"{nickname} 랜덤 매칭 시작.");
         PhotonNetwork.LocalPlayer.NickName = nickname; // 현재 플레이어 닉네임 설정하기.
 
         RoomOptions roomOptions = new RoomOptions();
@@ -99,6 +106,7 @@ public class NetworkMng : MonoBehaviourPunCallbacks
      */
     public override void OnJoinedRoom()
     {
+        // SceneManager.LoadScene("New Scene");
         StartCoroutine(this.CreatePlayer());
         //Debug.Log("Joined room");
     }
@@ -107,6 +115,7 @@ public class NetworkMng : MonoBehaviourPunCallbacks
      */
     IEnumerator CreatePlayer()
     {
+        PhotonNetwork.Instantiate("2_GameScene/4_Prefab/MultyPlayer", Vector3.zero, Quaternion.identity);
         yield return null;
     }
 

@@ -10,7 +10,7 @@ public class SGetScrp : MonoBehaviour
 
     void Update()
     {
-        PlayerPrefs.SetInt("Credit", SSoundMng.I.nAC);
+        PlayerPrefs.SetInt("Credit", SSoundMng.I.credit);
         SGameMng.I.nHightTimeCount = PlayerPrefs.GetInt("HightTime");       // 시간
         HightTimeText.text = SGameMng.I.nHightTimeCount.ToString() + " 초";
 

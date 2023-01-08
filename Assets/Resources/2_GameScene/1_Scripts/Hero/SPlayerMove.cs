@@ -64,7 +64,6 @@ public class SPlayerMove : MonoBehaviour
 
     void Start()
     {
-        _rigidBody = GetComponent<Rigidbody2D>();
         Sr = GetComponent<SpriteRenderer>();
         CharSelect();
     }
@@ -73,7 +72,6 @@ public class SPlayerMove : MonoBehaviour
     {
         if (!SGameMng.I.bPause && !SGameMng.I.bMoveAccess)
         {
-            getKey();
             TimeCount();
             if (bSkills[0])
             {
@@ -124,7 +122,7 @@ public class SPlayerMove : MonoBehaviour
         {
             SGameMng.I.nTimeCount++;
             if (!bHeroDie)
-                SSoundMng.I.nAC++;
+                SSoundMng.I.credit++;
         }
         StartCoroutine(TimeCountCor());
     }
@@ -388,39 +386,5 @@ public class SPlayerMove : MonoBehaviour
                 }
             }
         }
-    }
-
-    public static float _moveSpeed = 5.5f;
-
-    Rigidbody2D _rigidBody;
-
-    Vector3 _moveVector = Vector3.zero;
-    Vector3 _rotateVector = Vector3.zero;
-    const float correction = 90f * Mathf.Deg2Rad;
-
-    void FixedUpdate()
-    {
-        movement();
-        rotation();
-    }
-
-    void getKey()
-    {
-        _moveVector = new Vector3(CnControls.CnInputManager.GetAxis("Horizontal"), CnControls.CnInputManager.GetAxis("Vertical"));
-        _rotateVector = new Vector3(CnControls.CnInputManager.GetAxis("RotateX"), CnControls.CnInputManager.GetAxis("RotateY"));
-    }
-
-    void movement()
-    {
-        _rigidBody.velocity = _moveVector * _moveSpeed;
-    }
-
-    void rotation()
-    {
-        if (_rotateVector.Equals(Vector3.zero))
-            return;
-
-        float value = (Mathf.Atan2(_rotateVector.y, _rotateVector.x) - correction) * Mathf.Rad2Deg;
-        _rigidBody.rotation = value;
     }
 }
