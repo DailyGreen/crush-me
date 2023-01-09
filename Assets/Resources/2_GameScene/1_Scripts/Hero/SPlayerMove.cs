@@ -60,6 +60,8 @@ public class SPlayerMove : MonoBehaviour
     [SerializeField]
     Hero.HeroMover heroScrp;
 
+    public GameObject[] itemPrefab;
+
     //////////////////////////////////////////////////////////////////화면 크기 가로2.5 세로4.5////////////////////////////////////////////////////////////////////////
 
     void Start()
@@ -293,7 +295,7 @@ public class SPlayerMove : MonoBehaviour
         switch(kind)
         {
             case 0:
-                Debug.Log("호밍 미사일");
+                Instantiate(itemPrefab[0], transform.position, Quaternion.identity, transform.parent.parent);
                 break;
         }
     }

@@ -10,6 +10,9 @@ public class NetworkMng : MonoBehaviourPunCallbacks
     public string nickname = "";        // <! 닉네임
 
     const int MAX_PLAYER = 2;
+
+    public Transform EnemyPlayerTr;
+
     private static NetworkMng _Instance;
 
     public static NetworkMng I
@@ -115,7 +118,8 @@ public class NetworkMng : MonoBehaviourPunCallbacks
      */
     IEnumerator CreatePlayer()
     {
-        PhotonNetwork.Instantiate("2_GameScene/4_Prefab/MultyPlayer", Vector3.zero, Quaternion.identity);
+        GameObject temp = PhotonNetwork.Instantiate("2_GameScene/4_Prefab/MultyPlayer", Vector3.zero, Quaternion.identity) as GameObject;
+        EnemyPlayerTr = temp.transform.GetChild(0);
         yield return null;
     }
 
