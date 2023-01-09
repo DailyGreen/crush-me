@@ -9,9 +9,6 @@ public class Rocket : MonoBehaviour
     public Earth EarthSc = null;
 
     public GameObject CharSelectGams = null;
-    //public GameObject CharSelectCloseBtn = null;
-    //public GameObject CharFrameGams = null;
-    //public GameObject[] CharBtnGams = null;
 
     public Image[] JoyStickPosImg = null;
 
@@ -52,7 +49,6 @@ public class Rocket : MonoBehaviour
                 CharSelectSc.SelectFrame(SSoundMng.I.nCharNum, 1);
                 break;
         }
-        SSoundMng.I.credit = 10000;
     }
 
     // Update is called once per frame

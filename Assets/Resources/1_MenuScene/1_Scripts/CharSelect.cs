@@ -95,7 +95,6 @@ public class CharSelect : MonoBehaviour
     public void Char0()
     {
         SSoundMng.I.nCharNum = 0;
-        //CharColor = new Color(255f, 255f, 255f, 255f);
         SelectFrame(0, 0);
         Debug.Log("기본");
     }
@@ -105,7 +104,6 @@ public class CharSelect : MonoBehaviour
         if (SSoundMng.I.bCharLock[1])
         {
             SSoundMng.I.nCharNum = 1;
-            //CharColor = new Color(255f, 255f, 255f, 255f);
             SelectFrame(1, 1);
             Debug.Log("초록");
         }
@@ -113,7 +111,6 @@ public class CharSelect : MonoBehaviour
         {
             if (SSoundMng.I.credit >= 100)
             {
-                //CharColor = new Color(255f, 255f, 255f, 255f);
                 CharUnLock(1, 100);
             }
             else if (SSoundMng.I.credit < 100)
@@ -131,7 +128,6 @@ public class CharSelect : MonoBehaviour
         if (SSoundMng.I.bCharLock[2])
         {
             SSoundMng.I.nCharNum = 2;
-            //CharColor = new Color(255f, 255f, 255f, 255f);
             SelectFrame(2, 2);
             Debug.Log("보라");
         }
@@ -139,8 +135,7 @@ public class CharSelect : MonoBehaviour
         {
             if (SSoundMng.I.credit >= 100)
             {
-                //CharColor = new Color(255f, 255f, 255f, 255f);
-                CharUnLock(1, 100);
+                CharUnLock(2, 100);
             }
             else if (SSoundMng.I.credit < 100)
             {
@@ -157,7 +152,6 @@ public class CharSelect : MonoBehaviour
         if (SSoundMng.I.bCharLock[3])
         {
             SSoundMng.I.nCharNum = 3;
-            //CharColor = new Color(210 / 255f, 68 / 255f, 68 / 255f, 255f);
             SelectFrame(3);
             Debug.Log("빨강");
         }
@@ -165,7 +159,6 @@ public class CharSelect : MonoBehaviour
         {
             if (SSoundMng.I.credit >= 100)
             {
-                //CharColor = new Color(210 / 255f, 68 / 255f, 68 / 255f, 255f);
                 CharUnLock(3, 100);
             }
             else if (SSoundMng.I.credit < 100)
@@ -182,7 +175,6 @@ public class CharSelect : MonoBehaviour
         if (SSoundMng.I.bCharLock[4])
         {
             SSoundMng.I.nCharNum = 4;
-            //CharColor = new Color(84 / 255f, 105 / 255f, 248 / 255f, 255f);
             SelectFrame(4);
             Debug.Log("파랑");
         }
@@ -190,7 +182,6 @@ public class CharSelect : MonoBehaviour
         {
             if (SSoundMng.I.credit >= 100)
             {
-                //CharColor = new Color(84 / 255f, 105 / 255f, 248 / 255f, 255f);
                 CharUnLock(4, 100);
             }
             else if (SSoundMng.I.credit < 100)
@@ -207,7 +198,6 @@ public class CharSelect : MonoBehaviour
         if (SSoundMng.I.bCharLock[5])
         {
             SSoundMng.I.nCharNum = 5;
-            //CharColor = new Color(230 / 255f, 233 / 255f, 56 / 255f, 255f);
             SelectFrame(5);
             Debug.Log("노랑");
         }
@@ -215,7 +205,6 @@ public class CharSelect : MonoBehaviour
         {
             if (SSoundMng.I.credit >= 100)
             {
-                //CharColor = new Color(230 / 255f, 233 / 255f, 56 / 255f, 255f);
                 CharUnLock(5, 100);
             }
             else if (SSoundMng.I.credit < 100)
@@ -232,7 +221,6 @@ public class CharSelect : MonoBehaviour
         if (SSoundMng.I.bCharLock[6])
         {
             SSoundMng.I.nCharNum = 6;
-            //CharColor = new Color(62 / 255f, 220 / 255f, 227 / 255f, 255f);
             SelectFrame(6);
             Debug.Log("하늘");
         }
@@ -240,7 +228,6 @@ public class CharSelect : MonoBehaviour
         {
             if (SSoundMng.I.credit >= 100)
             {
-                //CharColor = new Color(62 / 255f, 220 / 255f, 227 / 255f, 255f);
                 CharUnLock(6, 100);
             }
             else if (SSoundMng.I.credit < 100)
@@ -257,7 +244,6 @@ public class CharSelect : MonoBehaviour
         if (SSoundMng.I.bCharLock[7])
         {
             SSoundMng.I.nCharNum = 7;
-            //CharColor = new Color(169 / 255f, 169 / 255f, 169 / 255f, 255f);
             SelectFrame(7);
             Debug.Log("회색");
         }
@@ -265,7 +251,6 @@ public class CharSelect : MonoBehaviour
         {
             if (SSoundMng.I.credit >= 100)
             {
-                //CharColor = new Color(169 / 255f, 169 / 255f, 169 / 255f, 255f);
                 CharUnLock(7, 100);
             }
             else if (SSoundMng.I.credit < 100)
@@ -282,7 +267,6 @@ public class CharSelect : MonoBehaviour
         if (SSoundMng.I.bCharLock[8])
         {
             SSoundMng.I.nCharNum = 8;
-            //CharColor = new Color(255f, 255f, 255f, 255f);
             SelectFrame(8, 3);
             Debug.Log("스뼤샬");
         }
@@ -290,7 +274,6 @@ public class CharSelect : MonoBehaviour
         {
             if (SSoundMng.I.credit >= 100)
             {
-                //CharColor = new Color(255f, 255f, 255f, 255f);
                 CharUnLock(8, 100);
             }
             else if (SSoundMng.I.credit < 100)

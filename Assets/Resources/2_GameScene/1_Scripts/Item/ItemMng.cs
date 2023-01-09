@@ -23,7 +23,7 @@ public class ItemMng : MonoBehaviour
         Vector2 ItemDestination;
         float speed;
 
-        //nItemKind = Random.Range(?, ?);
+        nItemKind = Random.Range(0, 1);
         nDirect = Random.Range(0, 4);
         speed = Random.Range(0.5f, 1.1f);
         switch (nDirect)
@@ -47,13 +47,14 @@ public class ItemMng : MonoBehaviour
         }
         ItemDestination = ItemSpawnPos * -1;            // 생성위치의 반대편으로 생성
         SGameMng.I.isMult = false;
-        return ItemSetting(ItemSpawnPos, ItemDestination, speed).gameObject;
+        return ItemSetting(ItemSpawnPos, ItemDestination, speed, nItemKind).gameObject;
     }
 
-    Item ItemSetting(Vector2 spawnpos, Vector2 destination, float speed)
+    Item ItemSetting(Vector2 spawnpos, Vector2 destination, float speed, int kind)
     {
         Item temp = Instantiate(ItemPre, spawnpos, Quaternion.identity, transform).GetComponent<Item>();
         temp.destination = destination;
+        temp.itemKind = kind;
         temp.speed = speed;
         return temp;
     }
