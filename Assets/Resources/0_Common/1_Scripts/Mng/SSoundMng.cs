@@ -148,7 +148,7 @@ public class SSoundMng : MonoBehaviour
             }
         }
         PlayerPrefs.SetString("Char", charUnlock);
-        //PlayerPrefs.SetString("Char", "0,0,0,0,0,0,0,0");         // 캐릭터 잠김 초기화
+        //PlayerPrefs.SetString("Char", "0,0,0,0,0,0,0,0,0");         // 캐릭터 잠김 초기화
         PlayerPrefs.SetInt("EquipChar", nCharNum);
     }
 }

@@ -67,6 +67,7 @@ public class SGameMng : MonoBehaviour
     float[] gTime = new float[(int)E_TIME.E_MAX];
 
     public float fLazerTime = 5f;
+    public bool isMult = false;
 
     public bool TimeCtrl(int nindex, float DelTime)
     {

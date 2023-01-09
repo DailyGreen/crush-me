@@ -20,6 +20,7 @@ public class Rocket : MonoBehaviour
     public bool bCharSelectOn = false;
 
     public TMPro.TextMeshProUGUI CreditText;
+    public CharSelect CharSelectSc;
 
     // Use this for initialization
     void Start()
@@ -36,6 +37,22 @@ public class Rocket : MonoBehaviour
             JoyStickPosImg[0].color = new Color(255f, 255f, 255f, 100 / 255f);
             JoyStickPosImg[1].color = new Color(255f, 255f, 255f, 255f);
         }
+        switch(SSoundMng.I.nCharNum)
+        {
+            case 0:
+                CharSelectSc.SelectFrame(SSoundMng.I.nCharNum, 0);
+                break;
+            case 2:
+                CharSelectSc.SelectFrame(SSoundMng.I.nCharNum, 2);
+                break;
+            case 8:
+                CharSelectSc.SelectFrame(SSoundMng.I.nCharNum, 3);
+                break;
+            default:
+                CharSelectSc.SelectFrame(SSoundMng.I.nCharNum, 1);
+                break;
+        }
+        SSoundMng.I.credit = 10000;
     }
 
     // Update is called once per frame

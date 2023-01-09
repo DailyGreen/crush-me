@@ -46,7 +46,7 @@ public class ItemMng : MonoBehaviour
                 break;
         }
         ItemDestination = ItemSpawnPos * -1;            // 생성위치의 반대편으로 생성
-
+        SGameMng.I.isMult = false;
         return ItemSetting(ItemSpawnPos, ItemDestination, speed).gameObject;
     }
 
@@ -62,6 +62,7 @@ public class ItemMng : MonoBehaviour
     {
         nItemSpawnTime = Random.Range(15, 31);
         yield return new WaitForSeconds(nItemSpawnTime);
+        SGameMng.I.isMult = true;
         Destroy(ItemSpawn(), 5.0f);
         StartCoroutine(SpawnDelay());
     }
