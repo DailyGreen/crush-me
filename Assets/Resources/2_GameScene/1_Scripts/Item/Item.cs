@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
     CircleCollider2D ItemCol;
 
     public float speed;
+    public int itemKind;                // 0 : 호밍 미사일
     public Vector2 destination;
 
     void Start()
@@ -25,8 +26,10 @@ public class Item : MonoBehaviour
     {
         if(collision.CompareTag("Hero"))
         {
+            SPlayerMove player = collision.GetComponent<SPlayerMove>();
             ItemSr.enabled = false;
             ItemCol.enabled = false;
+            player.UseItem(itemKind);
         }
     }
 
